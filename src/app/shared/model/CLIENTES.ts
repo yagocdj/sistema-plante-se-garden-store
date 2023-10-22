@@ -1,6 +1,6 @@
 import {Cliente} from "./cliente";
 
-export const CLIENTES = [
+export const CLIENTES: Array<Cliente> = [
   new Cliente(
     'Marcela Kramer',
     '99900045419',
