@@ -4,7 +4,7 @@ export class Cliente {
   private _email: string;
   private _endereco: string;
   private _telefone: string;
-  private _senha: string; //senha a revisar
+  private _senha: string; // senha a revisar
 
   constructor(nome: string, cpf: string, email: string,
               endereco: string, telefone: string, senha: string) {

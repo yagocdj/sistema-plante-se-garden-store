@@ -1,0 +1,85 @@
+{
+  "administradores": [
+    {
+      "nome": "admin_1",
+      "senha": "teste1"
+    }
+    {
+      "nome": "admin_2",
+      "senha": "teste2"
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Marcela Kramer",
+      "cpf": "99900045419",
+      "email": "mkramer@gmail.com",
+      "endereco": "Rua Marrom, 91",
+      "telefone": "929290101",
+      "senha": "EstevaoFerreira2023"
+    },
+    {
+      "id": 2,
+      "nome": "Yago César",
+      "cpf": "11100099910",
+      "email": "yagocdj@gmail.com",
+      "endereco": "Rua Rosa, 100",
+      "telefone": "940028922",
+      "senha": "MinhaSenha@123"
+    },
+    {
+      "id": 3,
+      "nome": "Renato Melo",
+      "cpf": "45411129400",
+      "email": "renato.melo@gmail.com",
+      "endereco": "Rua Verde, 99",
+      "telefone": "940035913",
+      "senha": "SucoDeLaranja@99"
+    },
+    {
+      "id": 4,
+      "nome": "Ana Júlia",
+      "cpf": "29915049101",
+      "email": "aj2023@gmail.com",
+      "endereco": "Rua Lilás, 49",
+      "telefone": "999991111",
+      "senha": "Sextou:D@99"
+    }
+  ],
+  "produtos": [
+    {
+      "nome": "Aparador de grama",
+      "preco": 500.0,
+      "categoria": "Ferramentas",
+      "quantidade": 1
+    },
+    {
+      "nome": "Banco para Jardim Madeira 3 Lugares 184cm Marrom Yumi Naterial",
+      "preco": 1229.0,
+      "categoria": "Bancos para jardim",
+      "quantidade": 2
+    },
+    {
+      "nome": "Fertilizante multiuso",
+      "preco": 4.44,
+      "categoria": "Fertilizantes",
+      "quantidade": 5
+    },
+    {
+      "nome": "Vaso Pequeno 30x20",
+      "preco": 6.50,
+      "categoria": "Vasos de Plantas",
+      "quantidade": 0
+    },
+    {
+      "nome": "Vaso Grande 80x50",
+      "preco": 12.20,
+      "categoria": "Vasos de Plantas",
+      "quantidade": 3
+    }
+  ],
+  "pedidos": [
+
+  ]
+}
