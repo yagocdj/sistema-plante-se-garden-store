@@ -4,6 +4,7 @@ export class Produto {
   private _categoria: string;
   private _quantidade: number;
 
+  //Adicionar ID autoincremental futuramente
   constructor(nome: string, preco: number, categoria: string,
               quantidade: number = 0) {
     this._nome = nome;
