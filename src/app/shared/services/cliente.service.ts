@@ -22,7 +22,22 @@ export class ClienteService {
     this._clientes.push(cliente);
   }
 
-  // TODO - método atualizar()
+  // TODO - revisar este método
+  editar(cpf: string, novoCliente: Cliente): void {
+    const indexClienteASerEditado = this.localizar(cpf);
+    if (indexClienteASerEditado < 0)
+      throw new Error(`Não foi localizado um cliente com o CPF "${cpf}".`);
+    if (this.localizar(novoCliente.cpf) >= 0)
+      throw new Error(`Já existe um cliente com o CPF ${novoCliente.cpf}`)
+    this._clientes[indexClienteASerEditado] = new Cliente(
+      novoCliente.nome,
+      novoCliente.cpf,
+      novoCliente.email,
+      novoCliente.endereco,
+      novoCliente.telefone,
+      novoCliente.senha,
+    )
+  }
 
   localizar(cpf: string): number {
     return this._clientes.findIndex(
