@@ -17,18 +17,24 @@ export class ClienteService {
   }
 
   inserir(cliente: Cliente): void {
-    if (this.localizar(cliente.cpf) >= 0)
+    if (this.localizar(cliente.cpf) >= 0) {
       throw new Error(`O cliente de CPF "${cliente.cpf}" já está cadastrado.`);
+    }
     this._clientes.push(cliente);
   }
 
   // TODO - revisar este método
   editar(cpf: string, novoCliente: Cliente): void {
     const indexClienteASerEditado = this.localizar(cpf);
-    if (indexClienteASerEditado < 0)
+
+    if (indexClienteASerEditado < 0) {
       throw new Error(`Não foi localizado um cliente com o CPF "${cpf}".`);
-    if (this.localizar(novoCliente.cpf) >= 0)
-      throw new Error(`Já existe um cliente com o CPF ${novoCliente.cpf}`)
+    }
+
+    if (this.localizar(novoCliente.cpf) >= 0) {
+      throw new Error(`Já existe um cliente com o CPF ${novoCliente.cpf}`);
+    }
+
     this._clientes[indexClienteASerEditado] = new Cliente(
       novoCliente.nome,
       novoCliente.cpf,
@@ -36,7 +42,7 @@ export class ClienteService {
       novoCliente.endereco,
       novoCliente.telefone,
       novoCliente.senha,
-    )
+    );
   }
 
   localizar(cpf: string): number {
@@ -45,10 +51,21 @@ export class ClienteService {
     );
   }
 
+  getCliente(cpf: string): Cliente | undefined {
+    const indexCliente = this.localizar(cpf);
+    if (indexCliente < 0) {
+      return;
+    }
+
+    return this._clientes[indexCliente];
+  }
+
   remover(cpf: string): void {
     const indexClienteASerRemovido = this.localizar(cpf);
-    if (indexClienteASerRemovido < 0)
+     if (indexClienteASerRemovido < 0) {
       throw new Error(`Não foi localizado um cliente com o CPF "${cpf}".`);
+    }
+
     this._clientes.splice(indexClienteASerRemovido, 1);
   }
 
