@@ -1,6 +1,6 @@
 import {Produto} from "./produto";
 
-export const PRODUTOS = [
+export const PRODUTOS: Array<Produto> = [
   new Produto('Aparador de grama', 500.0, 'Ferramentas', 1),
   new Produto('Banco para Jardim Madeira 3 Lugares 184cm Marrom Yumi Naterial',
       1229.0, 'Bancos para jardim', 2),

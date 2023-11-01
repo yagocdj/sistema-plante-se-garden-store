@@ -1,6 +1,6 @@
 export class Admin {
   private _nome: string;
-  private _senha: string; //senha a revisar
+  private _senha: string; // senha a revisar
 
   constructor(nome:string, senha: string) {
     this._nome = nome;
