@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-admin.component.scss']
 })
 export class LoginAdminComponent {
+  onSubmit(){}
+
 
 }
