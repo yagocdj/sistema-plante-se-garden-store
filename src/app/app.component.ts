@@ -8,7 +8,7 @@ import { Cliente } from './shared/model/cliente';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'plante-se-garden-store';
+  title = 'Olá, mundo!';
 
   constructor(private clienteService: ClienteService) {
     console.log('\nListar todos os clientes:');
