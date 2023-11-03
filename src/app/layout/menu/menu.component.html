@@ -1,12 +1,12 @@
 <mat-toolbar class="bg-sl-green">
   <mat-toolbar-row>
     <button mat-icon-button class="flex-button" aria-label="Example icon-button with menu icon"
-     fxFlex="10">
+     fxFlex="15">
       <mat-icon>menu</mat-icon>
     </button>
-    <span fxFlex="80" id="logo-container">Logo</span>
+    <span fxFlex="70" id="logo-container">Logo</span>
     <button mat-icon-button class="flex-button" aria-label="Example icon-button with share icon"
-     fxFlex="10">
+     fxFlex="15">
       <mat-icon>account_circle</mat-icon>
     </button>
   </mat-toolbar-row>
@@ -14,11 +14,14 @@
     <input type="text" name="search" id="search-box"
      placeholder="O que você deseja comprar?"
      aria-label="Caixa de entrada de texto para buscar por produtos na loja">
-    <button
-     mat-icon-button
-     aria-label="Botão para buscar por produtos com a descrição digitada antes">
-      <mat-icon>search</mat-icon>
-    </button>
+    <div id="search-button-container">
+      <button
+       mat-icon-button
+       aria-label="Botão para buscar por produtos com a descrição digitada antes"
+       id="search-button">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
   </mat-toolbar-row>
 </mat-toolbar>
   
