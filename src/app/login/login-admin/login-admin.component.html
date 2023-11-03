@@ -1,25 +1,17 @@
-<div class="loginForm">
+<div class="loginFormulario">
   <mat-card>
     <mat-card-content>
-      <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]='loginForm' (ngSubmit)="acessar()">
         <h2>Login Administrativo</h2>
         <mat-form-field>
-          <!-- [(ngModel)]="login" -->
-        <input matInput placeholder="Login" name="username" required>
-          <mat-error>
-            Por favor Insira um Login Válido
-          </mat-error>
+        <input matInput formControlName="nome" class="form-control" placeholder="Login" >
         </mat-form-field>
         <div>
           <mat-form-field>
-            <!-- [(ngModel)]="senha" -->
-            <input matInput type="password" placeholder="Senha" name="password" required>
-            <mat-error>
-              Por favor Insira uma Senha Válida
-            </mat-error>
+            <input matInput formControlName="senha" class="form-control" type="password" placeholder="Senha" >
           </mat-form-field>
         </div>
-        <button mat-raised-button color="primary" [disabled]="!loginForm.form.valid">Acessar</button>
+        <button mat-raised-button color="primary" type="submit" >Acessar</button>
       </form>
     </mat-card-content>
 </mat-card>
