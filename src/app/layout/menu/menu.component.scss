@@ -25,3 +25,17 @@
     padding-right: 1rem;
     background-color: transparent;
 }
+
+#toolbar-container {
+    padding-bottom: 10px;
+}
+
+.sidenav-styling {
+    width: min(70%, 70%);
+}
+
+.close-button {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5em;
+}

@@ -6,11 +6,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexModule } from '@angular/flex-layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
+import { DesktopMenuComponent } from './desktop-menu/desktop-menu.component';
 
 @NgModule({
   declarations: [
-    MenuComponent
+    MenuComponent,
+    DesktopMenuComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import {MatInputModule} from '@angular/material/input';
     MatInputModule
   ],
   exports: [
-    MenuComponent
+    MenuComponent,
+    DesktopMenuComponent
   ]
 })
 export class LayoutModule { }

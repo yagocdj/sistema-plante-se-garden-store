@@ -1,13 +1,23 @@
-<mat-toolbar class="bg-sl-green">
+<mat-sidenav #sideNav mode="over" class="sidenav-styling">
+  <div class="sidenav-header">
+    <button mat-icon-button (click)="sideNav.toggle()" class="close-button">
+      <mat-icon>
+        close
+      </mat-icon>
+    </button>
+  </div>
+</mat-sidenav>
+
+<mat-toolbar class="bg-sl-green" id="toolbar-container">
   <mat-toolbar-row>
     <button mat-icon-button class="flex-button" aria-label="Example icon-button with menu icon"
-     fxFlex="15">
+     fxFlex="15" (click)="sideNav.toggle()">
       <mat-icon>menu</mat-icon>
     </button>
     <span fxFlex="70" id="logo-container">Logo</span>
     <button mat-icon-button class="flex-button" aria-label="Example icon-button with share icon"
      fxFlex="15">
-      <mat-icon>account_circle</mat-icon>
+      <mat-icon>shopping_cart</mat-icon>
     </button>
   </mat-toolbar-row>
   <mat-toolbar-row>
@@ -17,8 +27,7 @@
     <div id="search-button-container">
       <button
        mat-icon-button
-       aria-label="Botão para buscar por produtos com a descrição digitada antes"
-       id="search-button">
+       aria-label="Botão para buscar por produtos com a descrição digitada antes">
         <mat-icon>search</mat-icon>
       </button>
     </div>
