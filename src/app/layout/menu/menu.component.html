@@ -1,5 +1,21 @@
-<mat-sidenav #sideNav mode="over" class="sidenav-styling">
+<mat-sidenav #sideNav mode="over" class="sidenav-component">
   <div class="sidenav-header">
+    <div class="user-info">
+      <mat-icon class="icon-display">
+        account_circle
+      </mat-icon>
+      <!-- Futuramente, utilizar-se-a de string interpolation
+      para pegar o nome do usuario caso haja um (logado)-->
+      <p id="hello-user-paragraph">Olá, usuário!</p>
+    </div>
+    <div class="user-actions">
+      <button mat-flat-button color="primary" id="login-bttn">
+        Entrar
+      </button>
+      <button mat-flat-button color="accent" id="create-account-bttn">
+        Criar conta
+      </button>
+    </div>
     <button mat-icon-button (click)="sideNav.toggle()" class="close-button">
       <mat-icon>
         close
