@@ -12,3 +12,9 @@
     </footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
+<div *ngIf="!isMobile">
+  <header>
+    <app-desktop-menu></app-desktop-menu>
+  </header>
+</div>

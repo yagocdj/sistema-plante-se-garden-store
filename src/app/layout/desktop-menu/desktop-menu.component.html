@@ -1,1 +1,28 @@
-<p>desktop-menu works!</p>
+<mat-toolbar class="navbar-container">
+  <div class="logo-container">
+    <a href="#">Logo</a>
+  </div>
+  <div class="search-container">
+    <input type="text" name="search" id="search-box"
+    placeholder="O que você deseja comprar?"
+    aria-label="Caixa de entrada de texto para buscar por produtos na loja">
+    <div id="search-button-container">
+      <button mat-icon-button
+       arial-label="Botão para buscar por produtos com a descrição digitada antes">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </div>
+  <div class="user-options">
+    <button mat-icon-button>
+      <mat-icon class="icon-display">
+        account_circle
+      </mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon class="icon-display">
+        shopping_cart
+      </mat-icon>
+    </button>
+  </div>
+</mat-toolbar>

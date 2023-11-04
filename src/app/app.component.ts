@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Olá, mundo!';
-  private _isMobile = true;
+  private _isMobile = false;
 
   constructor() {
 
@@ -17,7 +17,7 @@ export class AppComponent {
     return this._isMobile;
   }
 
-  set isMobile(state: boolean) {
-    this._isMobile = state;
+  set isMobile(value: boolean) {
+    this._isMobile = value;
   }
 }
