@@ -3,8 +3,8 @@ export class Produto {
   private _preco: number;
   private _categoria: string;
   private _quantidade: number;
+  //private _id: number;
 
-  //Adicionar ID autoincremental futuramente
   constructor(nome: string, preco: number, categoria: string,
               quantidade: number = 0) {
     this._nome = nome;
