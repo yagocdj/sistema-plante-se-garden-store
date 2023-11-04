@@ -1,3 +1,7 @@
+@import '../../../styles.scss';
+
+$transparent-bg: rgba($color: #505050, $alpha: 0.2);
+
 .navbar-container {
   display: flex;
   justify-content: center;
@@ -9,7 +13,7 @@
   width: 100%;
   height: min(30px, 30px);
   border-radius: 5px;
-  background-color: rgba($color: #505050, $alpha: 0.2);
+  background-color: $transparent-bg;
   border: none;
   padding: 5px 10px 5px 10px;
 }
@@ -38,4 +42,12 @@
 .user-options {
   display: flex;
   gap: 10px;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+#category-options {
+  gap: 15px
 }
