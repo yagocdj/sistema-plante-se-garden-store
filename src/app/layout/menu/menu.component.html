@@ -22,6 +22,11 @@
       </mat-icon>
     </button>
   </div>
+  <div class="sidenav-options">
+    <button *ngFor="let categoria of categorias" mat-button class="category-bttn">
+      {{categoria}}
+    </button>
+  </div>
 </mat-sidenav>
 
 <mat-toolbar class="bg-sl-green" id="toolbar-container">

@@ -35,7 +35,7 @@
 }
 
 .sidenav-header {
-    padding: 40px 40px 0px 40px;
+    padding: 40px;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -69,4 +69,16 @@
 }
 #hello-user-paragraph {
     margin: auto 0 auto 0;
+}
+
+.sidenav-options {
+    font-size: $fs-medium;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.category-bttn {
+    justify-content: start;
+    padding-left: 40px;
 }

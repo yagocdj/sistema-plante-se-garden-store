@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CategoriasService } from 'src/app/shared/services/categorias.service';
 
 @Component({
   selector: 'mobile-menu',
@@ -7,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent {
 
+  categorias: string[] = this.categoriasService.listar();
+
+  constructor(private categoriasService: CategoriasService) { }
 }
