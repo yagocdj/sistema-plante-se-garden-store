@@ -1,0 +1,57 @@
+<mat-sidenav #sideNav mode="over" class="sidenav-component">
+  <div class="sidenav-header">
+    <div class="user-info">
+      <mat-icon class="icon-display">
+        account_circle
+      </mat-icon>
+      <!-- Futuramente, utilizar-se-a de string interpolation
+      para pegar o nome do usuario caso haja um (logado)-->
+      <p id="hello-user-paragraph">Olá, usuário!</p>
+    </div>
+    <div class="user-actions">
+      <button mat-flat-button color="primary" id="login-bttn">
+        Entrar
+      </button>
+      <button mat-flat-button color="accent" id="create-account-bttn">
+        Criar conta
+      </button>
+    </div>
+    <button mat-icon-button (click)="sideNav.toggle()" class="close-button">
+      <mat-icon>
+        close
+      </mat-icon>
+    </button>
+  </div>
+  <div class="sidenav-options">
+    <button *ngFor="let categoria of categorias" mat-button class="category-bttn">
+      {{categoria}}
+    </button>
+  </div>
+</mat-sidenav>
+
+<mat-toolbar class="bg-sl-green" id="toolbar-container">
+  <mat-toolbar-row>
+    <button mat-icon-button class="flex-button" aria-label="Example icon-button with menu icon"
+     fxFlex="15" (click)="sideNav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <a href="#" fxFlex="70" id="logo-container">Logo</a>
+    <button mat-icon-button class="flex-button" aria-label="Example icon-button with share icon"
+     fxFlex="15">
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <input type="text" name="search" id="search-box"
+     placeholder="O que você deseja comprar?"
+     aria-label="Caixa de entrada de texto para buscar por produtos na loja">
+    <div id="search-button-container">
+      <button
+       mat-icon-button
+       aria-label="Botão para buscar por produtos com a descrição digitada antes">
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+  

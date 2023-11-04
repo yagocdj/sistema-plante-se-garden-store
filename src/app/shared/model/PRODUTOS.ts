@@ -5,7 +5,7 @@ export const PRODUTOS: Array<Produto> = [
   new Produto('Banco para Jardim Madeira 3 Lugares 184cm Marrom Yumi Naterial',
       1229.0, 'Bancos para jardim', 2),
   new Produto('Fertilizante multiuso', 4.44, 'Fertilizantes', 5),
-  new Produto('Vaso Pequeno 30x20',6.50,'Vasos de Plantas',0),
-  new Produto('Vaso Grande 80x50',12.20, 'Vasos de Plantas', 3)
+  new Produto('Vaso Pequeno 30x20',6.50,'Vasos de plantas',0),
+  new Produto('Vaso Grande 80x50',12.20, 'Vasos de plantas', 3)
 
 ];
