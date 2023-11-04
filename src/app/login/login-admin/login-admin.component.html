@@ -1,0 +1,18 @@
+<div class="loginFormulario">
+  <mat-card>
+    <mat-card-content>
+      <form [formGroup]='loginForm' (ngSubmit)="acessar()">
+        <h2>Login Administrativo</h2>
+        <mat-form-field>
+        <input matInput formControlName="nome" class="form-control" placeholder="Login" >
+        </mat-form-field>
+        <div>
+          <mat-form-field>
+            <input matInput formControlName="senha" class="form-control" type="password" placeholder="Senha" >
+          </mat-form-field>
+        </div>
+        <button mat-raised-button color="primary" type="submit" >Acessar</button>
+      </form>
+    </mat-card-content>
+</mat-card>
+</div>

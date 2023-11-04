@@ -18,7 +18,7 @@ export class AppComponent {
     console.log(`\nLocalizar a cliente de CPF '${cpfDoCliente}'`);
     const indexClienteLocalizado = this.clienteService.localizar(cpfDoCliente);
     const clienteLocalizado = this.clienteService.listar()[indexClienteLocalizado];
-    
+
     console.log(clienteLocalizado);
 
     console.log('\nEditando as informações do cliente acima');
