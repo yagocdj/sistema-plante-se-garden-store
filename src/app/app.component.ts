@@ -1,23 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MediaService } from './shared/services/media.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Olá, mundo!';
-  private _isMobile = false;
+  private _isDesktop = false;
+  private _mediaService: MediaService = new MediaService('(min-width: 1024px)');
 
-  constructor() {
+  constructor() { }
 
+  ngOnInit(): void {
+    this._mediaService.match$.subscribe(value => this._isDesktop = value);
   }
 
-  get isMobile(): boolean {
-    return this._isMobile;
+  get isDesktop(): boolean {
+    return this._isDesktop;
   }
 
-  set isMobile(value: boolean) {
-    this._isMobile = value;
+  set isDesktop(value: boolean) {
+    this._isDesktop = value;
   }
 }
