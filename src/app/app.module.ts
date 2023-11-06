@@ -6,10 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from './layout/layout.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { LoginAdminComponent } from './login/login-admin/login-admin.component';
-//import { LoginModule } from './login/login.module';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
-//import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
@@ -21,6 +19,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProdutoModule } from './produto/produto.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +44,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
     LayoutModule,
-    MatSidenavModule
+    MatSidenavModule,
+    ProdutoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
