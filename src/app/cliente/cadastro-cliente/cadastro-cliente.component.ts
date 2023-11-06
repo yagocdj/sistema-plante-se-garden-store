@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
+import { Cliente } from 'src/app/shared/model/cliente';
 import { CepService } from 'src/app/shared/services/cep.service';
+import { ClienteService } from 'src/app/shared/services/cliente.service';
 
 @Component({
   selector: 'app-cadastro-cliente',
@@ -14,7 +16,10 @@ export class CadastroClienteComponent implements OnInit {
   readonly requiredFieldErrorMessage = 'Este campo é obrigatório.';
   cities: string[] = [];
 
-  constructor(private cepService: CepService) { }
+  constructor(
+    private cepService: CepService,
+    private clienteService: ClienteService
+  ) { }
 
   ngOnInit(): void {
     this.cadastroForm = new FormGroup({
@@ -24,8 +29,30 @@ export class CadastroClienteComponent implements OnInit {
       telefone: new FormControl('', [Validators.required]),
       cep: new FormControl('', [Validators.required]),
       nomeDaRua: new FormControl('', [Validators.required]),
-      numeroResidencia: new FormControl('', [Validators.required])
+      numeroResidencia: new FormControl('', [Validators.required]),
+      senha: new FormControl('', [Validators.required])
     });
+  }
+
+  // FIXME - corrigir a questão da senha
+  // FIXME - verificar se o ID está sendo criado corretamente no DB
+  createAccount(): void {
+    const address = `${this.nomeDaRua?.value},${this.numeroResidencia?.value}`
+
+    const clienteToBeInserted = new Cliente(
+      this.nome?.value,
+      this.cpf?.value,
+      this.email?.value,
+      address,
+      this.telefone?.value,
+      this.senha?.value
+    );
+
+    this.clienteService.inserir(clienteToBeInserted).subscribe();
+    // FIXME - APENAS PARA TESTE
+    this.clienteService.listar().subscribe(
+      c => c.forEach(x => console.log(x))
+    );
   }
 
   queryCep(event: any): void {
@@ -79,4 +106,6 @@ export class CadastroClienteComponent implements OnInit {
   get nomeDaRua() { return this.cadastroForm.get('nomeDaRua'); }
 
   get numeroResidencia() { return this.cadastroForm.get('numeroResidencia'); }
+
+  get senha() { return this.cadastroForm.get('senha'); }
 }

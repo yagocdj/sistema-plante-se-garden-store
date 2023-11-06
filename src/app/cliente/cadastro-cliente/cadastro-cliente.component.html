@@ -2,7 +2,8 @@
   <mat-card class="form-container-card">
     <h1>Criar conta</h1>
     <mat-card-content>
-      <form [formGroup]="cadastroForm" #formDir="ngForm" id="registration-form">
+      <!-- TODO - add validações em todos os campos necessários -->
+      <form [formGroup]="cadastroForm" #formDir="ngForm" id="registration-form" (ngSubmit)="createAccount()">
         <h2>1. Dados pessoais</h2>
         
         <mat-form-field>
@@ -66,6 +67,8 @@
          </mat-error>
         </mat-form-field>
         
+        <!-- TODO - preencher automaticamente as infos. de UF e cidade a partir do CEP -->
+
         <mat-form-field>
           <mat-label>Estado (UF)</mat-label>
           <mat-select #ufSelection (selectionChange)="queryCitiesByUF(ufSelection.value)">
@@ -88,16 +91,13 @@
           <mat-label>Digite uma senha</mat-label>
           <input type="password" matInput>
         </mat-form-field>
-        
-        <mat-form-field>
-          <mat-label>Confirme a senha digitada</mat-label>
-          <input type="password" matInput>
-        </mat-form-field>
 
+        <!-- TODO - adicionar uma validação de senha -->
+
+        <button mat-button type="submit">
+          Criar conta
+        </button>
       </form>
     </mat-card-content>
-    <button mat-button>
-      Criar conta
-    </button>
   </mat-card>
 </main>

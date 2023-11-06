@@ -45,18 +45,28 @@
       "endereco": "Rua Lilás, 49",
       "telefone": "999991111",
       "senha": "Sextou:D@99"
+    },
+    {
+      "_nome": "asdf",
+      "_cpf": "11155511155",
+      "_email": "a@a",
+      "_endereco": "Rua Aderaldo Silveira de Souza,121",
+      "_telefone": "15915155151",
+      "_senha": "",
+      "_pedidos": [],
+      "id": 5
     }
   ],
   "produtos": [
     {
       "nome": "Aparador de grama",
-      "preco": 500.0,
+      "preco": 500,
       "categoria": "Ferramentas",
       "quantidade": 1
     },
     {
       "nome": "Banco para Jardim Madeira 3 Lugares 184cm Marrom Yumi Naterial",
-      "preco": 1229.0,
+      "preco": 1229,
       "categoria": "Bancos para jardim",
       "quantidade": 2
     },
@@ -68,18 +78,16 @@
     },
     {
       "nome": "Vaso Pequeno 30x20",
-      "preco": 6.50,
+      "preco": 6.5,
       "categoria": "Vasos de Plantas",
       "quantidade": 0
     },
     {
       "nome": "Vaso Grande 80x50",
-      "preco": 12.20,
+      "preco": 12.2,
       "categoria": "Vasos de Plantas",
       "quantidade": 3
     }
   ],
-  "pedidos": [
-
-  ]
+  "pedidos": []
 }
