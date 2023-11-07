@@ -5,9 +5,9 @@ import { CadastroClienteComponent } from './cliente/cadastro-cliente/cadastro-cl
 
 const routes: Routes = [
   {path:'login-admin', component: LoginAdminComponent},
-  {path: 'cadastro-cliente', component: CadastroClienteComponent},
-  {path: '**', redirectTo: 'cadastro-cliente'}
-  //{path:'**', redirectTo:'login-admin'}
+  {path: 'cadastro-cliente', component: CadastroClienteComponent}
+  // {path: '**', redirectTo: 'cadastro-cliente'}
+  // {path:'**', redirectTo:'login-admin'}
 ];
 
 @NgModule({

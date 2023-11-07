@@ -37,7 +37,6 @@ export class CadastroClienteComponent implements OnInit {
   }
 
   // FIXME - corrigir a questão da senha
-  // FIXME - verificar se o ID está sendo criado corretamente no DB
   createAccount(): void {
     if (this.cadastroForm.valid) {
       const address = `${this.nomeDaRua?.value},${this.numeroResidencia?.value},${this.cidade?.value}-${this.uf?.value.toUpperCase()}`;
