@@ -45,16 +45,6 @@
       "endereco": "Rua Lilás, 49",
       "telefone": "999991111",
       "senha": "Sextou:D@99"
-    },
-    {
-      "_nome": "asdf",
-      "_cpf": "11155511155",
-      "_email": "a@a",
-      "_endereco": "Rua Aderaldo Silveira de Souza,121",
-      "_telefone": "15915155151",
-      "_senha": "",
-      "_pedidos": [],
-      "id": 5
     }
   ],
   "produtos": [

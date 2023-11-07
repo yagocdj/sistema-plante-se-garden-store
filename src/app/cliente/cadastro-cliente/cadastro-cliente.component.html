@@ -3,7 +3,8 @@
     <h1>Criar conta</h1>
     <mat-card-content>
       <!-- TODO - add validações em todos os campos necessários -->
-      <form [formGroup]="cadastroForm" #formDir="ngForm" id="registration-form" (ngSubmit)="createAccount()">
+      <form [formGroup]="cadastroForm" #formDir="ngForm" id="registration-form"
+       (ngSubmit)="createAccount()">
         <h2>1. Dados pessoais</h2>
         
         <mat-form-field>
@@ -71,14 +72,16 @@
 
         <mat-form-field>
           <mat-label>Estado (UF)</mat-label>
-          <mat-select #ufSelection (selectionChange)="queryCitiesByUF(ufSelection.value)">
+          <mat-select #ufSelection
+           (ngModelChange)="queryCitiesByUF(ufSelection.value)"
+           formControlName="uf">
             <mat-option *ngFor="let uf of queryUFs()" value="{{uf}}">{{uf | uppercase}}</mat-option>
           </mat-select>
         </mat-form-field>
         
         <mat-form-field>
           <mat-label>Cidade</mat-label>
-          <mat-select>
+          <mat-select formControlName="cidade">
             <mat-option *ngFor="let city of cities" value="{{city}}">{{city}}</mat-option>
           </mat-select>
         </mat-form-field>
@@ -89,7 +92,7 @@
 
         <mat-form-field>
           <mat-label>Digite uma senha</mat-label>
-          <input type="password" matInput>
+          <input type="password" matInput formControlName="senha" required>
         </mat-form-field>
 
         <!-- TODO - adicionar uma validação de senha -->

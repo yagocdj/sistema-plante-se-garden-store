@@ -30,6 +30,8 @@ export class CadastroClienteComponent implements OnInit {
       cep: new FormControl('', [Validators.required]),
       nomeDaRua: new FormControl('', [Validators.required]),
       numeroResidencia: new FormControl('', [Validators.required]),
+      uf: new FormControl('', [Validators.required]),
+      cidade: new FormControl('', [Validators.required]),
       senha: new FormControl('', [Validators.required])
     });
   }
@@ -37,27 +39,23 @@ export class CadastroClienteComponent implements OnInit {
   // FIXME - corrigir a questão da senha
   // FIXME - verificar se o ID está sendo criado corretamente no DB
   createAccount(): void {
-    const address = `${this.nomeDaRua?.value},${this.numeroResidencia?.value}`
-
-    const clienteToBeInserted = new Cliente(
-      this.nome?.value,
-      this.cpf?.value,
-      this.email?.value,
-      address,
-      this.telefone?.value,
-      this.senha?.value
-    );
-
-    this.clienteService.inserir(clienteToBeInserted).subscribe();
-    // FIXME - APENAS PARA TESTE
-    this.clienteService.listar().subscribe(
-      c => c.forEach(x => console.log(x))
-    );
+    if (this.cadastroForm.valid) {
+      const address = `${this.nomeDaRua?.value},${this.numeroResidencia?.value},${this.cidade?.value}-${this.uf?.value.toUpperCase()}`;
+  
+      this.clienteService.inserir({
+        nome: this.nome?.value,
+        cpf: this.cpf?.value,
+        email: this.email?.value,
+        endereco: address,
+        telefone: this.telefone?.value,
+        senha: this.senha?.value
+      } as Cliente).subscribe();
+    }
   }
 
   queryCep(event: any): void {
-    const cep = event.target?.value;
-    if (cep) {
+    const cep = event.target?.value as string;
+    if (cep && cep.length) {
       this.cepService.buscar(cep).subscribe(
         (addressInfo) => {
           this.fillForm(addressInfo);
@@ -69,6 +67,8 @@ export class CadastroClienteComponent implements OnInit {
   private fillForm(addressInfo: any): void {
     this.cadastroForm.patchValue({
       nomeDaRua: addressInfo.logradouro,
+      uf: (addressInfo.uf as string).toLowerCase(),
+      cidade: addressInfo.localidade
     });
   }
 
@@ -106,6 +106,10 @@ export class CadastroClienteComponent implements OnInit {
   get nomeDaRua() { return this.cadastroForm.get('nomeDaRua'); }
 
   get numeroResidencia() { return this.cadastroForm.get('numeroResidencia'); }
+
+  get uf() { return this.cadastroForm.get('uf'); }
+  
+  get cidade() { return this.cadastroForm.get('cidade'); }
 
   get senha() { return this.cadastroForm.get('senha'); }
 }
