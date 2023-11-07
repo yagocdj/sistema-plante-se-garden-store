@@ -84,18 +84,11 @@
       "id": 4
     },
     {
-      "nomeProduto": "Pá Teste",
-      "categoriaProduto": "Ferramentas",
-      "precoProduto": "99.90",
-      "quantidadeProduto": "10",
+      "nome": "teste1",
+      "categoria": "Ferramentas",
+      "preco": "30.00",
+      "quantidade": "10",
       "id": 5
-    },
-    {
-      "nomeProduto": "Pá teste",
-      "categoriaProduto": "Ferramentas",
-      "precoProduto": "100.20",
-      "quantidadeProduto": "10",
-      "id": 6
     }
   ],
   "pedidos": []

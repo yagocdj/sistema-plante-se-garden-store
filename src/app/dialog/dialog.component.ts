@@ -16,19 +16,19 @@ export class DialogComponent {
 
   ngOnInit():void{
     this.produtoForm = this.formBuilder.group({
-      nomeProduto : ['', Validators.required],
-      categoriaProduto: ['', Validators.required],
-      precoProduto: ['', Validators.required],
-      quantidadeProduto : ['', Validators.required]
+      nome: ['', Validators.required],
+      categoria: ['', Validators.required],
+      preco: ['', Validators.required],
+      quantidade: ['', Validators.required]
     })
   }
 
   produtoFormulario(){
     if (this.produtoForm.valid){
-      this.produto.inserir(this.produtoForm.value).subscribe
-      ({next:()=>{alert('Produto Adicionado com Sucesso!')
-      }, error:()=>{alert('Preencha os campos.')}
-    })
+      this.produto.inserir(this.produtoForm.value).subscribe();
+      // ({next:()=>{alert('Produto Adicionado com Sucesso!')
+      // }, error:()=>{alert('Preencha os campos.')}
+    // })
   }
 
 }
