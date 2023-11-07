@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ProdutoService } from './../shared/services/produto.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
@@ -8,9 +9,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
+  [x: string]: any;
   produtoForm !: FormGroup;
 
-  constructor(private formBuilder:FormBuilder, private produto: ProdutoService){
+  constructor(private formBuilder:FormBuilder,  private produto: ProdutoService, private router: Router){
 
   }
 
@@ -26,9 +28,8 @@ export class DialogComponent {
   produtoFormulario(){
     if (this.produtoForm.valid){
       this.produto.inserir(this.produtoForm.value).subscribe();
-      // ({next:()=>{alert('Produto Adicionado com Sucesso!')
-      // }, error:()=>{alert('Preencha os campos.')}
-    // })
+      console.log('adicionou com sucesso!');
+      location.reload(); //utilizado para dar um refresh e atualizar a lista de produtos
   }
 
 }

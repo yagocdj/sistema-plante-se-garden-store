@@ -19,4 +19,5 @@ export class CadastrarProdutoComponent {
     this.dialog.open(DialogComponent, {
     });
   }
+  
 }
