@@ -1,0 +1,28 @@
+
+<div>
+  <form [formGroup]="produtoForm">
+    <mat-card class="card-cadastro">
+      <mat-card-content>
+        <mat-form-field appearance="fill">
+          <input formControlName="nomeProduto" matInput placeholder="Digite o Nome do Produto">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <input formControlName="categoriaProduto" matInput placeholder="Digite a Categoria">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <input formControlName="precoProduto" matInput placeholder="Digite o Preço">
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <input formControlName="quantidadeProduto" matInput placeholder="Digite a Quantidade">
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button id="acaoModalCadastrar" mat-raised-button color="primary" mat-dialog-close="" >Cancelar</button>
+        <button mat-raised-button color="primary" (click)="produtoFormulario()">Save</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>

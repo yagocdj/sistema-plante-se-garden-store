@@ -20,11 +20,14 @@ import { MatOptionModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProdutoModule } from './produto/produto.module';
+import {MatDialogModule} from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginAdminComponent
+    LoginAdminComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import { ProdutoModule } from './produto/produto.module';
     HttpClientModule,
     LayoutModule,
     MatSidenavModule,
-    ProdutoModule
+    ProdutoModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

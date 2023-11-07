@@ -12,14 +12,16 @@ import {FlexModule} from '@angular/flex-layout';
 import {RouterLink} from '@angular/router';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
 @NgModule({
   declarations: [
     ListagemProdutoComponent,
-    CadastrarProdutoComponent,
-    EditarProdutoComponent
+    EditarProdutoComponent,
+    CadastrarProdutoComponent
+
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { EditarProdutoComponent } from './editar-produto/editar-produto.componen
     MatInputModule,
     MatBadgeModule,
     FlexModule,
-    RouterLink
+    RouterLink,
+    MatDialogModule
   ],
   exports: [ListagemProdutoComponent]
 })

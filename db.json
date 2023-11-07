@@ -50,41 +50,53 @@
   "produtos": [
     {
       "nome": "Aparador de grama",
-      "preco": 500.0,
+      "preco": 500,
       "categoria": "Ferramentas",
       "quantidade": 1,
-      "id":0
+      "id": 0
     },
     {
       "nome": "Banco para Jardim Madeira 3 Lugares 184cm Marrom Yumi Naterial",
-      "preco": 1229.0,
+      "preco": 1229,
       "categoria": "Bancos para jardim",
       "quantidade": 2,
-      "id":1
+      "id": 1
     },
     {
       "nome": "Fertilizante multiuso",
       "preco": 4.44,
       "categoria": "Fertilizantes",
       "quantidade": 5,
-      "id":2
+      "id": 2
     },
     {
       "nome": "Vaso Pequeno 30x20",
-      "preco": 6.50,
+      "preco": 6.5,
       "categoria": "Vasos de Plantas",
       "quantidade": 0,
-      "id":3
+      "id": 3
     },
     {
       "nome": "Vaso Grande 80x50",
-      "preco": 12.20,
+      "preco": 12.2,
       "categoria": "Vasos de Plantas",
       "quantidade": 3,
-      "id":4
+      "id": 4
+    },
+    {
+      "nomeProduto": "Pá Teste",
+      "categoriaProduto": "Ferramentas",
+      "precoProduto": "99.90",
+      "quantidadeProduto": "10",
+      "id": 5
+    },
+    {
+      "nomeProduto": "Pá teste",
+      "categoriaProduto": "Ferramentas",
+      "precoProduto": "100.20",
+      "quantidadeProduto": "10",
+      "id": 6
     }
   ],
-  "pedidos": [
-
-  ]
+  "pedidos": []
 }
