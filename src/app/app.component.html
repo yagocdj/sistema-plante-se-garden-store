@@ -3,13 +3,9 @@
     <header>
       <mobile-menu></mobile-menu>
     </header>
-    <main style="color: purple;">
-      <h1>{{title}}</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum architecto, ipsa amet adipisci iusto minus cupiditate cumque placeat dolore eaque laborum minima ea quis corrupti nobis quae error sequi rem?</p>
+    <main>
+      <router-outlet></router-outlet>
     </main>
-    <footer>
-      <p style="color: red;">Here goes the app's footer</p>
-    </footer>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
@@ -18,5 +14,7 @@
     <app-desktop-menu></app-desktop-menu>
   </header>
 </div>
-<router-outlet></router-outlet>
+<main>
+  <router-outlet></router-outlet>
+</main>
 
