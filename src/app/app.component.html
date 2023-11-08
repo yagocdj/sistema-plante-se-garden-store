@@ -1,4 +1,4 @@
-<mat-sidenav-container *ngIf="!isDesktop" autosize class="sidenav-container">
+<mat-sidenav-container *ngIf="!isDesktop" autosize>
   <mat-sidenav-content>
     <header>
       <mobile-menu></mobile-menu>
@@ -13,8 +13,8 @@
   <header>
     <app-desktop-menu></app-desktop-menu>
   </header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
 </div>
-<main>
-  <router-outlet></router-outlet>
-</main>
 
