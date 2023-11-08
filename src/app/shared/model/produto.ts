@@ -3,7 +3,7 @@ export class Produto {
   private _preco: number;
   private _categoria: string;
   private _quantidade: number;
-  //private _id: number;
+  private _id: number | null=null;
 
   constructor(nome: string, preco: number, categoria: string,
               quantidade: number = 0) {
@@ -40,5 +40,12 @@ export class Produto {
 
   get quantidade(): number {
     return this._quantidade;
+  }
+
+  set id(value:number){
+    this._id = value;
+  }
+  get id(): number {
+    return this.id;
   }
 }

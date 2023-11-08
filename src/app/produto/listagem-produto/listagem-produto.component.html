@@ -8,13 +8,15 @@
     <mat-card-content>
       O preço do produto é: R$ {{produto.preco}}.
     </mat-card-content>
-    <mat-card-actions>
-      <button mat-button [routerLink]="['/login-admin']">
-        <mat-icon>edit</mat-icon>
-      </button>
-      <!-- <button mat-button (click)="excluir(produto)">
-        <mat-icon>delete</mat-icon>
-      </button> -->
-    </mat-card-actions>
+    <div class="botaoCard">
+      <mat-card-actions>
+          <button mat-button [routerLink]="['/login-admin']">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-button (click)="excluirProduto(produto.id)">
+            <mat-icon>delete</mat-icon>
+          </button>
+      </mat-card-actions>
+    </div>
   </mat-card>
 </div>

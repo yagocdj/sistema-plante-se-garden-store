@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class ProdutoService {
 
-  private URL_PRODUTOS = 'http://localhost:3000/produtos';
+  readonly URL_PRODUTOS = 'http://localhost:3000/produtos';
 
   constructor(private http: HttpClient) { }
 
@@ -29,6 +29,9 @@ export class ProdutoService {
     return this.localizar(nomeProduto).pipe(
       switchMap(id => this.http.delete<void>(`${this.URL_PRODUTOS}/${id}`))
     );
+  }
+  remover2(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.URL_PRODUTOS}/${id}`);
   }
 
   editar(idproduto:number, produto: Produto): Observable<Produto> {
