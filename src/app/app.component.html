@@ -1,22 +1,16 @@
 <mat-sidenav-container *ngIf="!isDesktop" autosize class="sidenav-container">
   <mat-sidenav-content>
-    <header>
+    <nav>
       <mobile-menu></mobile-menu>
-    </header>
-    <main style="color: purple;">
-      <h1>{{title}}</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum architecto, ipsa amet adipisci iusto minus cupiditate cumque placeat dolore eaque laborum minima ea quis corrupti nobis quae error sequi rem?</p>
-    </main>
-    <footer>
-      <p style="color: red;">Here goes the app's footer</p>
-    </footer>
+    </nav>
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
 
 <div *ngIf="isDesktop">
-  <header>
+  <nav>
     <app-desktop-menu></app-desktop-menu>
-  </header>
+  </nav>
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>
 
