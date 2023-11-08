@@ -23,10 +23,8 @@ ngOnInit(): void {
 }
 
 excluirProduto(id:number): void {
-  this.produtoService.remover2(id).subscribe({next:(res) => {
-    console.log('Produto excluído com sucesso')},
-    error:()=>{console.log('Produto excluído sem sucesso')}
-  });
+  this.produtoService.remover(id).subscribe();
+  console.log("produto removido com sucesso.")
   location.reload();
 }
 }

@@ -25,12 +25,7 @@ export class ProdutoService {
     return this.http.get<number>(`${this.URL_PRODUTOS}/localizar/${nomeProduto}`);
   }
 
-  remover(nomeProduto: string): Observable<void> {
-    return this.localizar(nomeProduto).pipe(
-      switchMap(id => this.http.delete<void>(`${this.URL_PRODUTOS}/${id}`))
-    );
-  }
-  remover2(id: number): Observable<void> {
+  remover(id: number): Observable<void> {
     return this.http.delete<void>(`${this.URL_PRODUTOS}/${id}`);
   }
 
@@ -39,6 +34,11 @@ export class ProdutoService {
   }
 }
 
+ // remover(nomeProduto: string): Observable<void> {
+  //   return this.localizar(nomeProduto).pipe(
+  //     switchMap(id => this.http.delete<void>(`${this.URL_PRODUTOS}/${id}`))
+  //   );
+  // }
 
 
 // import { PRODUTOS } from './../model/PRODUTOS';
