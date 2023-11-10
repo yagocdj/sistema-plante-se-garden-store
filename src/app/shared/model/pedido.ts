@@ -2,28 +2,29 @@ import { Produto } from "./produto";
 import { Cliente } from "./cliente";
 
 export class Pedido {
-  private static ultimoId = 0;
   readonly cliente: Cliente;
   readonly produtos: Array<Produto>;
   private _valorTotal: number;
 
-  readonly id: number;
-
-  constructor(cliente: Cliente, produtos: Produto[]) {
-    this.id = this.getProximoId();
+  constructor(
+    cliente: Cliente, produtos: Produto[],
+    private _id: number
+  ) {
     this.cliente = cliente;
     this.produtos = produtos;
     this._valorTotal = this.calcularValorTotal();
   }
 
-  //id para 'fachada'
-  private getProximoId(): number {
-    Pedido.ultimoId++;
-    return Pedido.ultimoId;
-  }
-
   get valorTotal(): number {
       return this._valorTotal;
+  }
+
+  get id(): number {
+    return this._id;
+  }
+
+  set id(value: number) {
+    this._id = value;
   }
 
   //método para serviço

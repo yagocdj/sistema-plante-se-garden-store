@@ -1,5 +1,5 @@
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
-import { MediaService } from './shared/services/media.service';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +9,24 @@ import { MediaService } from './shared/services/media.service';
 export class AppComponent implements OnInit {
   title = 'Olá, mundo!';
   private _isDesktop = false;
-  private _mediaService: MediaService = new MediaService('(min-width: 1024px)');
 
-  constructor() { }
+  constructor(
+    private responsive: BreakpointObserver
+  ) { }
 
   ngOnInit(): void {
-    this._mediaService.match$.subscribe(value => this._isDesktop = value);
+    this.responsive.observe(
+      '(min-width: 900px)'
+    ).subscribe(
+      result => {
+        if (result.matches) {
+          this._isDesktop = true;
+        } else {
+          this._isDesktop = false;
+        }
+      }
+    );
+
   }
 
   get isDesktop(): boolean {

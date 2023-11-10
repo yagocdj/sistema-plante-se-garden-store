@@ -10,7 +10,9 @@ export class Cliente {
   private _pedidos: Pedido[];
 
   constructor(nome: string, cpf: string, email: string,
-              endereco: string, telefone: string, senha: string) {
+    endereco: string, telefone: string, senha: string,
+    private _id: number
+  ) {
     this._nome = nome;
     this._cpf = cpf;
     this._email = email;
@@ -70,6 +72,14 @@ export class Cliente {
 
   get pedidos(): Pedido[] {
     return this._pedidos;
+  }
+
+  get id(): number {
+    return this._id;
+  }
+
+  set id(value: number) {
+    this._id = value;
   }
 
   localizar(id: number): number {

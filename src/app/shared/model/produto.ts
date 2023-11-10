@@ -5,8 +5,10 @@ export class Produto {
   private _quantidade: number;
 
   //Adicionar ID autoincremental futuramente
-  constructor(nome: string, preco: number, categoria: string,
-              quantidade: number = 0) {
+  constructor(
+    nome: string, preco: number, categoria: string,
+    quantidade: number = 0, private _id: number
+  ) {
     this._nome = nome;
     this._preco = preco;
     this._categoria = categoria;
@@ -40,5 +42,13 @@ export class Produto {
 
   get quantidade(): number {
     return this._quantidade;
+  }
+  
+  get id(): number {
+    return this._id;
+  }
+
+  set id(value: number) {
+    this._id = value;
   }
 }
