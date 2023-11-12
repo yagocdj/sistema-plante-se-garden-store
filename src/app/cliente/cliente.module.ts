@@ -9,10 +9,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { ListagemClienteComponent } from './listagem-cliente/listagem-cliente.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { RouterLink } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
-    CadastroClienteComponent
+    CadastroClienteComponent,
+    ListagemClienteComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +31,13 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
+    RouterLink,
+    MatIconModule,
+    MatTooltipModule
   ],
   exports: [
     CadastroClienteComponent
