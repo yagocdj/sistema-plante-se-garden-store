@@ -1,4 +1,4 @@
-<mat-sidenav-container *ngIf="!isDesktop" autosize>
+<mat-sidenav-container *ngIf="!isDesktop && !isAdminScreen()" autosize>
   <mat-sidenav-content>
     <nav>
       <mobile-menu></mobile-menu>
@@ -9,7 +9,7 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<div *ngIf="isDesktop">
+<div *ngIf="isDesktop && !isAdminScreen()">
   <nav>
     <app-desktop-menu></app-desktop-menu>
   </nav>
@@ -18,3 +18,8 @@
   </main>
 </div>
 
+<div *ngIf="isAdminScreen()">
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>

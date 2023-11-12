@@ -23,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProdutoModule } from './produto/produto.module';
 import { ClienteModule } from './cliente/cliente.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { ClienteModule } from './cliente/cliente.module';
     LayoutModule,
     MatSidenavModule,
     ProdutoModule,
-    ClienteModule
+    ClienteModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
