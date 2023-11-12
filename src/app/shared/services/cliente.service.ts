@@ -1,72 +1,41 @@
 import { Injectable } from '@angular/core';
 import {Cliente} from "../model/cliente";
-import {CLIENTES} from "../model/CLIENTES";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
 
-  private _clientes: Array<Cliente>;
-  constructor() {
-    this._clientes = CLIENTES;
+  readonly apiUrl = 'http://localhost:3000/clientes';
+
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  };
+
+  constructor(private httpClient: HttpClient) { }
+
+  listar(): Observable<Cliente[]> {
+    return this.httpClient.get<Cliente[]>(this.apiUrl);
   }
 
-  listar(): Array<Cliente> {
-    return this._clientes;
+  inserir(cliente: Cliente): Observable<Cliente> {
+    return this.httpClient.post<Cliente>(this.apiUrl, cliente, this.httpOptions);
   }
 
-  inserir(cliente: Cliente): void {
-    if (this.localizar(cliente.cpf) >= 0) {
-      throw new Error(`O cliente de CPF "${cliente.cpf}" já está cadastrado.`);
-    }
-    this._clientes.push(cliente);
+  editar(cpf: string, cliente: Cliente): Observable<Cliente> {
+    return this.httpClient.put<Cliente>(this.apiUrl, cliente, this.httpOptions);
   }
 
-  // TODO - revisar este método
-  editar(cpf: string, novoCliente: Cliente): void {
-    const indexClienteASerEditado = this.localizar(cpf);
-
-    if (indexClienteASerEditado < 0) {
-      throw new Error(`Não foi localizado um cliente com o CPF "${cpf}".`);
-    }
-
-    if (this.localizar(novoCliente.cpf) >= 0) {
-      throw new Error(`Já existe um cliente com o CPF ${novoCliente.cpf}`);
-    }
-
-    this._clientes[indexClienteASerEditado] = new Cliente(
-      novoCliente.nome,
-      novoCliente.cpf,
-      novoCliente.email,
-      novoCliente.endereco,
-      novoCliente.telefone,
-      novoCliente.senha,
-    );
+  localizar(cpf: string): Observable<Cliente> {
+    return this.httpClient.get<Cliente>(this.apiUrl + '?cpf=' + cpf, this.httpOptions);
   }
 
-  localizar(cpf: string): number {
-    return this._clientes.findIndex(
-      (cliente: Cliente): boolean => cliente.cpf === cpf
-    );
-  }
-
-  getCliente(cpf: string): Cliente | undefined {
-    const indexCliente = this.localizar(cpf);
-    if (indexCliente < 0) {
-      return;
-    }
-
-    return this._clientes[indexCliente];
-  }
-
-  remover(cpf: string): void {
-    const indexClienteASerRemovido = this.localizar(cpf);
-     if (indexClienteASerRemovido < 0) {
-      throw new Error(`Não foi localizado um cliente com o CPF "${cpf}".`);
-    }
-
-    this._clientes.splice(indexClienteASerRemovido, 1);
+  remover(cpf: string): Observable<Cliente> {
+    return this.httpClient.delete<Cliente>(this.apiUrl + '?cpf=' + cpf, this.httpOptions);
   }
 
 }
