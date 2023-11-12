@@ -1,18 +1,20 @@
 export class Produto {
+  private _id: number | undefined;
   private _nome: string;
   private _preco: number;
   private _categoria: string;
   private _quantidade: number;
+  private _imageUrl: string;
 
-  //Adicionar ID autoincremental futuramente
   constructor(
     nome: string, preco: number, categoria: string,
-    quantidade: number = 0, private _id: number
+    quantidade: number = 0, imageUrl: string = ''
   ) {
     this._nome = nome;
     this._preco = preco;
     this._categoria = categoria;
     this._quantidade = quantidade;
+    this._imageUrl = imageUrl
   }
 
 
@@ -44,11 +46,19 @@ export class Produto {
     return this._quantidade;
   }
   
-  get id(): number {
+  get id(): number | undefined{
     return this._id;
   }
 
   set id(value: number) {
     this._id = value;
   }
+
+  get imageUrl(): string {
+    return this._imageUrl;
+  }
+  set imageUrl(value: string) {
+    this._imageUrl = value;
+  }
+  
 }

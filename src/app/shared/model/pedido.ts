@@ -5,10 +5,10 @@ export class Pedido {
   readonly cliente: Cliente;
   readonly produtos: Array<Produto>;
   private _valorTotal: number;
+  private _id: number | null = null;
 
   constructor(
     cliente: Cliente, produtos: Produto[],
-    private _id: number
   ) {
     this.cliente = cliente;
     this.produtos = produtos;
@@ -19,7 +19,7 @@ export class Pedido {
       return this._valorTotal;
   }
 
-  get id(): number {
+  get id(): number | null {
     return this._id;
   }
 

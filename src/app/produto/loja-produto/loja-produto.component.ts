@@ -23,12 +23,14 @@ export class LojaProdutoComponent implements OnInit {
   ngOnInit(): void {
     this.fetchAllProducts();
     this.responsive.observe([
-      '(max-width: 684px)', '(max-width: 996px)'
+      '(max-width: 365px)', '(max-width: 684px)', '(max-width: 996px)'
     ]).subscribe(
       result => {
         const breakpoints = result.breakpoints;
         
-        if (breakpoints['(max-width: 684px)']) {
+        if (breakpoints['(max-width: 365px)']) {
+          this.numberOfCols = 1;
+        } else if (breakpoints['(max-width: 684px)']) {
           this.numberOfCols = 2;
         } else if (breakpoints['(max-width: 996px)']) {
           this.numberOfCols = 3;
@@ -42,9 +44,7 @@ export class LojaProdutoComponent implements OnInit {
 
   fetchAllProducts(): void {
     this.produtoService.listar().subscribe(
-      products => products.forEach(
-        p => this.productsInfo.push(p)
-      )
+      products => this.productsInfo = products
     );
   }
   

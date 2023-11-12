@@ -1,10 +1,10 @@
 export class Admin {  
   private _nome: string;
-  private _senha: string; // senha a revisar
+  private _senha: string;
+  private _id: number | null = null;
 
   constructor(
-    nome:string, senha: string,
-    private _id: number
+    nome:string, senha: string
   ) {
     this._nome = nome;
     this._senha = senha;
@@ -26,7 +26,7 @@ export class Admin {
     this._senha = novaSenha;
   }
 
-  public get id(): number {
+  public get id(): number | null {
     return this._id;
   }
   

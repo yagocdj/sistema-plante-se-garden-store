@@ -3,7 +3,7 @@
 .product-card {
   display: flex;
   flex-flow: column wrap;
-  height: min(300px, 300px);
+  height: min(350px, 350px);
   width: min(200px, 200px);
 }
 
@@ -19,7 +19,7 @@ mat-card img {
 }
 
 .inner-container {
-  width: max(85%, 470px);
+  width: max(85%, 370px);
   max-width: 1222px;
   height: 100%;
   display: flex;
@@ -35,7 +35,8 @@ mat-card img {
 
 .container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   height: 100vh;
   background-color: $light-gray;
@@ -52,6 +53,8 @@ mat-card img {
 }
 
 .card-actions {
+  box-sizing: border-box;
+  border-bottom: 4px solid $regular-green;
   height: 20%;
 }
 
@@ -67,6 +70,13 @@ mat-card img {
 
 .product-description {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
   height: 65%;
+}
+
+.screen-title-card {
+  width: max(85%, 370px);
+  max-width: 1222px;
+  margin-top: 14px;
 }

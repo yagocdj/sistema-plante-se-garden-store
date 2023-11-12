@@ -6,12 +6,12 @@ export class Cliente {
   private _email: string;
   private _endereco: string;
   private _telefone: string;
-  private _senha: string; // senha a revisar
+  private _senha: string;
   private _pedidos: Pedido[];
+  private _id: number | null = null;
 
   constructor(nome: string, cpf: string, email: string,
     endereco: string, telefone: string, senha: string,
-    private _id: number
   ) {
     this._nome = nome;
     this._cpf = cpf;
@@ -74,7 +74,7 @@ export class Cliente {
     return this._pedidos;
   }
 
-  get id(): number {
+  get id(): number | null {
     return this._id;
   }
 
