@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   title = 'Olá, mundo!';
   private _isDesktop = false;
   private _adminRoutes: string[] = [
-    '/login-admin', ''
+    '/login-admin', '/listagem-cliente'
   ];
 
   constructor(
