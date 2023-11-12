@@ -5,7 +5,7 @@
 
 <div class="container" >
   <mat-form-field>
-    <mat-label>Filtrar</mat-label>
+    <mat-label>Buscar</mat-label>
     <input matInput (keyup)="aplicarFiltro($event)" placeholder="Digite o nome, cpf, email ou telefone" #input>
   </mat-form-field>
 
@@ -41,7 +41,7 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
       <tr class="mat-row" *matNoDataRow>
-        <td class="mat-cell" colspan="4">Nenhuma ocorrência encontrada com o filtro: "{{input.value}}"</td>
+        <td class="mat-cell" colspan="4">Nenhuma ocorrência encontrada com a busca: "{{input.value}}"</td>
       </tr>
     </table>
 
