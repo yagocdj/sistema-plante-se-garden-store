@@ -4,6 +4,7 @@ import { LojaProdutoComponent } from './loja-produto/loja-produto.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     CommonModule,
     MatCardModule,
     MatButtonModule,
-    MatGridListModule
+    MatGridListModule,
+    MatIconModule
   ]
 })
 export class ProdutoModule { }
