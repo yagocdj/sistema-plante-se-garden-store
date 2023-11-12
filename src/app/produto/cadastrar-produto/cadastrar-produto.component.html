@@ -1,8 +1,8 @@
-<h1 mat-dialog-title>Cadastrar Produto</h1>
-<br>
 <!-- pensando em transformar esse componente em menu -->
 <div>
-  <button color="warn" mat-raised-button [routerLink]="['/login-admin']"><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="keyboard_return"></mat-icon></button>
+  <button color="warn" mat-raised-button [routerLink]="['/admin-menu']">
+    <mat-icon>keyboard_return</mat-icon>
+  </button>
   <button color="primary" mat-raised-button (click)="openDialog()">Cadastrar</button>
   <button color="primary" (click)="refreshPage()" mat-raised-button >Listar Produtos</button>
   <input id="inputBusca" placeholder="Digite sua busca" >

@@ -1,4 +1,10 @@
+<div id="divTitulo">
+  <h1>{{titulo}}</h1>
+  <p>_____________________________________________________________________</p>
+</div>
+
 <app-cadastrar-produto></app-cadastrar-produto>
+
 <div fxLayout="row wrap" fxLayout.lt-sm="column">
   <mat-card fxFlex="20" class="card-produto" *ngFor="let produto of produtos">
     <mat-card-header>

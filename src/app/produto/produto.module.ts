@@ -9,10 +9,10 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatBadgeModule} from '@angular/material/badge';
 import {FlexModule} from '@angular/flex-layout';
-import {RouterLink} from '@angular/router';
 import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -33,8 +33,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatInputModule,
     MatBadgeModule,
     FlexModule,
-    RouterLink,
-    MatDialogModule
+    MatDialogModule,
+    RouterModule
   ],
   exports: [ListagemProdutoComponent]
 })

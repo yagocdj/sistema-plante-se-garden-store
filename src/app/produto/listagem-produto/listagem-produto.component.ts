@@ -12,9 +12,10 @@ import { Produto } from 'src/app/shared/model/produto';
 export class ListagemProdutoComponent implements OnInit {
 
   produtos: Array<Produto> = [];
-
+ titulo ='Área de Produtos'
 
 constructor(private produtoService: ProdutoService){
+
 }
 
 
