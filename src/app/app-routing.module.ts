@@ -4,6 +4,7 @@ import { LoginAdminComponent } from './login/login-admin/login-admin.component';
 import { LojaProdutoComponent } from './produto/loja-produto/loja-produto.component';
 import { CadastroClienteComponent } from './cliente/cadastro-cliente/cadastro-cliente.component';
 import { ListagemClienteComponent } from './cliente/listagem-cliente/listagem-cliente.component';
+import { CarrinhoComponent } from './pedido/carrinho/carrinho.component';
 
 const routes: Routes = [
   {

@@ -1,7 +1,3 @@
-
-
-// import { ADMINISTRADORES } from './../../shared/model/ADMINISTRADORES';
-// import { Admin } from './../../shared/model/admin';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder  } from '@angular/forms'

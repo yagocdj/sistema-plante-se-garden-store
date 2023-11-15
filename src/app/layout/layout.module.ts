@@ -9,6 +9,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
 import { DesktopMenuComponent } from './desktop-menu/desktop-menu.component';
 import { RouterModule } from '@angular/router';
+import { PedidoModule } from '../pedido/pedido.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RouterModule } from '@angular/router';
     FlexModule,
     MatSidenavModule,
     MatInputModule,
-    RouterModule
+    RouterModule,
+    PedidoModule
   ],
   exports: [
     MenuComponent,

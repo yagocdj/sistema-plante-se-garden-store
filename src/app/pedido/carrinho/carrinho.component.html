@@ -1,0 +1,13 @@
+<mat-sidenav #sidenav class="example-sidenav" mode="over" position="end">
+  <h2>Meu carrinho</h2>
+  <p>Auto-resizing sidenav</p>
+  <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+  <button (click)="showFiller = !showFiller" mat-raised-button>
+    Toggle extra text
+  </button>
+  <button mat-icon-button (click)="closeSidenav()" class="close-button">
+    <mat-icon>
+      close
+    </mat-icon>
+  </button>
+</mat-sidenav>
