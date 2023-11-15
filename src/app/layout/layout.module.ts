@@ -8,12 +8,15 @@ import { FlexModule } from '@angular/flex-layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
 import { DesktopMenuComponent } from './desktop-menu/desktop-menu.component';
+import { AdminMenuComponent } from './admin-menu/admin-menu.component';
+import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     MenuComponent,
-    DesktopMenuComponent
+    DesktopMenuComponent,
+    AdminMenuComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +26,8 @@ import { RouterModule } from '@angular/router';
     FlexModule,
     MatSidenavModule,
     MatInputModule,
-    RouterModule
+    RouterModule,
+    MatCardModule
   ],
   exports: [
     MenuComponent,

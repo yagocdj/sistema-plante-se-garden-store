@@ -32,7 +32,7 @@ export class LoginAdminComponent implements OnInit {
         if(usuario){
           alert("Login efetuado com sucesso!");
           this.loginForm.reset;
-          this.router.navigate(['/listagem-cliente']);
+          this.router.navigate(['/admin-menu']);
         } else{
           alert("Usuário incorreto!");
         }
