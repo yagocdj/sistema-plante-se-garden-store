@@ -1,0 +1,39 @@
+<div class="container">
+
+  <mat-card class="screen-title-card">
+    <mat-card-content>
+      <h1>Produtos</h1>
+    </mat-card-content>
+  </mat-card>
+
+  <div class="inner-container">
+    <mat-grid-list [cols]="numberOfCols" gutterSize="20px" rowHeight="350px" id="products-grid">
+    
+      <mat-grid-tile *ngFor="let product of productsInfo" class="grid-tile">
+    
+        <mat-card class="product-card">
+          <img mat-card-image src="{{product.imageUrl}}" alt="Photo of a Shiba Inu">
+          <mat-card-content class="card-content">
+            <p class="product-description">
+              <span>{{product.nome.length > 50 ? product.nome.slice(0, 35) + '...' : product.nome}}</span>
+              <span>Cód:{{product.id}}</span>
+            </p>
+            <p class="product-value-info">
+              <span class="price">R{{product.preco | currency}}</span>
+              <span class="installments">4x de R{{product.preco / 4 | currency}} s/ juros</span>
+            </p>
+          </mat-card-content>
+          <mat-card-actions class="card-actions">
+            <button mat-button>Detalhes</button>
+            <button mat-icon-button>
+              <mat-icon>add</mat-icon>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+    
+      </mat-grid-tile>
+      
+    </mat-grid-list>
+  </div>
+</div>
+

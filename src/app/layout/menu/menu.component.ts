@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 import { CategoriasService } from 'src/app/shared/services/categorias.service';
 
 @Component({
@@ -10,5 +12,13 @@ export class MenuComponent {
 
   categorias: string[] = this.categoriasService.listar();
 
-  constructor(private categoriasService: CategoriasService) { }
+  constructor(
+    private categoriasService: CategoriasService,
+    private router: Router
+  ) { }
+
+  navigateToLogin(sideNav: MatSidenav): void {
+    this.router.navigate(['/cadastro-cliente'])
+    sideNav.close();
+  }
 }

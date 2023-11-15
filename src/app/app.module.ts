@@ -21,7 +21,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProdutoModule } from './produto/produto.module';
 import { ClienteModule } from './cliente/cliente.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,9 @@ import { ClienteModule } from './cliente/cliente.module';
     HttpClientModule,
     LayoutModule,
     MatSidenavModule,
-    ClienteModule
+    ProdutoModule,
+    ClienteModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

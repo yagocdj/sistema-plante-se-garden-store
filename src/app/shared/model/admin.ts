@@ -1,8 +1,11 @@
-export class Admin {
+export class Admin {  
   private _nome: string;
-  private _senha: string; // senha a revisar
+  private _senha: string;
+  private _id: number | null = null;
 
-  constructor(nome:string, senha: string) {
+  constructor(
+    nome:string, senha: string
+  ) {
     this._nome = nome;
     this._senha = senha;
   }
@@ -23,6 +26,12 @@ export class Admin {
     this._senha = novaSenha;
   }
 
-
+  public get id(): number | null {
+    return this._id;
+  }
+  
+  public set id(value: number) {
+    this._id = value;
+  }
 
 }

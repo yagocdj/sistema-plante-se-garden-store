@@ -1,5 +1,6 @@
+import { BreakpointObserver } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
-import { MediaService } from './shared/services/media.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,12 +10,23 @@ import { MediaService } from './shared/services/media.service';
 export class AppComponent implements OnInit {
   title = 'Olá, mundo!';
   private _isDesktop = false;
-  private _mediaService: MediaService = new MediaService('(min-width: 1024px)');
+  private _adminRoutes: string[] = [
+    '/login-admin', '/listagem-cliente'
+  ];
 
-  constructor() { }
+  constructor(
+    private responsive: BreakpointObserver,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    this._mediaService.match$.subscribe(value => this._isDesktop = value);
+    this.responsive.observe('(min-width: 900px)').subscribe(
+      result => this._isDesktop = result.matches
+    );
+  }
+
+  isAdminScreen(): boolean {
+    return this._adminRoutes.includes(this.router.url);
   }
 
   get isDesktop(): boolean {
