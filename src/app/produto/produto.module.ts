@@ -5,17 +5,32 @@ import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
+import { MenuProdutoComponent } from './menu-produto/menu-produto.component';
+import { RouterModule } from '@angular/router';
+import { CadastrarProdutoComponent } from './cadastrar-produto/cadastrar-produto.component';
+import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { MatDialogModule } from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ListagemProdutoComponent } from './listagem-produto/listagem-produto.component';
 
 @NgModule({
   declarations: [
-    LojaProdutoComponent
+    LojaProdutoComponent,
+    MenuProdutoComponent,
+    CadastrarProdutoComponent,
+    ListagemProdutoComponent
   ],
   imports: [
     CommonModule,
     MatCardModule,
     MatButtonModule,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    RouterModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule 
   ]
 })
 export class ProdutoModule { }

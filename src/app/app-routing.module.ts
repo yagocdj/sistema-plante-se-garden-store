@@ -5,6 +5,8 @@ import { LojaProdutoComponent } from './produto/loja-produto/loja-produto.compon
 import { CadastroClienteComponent } from './cliente/cadastro-cliente/cadastro-cliente.component';
 import { ListagemClienteComponent } from './cliente/listagem-cliente/listagem-cliente.component';
 import { CarrinhoComponent } from './pedido/carrinho/carrinho.component';
+import { AdminMenuComponent } from './layout/admin-menu/admin-menu.component';
+import { ListagemProdutoComponent } from './produto/listagem-produto/listagem-produto.component';
 
 const routes: Routes = [
   {
@@ -12,11 +14,11 @@ const routes: Routes = [
     component: LoginAdminComponent
   },
   {
-    path:'loja-produtos', 
+    path:'loja-produtos',
     component: LojaProdutoComponent
   },
   {
-    path: 'cadastro-cliente', 
+    path: 'cadastro-cliente',
     component: CadastroClienteComponent
   },
   {
@@ -24,9 +26,18 @@ const routes: Routes = [
     component: ListagemClienteComponent
   },
   {
+    path:'admin-menu',
+    component: AdminMenuComponent
+  },
+  {
+    path:'listagem-produto',
+    component: ListagemProdutoComponent
+  },
+  {
     path:'**',
     redirectTo:'loja-produtos'
-  }
+  },
+
 ];
 
 @NgModule({

@@ -27,7 +27,8 @@ import { PedidoModule } from './pedido/pedido.module';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginAdminComponent
+    LoginAdminComponent,
+
   ],
   imports: [
     BrowserModule,
