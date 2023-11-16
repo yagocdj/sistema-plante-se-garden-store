@@ -1,5 +1,17 @@
 #cart-sidenav {
+  position: fixed;
   width: min(90%, 370px);
+  height: 100vh;
+}
+
+.divider-container {
+  display: flex;
+  justify-content: center;
+}
+
+#cart-product-cards-container {
+  overflow-y: scroll;
+  height: 80%;
 }
 
 #cart-header {
@@ -20,6 +32,7 @@
 
 #cart-content {
   padding: 0 40px;
+  height: 80%;
 }
 
 mat-card img.cart-product-img {
@@ -42,11 +55,27 @@ mat-card img.cart-product-img {
   font-weight: bold;
 }
 
-.card-total-amount {
+#cart-total-amount {
+  padding-top: 10px;
   display: flex;
+  flex-direction: column;
 }
 
 #cart-finalize-order {
   display: flex;
   justify-content: center;
+}
+
+.cart-divider {
+  width: 90%;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+#total-amount-title {
+  font-weight: bold;
+  margin-bottom: 10px;
 }

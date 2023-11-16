@@ -5,19 +5,28 @@
     </button>
     <h2 id="cart-title">Meu carrinho</h2>
   </div>
+  <div class="divider-container">
+    <mat-divider class="cart-divider"></mat-divider>
+  </div>
   <div id="cart-content">
     <div id="cart-product-cards-container">
       <mat-card *ngFor="let product of cartProducts">
         <mat-card-content class="product-card-content">
           <div class="card-info-container">
-            <img mat-card-image class="cart-product-img" src="{{ product.imageUrl }}" />
+            <img
+              mat-card-image
+              class="cart-product-img"
+              src="{{ product.imageUrl }}"
+            />
             <p class="card-text-content">
               <span class="product-title">{{
                 product.nome.length > 25
                   ? product.nome.slice(0, 25) + "..."
                   : product.nome
               }}</span>
-              <span class="product-quantity">Qtd: {{ product.quantidade }}</span>
+              <span class="product-quantity"
+                >Qtd: {{ product.quantidade }}</span
+              >
               <span class="product-price">R{{ product.preco | currency }}</span>
             </p>
           </div>
@@ -34,13 +43,17 @@
       </mat-card>
     </div>
 
+    <div class="divider-container">
+      <mat-divider class="cart-divider"></mat-divider>
+    </div>
+
     <div id="cart-total-amount">
-      <span>Valor total:</span>
-      <div id="value-container">
+      <span id="total-amount-title">Valor total</span>
+      <div class="space-between">
         <span>PIX:</span>
         <span>R{{ totalValue | currency }}</span>
       </div>
-      <div id="installments-container">
+      <div class="space-between">
         <span>Cartão:</span>
         <span>4x de R{{ totalValue / 4 | currency }}</span>
       </div>
@@ -48,8 +61,6 @@
   </div>
 
   <div id="cart-finalize-order">
-    <button mat-button (click)="createNewOrder()">
-      Finalizar pedido
-    </button>
+    <button mat-button (click)="createNewOrder()">Finalizar pedido</button>
   </div>
 </mat-sidenav>

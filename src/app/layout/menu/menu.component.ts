@@ -17,8 +17,7 @@ export class MenuComponent {
 
   constructor(
     private categoriasService: CategoriasService,
-    private router: Router,
-    private shoppingCartService: ShoppingCartService
+    private router: Router
   ) { }
 
   navigateToLogin(sideNav: MatSidenav): void {
