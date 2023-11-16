@@ -12,13 +12,15 @@ import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListagemProdutoComponent } from './listagem-produto/listagem-produto.component';
+import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 
 @NgModule({
   declarations: [
     LojaProdutoComponent,
     MenuProdutoComponent,
     CadastrarProdutoComponent,
-    ListagemProdutoComponent
+    ListagemProdutoComponent,
+    EditarProdutoComponent
   ],
   imports: [
     CommonModule,
