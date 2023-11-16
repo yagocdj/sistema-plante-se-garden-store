@@ -5,6 +5,7 @@ import { LojaProdutoComponent } from './produto/loja-produto/loja-produto.compon
 import { CadastroClienteComponent } from './cliente/cadastro-cliente/cadastro-cliente.component';
 import { ListagemClienteComponent } from './cliente/listagem-cliente/listagem-cliente.component';
 import { AdminMenuComponent } from './layout/admin-menu/admin-menu.component';
+import { ListagemProdutoComponent } from './produto/listagem-produto/listagem-produto.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path:'admin-menu',
     component: AdminMenuComponent
+  },
+  {
+    path:'listagem-produto',
+    component: ListagemProdutoComponent
   },
   {
     path:'**',
