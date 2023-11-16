@@ -50,7 +50,7 @@ export class Produto {
     this._quantidade = value;
   }
 
-  get id(): number | undefined{
+  get id(): number | undefined {
     return this._id;
   }
 

@@ -16,7 +16,7 @@ export class ShoppingCartService {
     if (productIndex < 0) {
       this._shoppingCart.push(productToBeInserted);
     } else {
-      this._shoppingCart[productIndex].quantidade += productToBeInserted.quantidade;
+      this._shoppingCart[productIndex].quantidade++;
     }
     this._productsCount = this._shoppingCart.length;
   }
@@ -32,7 +32,7 @@ export class ShoppingCartService {
 
   getTotalValue(): number {
     return this._shoppingCart.reduce(
-      (accumulator, product) => accumulator + product.preco, 0);
+      (accumulator, product) => accumulator + product.preco * product.quantidade, 0);
   }
 
   get shoppingCart(): Produto[] {
