@@ -13,6 +13,7 @@ export class MenuComponent {
 
   categorias: string[] = this.categoriasService.listar();
   showShoppingCart = false;
+  productsInShoppingCartCount = 0;
 
   constructor(
     private categoriasService: CategoriasService,
@@ -27,5 +28,9 @@ export class MenuComponent {
 
   onShoppingCartClosed(): void {
     this.showShoppingCart = false;
+  }
+
+  onProductAdded(numberOfProducts: number): void {
+    this.productsInShoppingCartCount = numberOfProducts;
   }
 }

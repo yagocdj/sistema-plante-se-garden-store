@@ -7,6 +7,7 @@ import { Produto } from '../model/produto';
 export class ShoppingCartService {
 
   private _shoppingCart: Produto[] = [];
+  private _productsCount: number = 0;
 
   constructor() { }
 
@@ -17,6 +18,7 @@ export class ShoppingCartService {
     } else {
       this._shoppingCart[productIndex].quantidade += productToBeInserted.quantidade;
     }
+    this._productsCount = this._shoppingCart.length;
   }
 
   removeProductFromCart(productId: number): void {
@@ -25,6 +27,7 @@ export class ShoppingCartService {
       throw new Error(`There is no product with ID ${productId} into the cart.`);
     }
     this._shoppingCart.splice(productIndex, 1);
+    this._productsCount = this._shoppingCart.length;
   }
 
   getTotalValue(): number {
@@ -38,6 +41,13 @@ export class ShoppingCartService {
 
   set shoppingCart(value: Produto[]) {
     this._shoppingCart = value;
+  }
+
+  get productsCount(): number {
+    return this._productsCount;
+  }
+  set productsCount(value: number) {
+    this._productsCount = value;
   }
 
   private searchForIndex(productId: number): number {

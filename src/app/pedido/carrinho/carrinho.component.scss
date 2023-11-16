@@ -22,8 +22,7 @@
   padding: 0 40px;
 }
 
-mat-card img {
-  border-radius: 10%;
+mat-card img.cart-product-img {
   object-fit: cover;
   width: 90px;
   height: auto;
@@ -45,4 +44,9 @@ mat-card img {
 
 .card-total-amount {
   display: flex;
+}
+
+#cart-finalize-order {
+  display: flex;
+  justify-content: center;
 }

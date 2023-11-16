@@ -91,5 +91,31 @@
       "imageUrl": "https://images.unsplash.com/photo-1609062111394-0427aa22d6c1?q=80&w=1951&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ],
-  "pedidos": []
+  "pedidos": [
+    {
+      "cliente": [
+        {
+          "id": 2,
+          "nome": "Yago César",
+          "cpf": "11100099910",
+          "email": "yagocdj@gmail.com",
+          "endereco": "Rua Rosa, 100",
+          "telefone": "940028922",
+          "senha": "MinhaSenha@123"
+        }
+      ],
+      "produtos": [
+        {
+          "id": 2,
+          "nome": "Banco para Jardim Madeira 3 Lugares 184cm Marrom Yumi Naterial",
+          "preco": 1229,
+          "categoria": "Bancos para jardim",
+          "quantidade": 2,
+          "imageUrl": "https://images.unsplash.com/photo-1495220239082-2bb8c5228aa2?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }
+      ],
+      "valorTotal": 1229,
+      "id": 1
+    }
+  ]
 }

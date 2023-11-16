@@ -35,6 +35,7 @@
 <app-carrinho
   [show]="showShoppingCart"
   (sidenavClosed)="onShoppingCartClosed()"
+  (productAdded)="onProductAdded($event)"
 ></app-carrinho>
 
 <mat-toolbar class="bg-sl-green" id="toolbar-container">
@@ -66,7 +67,9 @@
         aria-label="Example icon-button with share icon"
         (click)="showShoppingCart = !showShoppingCart"
       >
-        <mat-icon>shopping_cart</mat-icon>
+        <mat-icon [matBadge]="productsInShoppingCartCount"
+          matBadgeSize="small">shopping_cart</mat-icon
+        >
       </button>
     </div>
   </mat-toolbar-row>

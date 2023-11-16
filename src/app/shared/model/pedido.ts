@@ -12,11 +12,15 @@ export class Pedido {
   ) {
     this.cliente = cliente;
     this.produtos = produtos;
-    this._valorTotal = this.calcularValorTotal();
+    this._valorTotal = 0;
   }
 
   get valorTotal(): number {
-      return this._valorTotal;
+    return this._valorTotal;
+  }
+
+  set valorTotal(value: number) {
+    this._valorTotal = value;
   }
 
   get id(): number | null {
@@ -28,12 +32,12 @@ export class Pedido {
   }
 
   //método para serviço
-  private calcularValorTotal(): number {
-    let total = 0;
-    for (const produto of this.produtos){
-      total += produto.preco * produto.quantidade;
-    }
-  return total;
-}
+  // private calcularValorTotal(): number {
+  //   let total = 0;
+  //   for (const produto of this.produtos) {
+  //     total += produto.preco * produto.quantidade;
+  //   }
+  //   return total;
+  // }
 
 }
