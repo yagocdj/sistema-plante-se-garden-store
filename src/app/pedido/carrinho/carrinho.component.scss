@@ -1,16 +1,48 @@
-.example-container {
-  width: 500px;
-  height: 300px;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+#cart-sidenav {
+  width: min(90%, 370px);
 }
 
-.example-sidenav-content {
+#cart-header {
   display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
+  padding: 0.45em 40px 0 40px;
+  gap: 30px;
 }
 
-.example-sidenav {
-  padding: 20px;
+#cart-title {
+  padding-top: 0.75em;
+}
+
+#close-button {
+  position: absolute;
+  top: 0.45em;
+  right: 0.45em;
+}
+
+#cart-content {
+  padding: 0 40px;
+}
+
+mat-card img {
+  border-radius: 10%;
+  object-fit: cover;
+  width: 90px;
+  height: auto;
+}
+
+.card-info-container {
+  display: flex;
+  gap: 10px;
+}
+
+.card-text-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-title {
+  font-weight: bold;
+}
+
+.card-total-amount {
+  display: flex;
 }

@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { CarrinhoComponent } from './carrinho/carrinho.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,9 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule
   ],
   exports: [
     CarrinhoComponent,
