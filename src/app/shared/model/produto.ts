@@ -46,7 +46,11 @@ export class Produto {
     return this._quantidade;
   }
 
-  get id(): number | undefined{
+  set quantidade(value: number) {
+    this._quantidade = value;
+  }
+
+  get id(): number | undefined {
     return this._id;
   }
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators} from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Cliente } from 'src/app/shared/model/cliente';
 import { CepService } from 'src/app/shared/services/cep.service';
 import { ClienteService } from 'src/app/shared/services/cliente.service';
@@ -11,7 +11,7 @@ import { ClienteService } from 'src/app/shared/services/cliente.service';
 })
 export class CadastroClienteComponent implements OnInit {
   // ! -> non-null assertion operator
-  
+
   cadastroForm!: FormGroup;
   readonly requiredFieldErrorMessage = 'Este campo é obrigatório.';
   cities: string[] = [];
@@ -40,7 +40,7 @@ export class CadastroClienteComponent implements OnInit {
   createAccount(): void {
     if (this.cadastroForm.valid) {
       const address = `${this.nomeDaRua?.value},${this.numeroResidencia?.value},${this.cidade?.value}-${this.uf?.value.toUpperCase()}`;
-  
+
       this.clienteService.inserir({
         nome: this.nome?.value,
         cpf: this.cpf?.value,
@@ -93,9 +93,9 @@ export class CadastroClienteComponent implements OnInit {
   }
 
   get nome() { return this.cadastroForm.get('nome'); }
-  
+
   get email() { return this.cadastroForm.get('email'); }
-  
+
   get cpf() { return this.cadastroForm.get('cpf'); }
 
   get telefone() { return this.cadastroForm.get('telefone'); }
@@ -107,7 +107,7 @@ export class CadastroClienteComponent implements OnInit {
   get numeroResidencia() { return this.cadastroForm.get('numeroResidencia'); }
 
   get uf() { return this.cadastroForm.get('uf'); }
-  
+
   get cidade() { return this.cadastroForm.get('cidade'); }
 
   get senha() { return this.cadastroForm.get('senha'); }

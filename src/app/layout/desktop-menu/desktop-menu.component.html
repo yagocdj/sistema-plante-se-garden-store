@@ -1,5 +1,11 @@
-<mat-toolbar class="bg-sl-green">
-  <mat-toolbar-row class="navbar-container">
+<app-carrinho
+  [show]="showShoppingCart"
+  (sidenavClosed)="onShoppingCartClosed()"
+  (productAdded)="onProductAdded($event)"
+></app-carrinho>
+
+<mat-toolbar>
+  <mat-toolbar-row class="navbar-container bg-sl-green">
     <div class="logo-container">
       <a href="#">
         <img src="../../../assets/icons/pot.svg" alt="Icon of a little pot with a plant inside of it"
@@ -23,10 +29,15 @@
           account_circle
         </mat-icon>
       </button>
-      <button mat-icon-button>
-        <mat-icon class="icon-display">
-          shopping_cart
-        </mat-icon>
+      <button
+        mat-icon-button
+        class="flex-button"
+        aria-label="Example icon-button with share icon"
+        (click)="showShoppingCart = !showShoppingCart"
+      >
+        <mat-icon [matBadge]="productsInShoppingCartCount"
+          matBadgeSize="small">shopping_cart</mat-icon
+        >
       </button>
     </div>
   </mat-toolbar-row>

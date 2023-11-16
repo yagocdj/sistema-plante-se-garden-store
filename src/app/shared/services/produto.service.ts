@@ -14,7 +14,7 @@ export class ProdutoService {
   constructor(private http: HttpClient) { }
 
   listar(): Observable<Produto[]> {
-    return this.http.get<Produto[]>(`${this.URL_PRODUTOS}`)
+    return this.http.get<Produto[]>(`${this.URL_PRODUTOS}`);
   }
 
   inserir(produto: Produto): Observable<Produto> {
@@ -29,7 +29,7 @@ export class ProdutoService {
     return this.http.delete<void>(`${this.URL_PRODUTOS}/${id}`);
   }
 
-  editar(idproduto:number, produto: Produto): Observable<Produto> {
+  editar(idproduto: number, produto: Produto): Observable<Produto> {
     return this.http.put<Produto>(`${this.URL_PRODUTOS}/${idproduto}`, produto);
   }
 }

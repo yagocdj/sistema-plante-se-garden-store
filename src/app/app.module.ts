@@ -6,10 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from './layout/layout.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { LoginAdminComponent } from './login/login-admin/login-admin.component';
-//import { LoginModule } from './login/login.module';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
-//import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
@@ -24,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProdutoModule } from './produto/produto.module';
 import { ClienteModule } from './cliente/cliente.module';
 import { RouterModule } from '@angular/router';
+import { PedidoModule } from './pedido/pedido.module';
 
 @NgModule({
   declarations: [
@@ -52,6 +51,7 @@ import { RouterModule } from '@angular/router';
     MatSidenavModule,
     ProdutoModule,
     ClienteModule,
+    PedidoModule,
     RouterModule
   ],
   providers: [],

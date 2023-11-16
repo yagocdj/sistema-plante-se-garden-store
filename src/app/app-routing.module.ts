@@ -4,6 +4,7 @@ import { LoginAdminComponent } from './login/login-admin/login-admin.component';
 import { LojaProdutoComponent } from './produto/loja-produto/loja-produto.component';
 import { CadastroClienteComponent } from './cliente/cadastro-cliente/cadastro-cliente.component';
 import { ListagemClienteComponent } from './cliente/listagem-cliente/listagem-cliente.component';
+import { CarrinhoComponent } from './pedido/carrinho/carrinho.component';
 import { AdminMenuComponent } from './layout/admin-menu/admin-menu.component';
 import { ListagemProdutoComponent } from './produto/listagem-produto/listagem-produto.component';
 

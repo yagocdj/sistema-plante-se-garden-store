@@ -11,6 +11,8 @@ import { DesktopMenuComponent } from './desktop-menu/desktop-menu.component';
 import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
+import { PedidoModule } from '../pedido/pedido.module';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { RouterModule } from '@angular/router';
     MatSidenavModule,
     MatInputModule,
     RouterModule,
-    MatCardModule
+    PedidoModule,
+    MatCardModule,
+    MatBadgeModule
   ],
   exports: [
     MenuComponent,

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { CategoriasService } from 'src/app/shared/services/categorias.service';
+import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
 
 @Component({
   selector: 'mobile-menu',
@@ -11,6 +12,8 @@ import { CategoriasService } from 'src/app/shared/services/categorias.service';
 export class MenuComponent {
 
   categorias: string[] = this.categoriasService.listar();
+  showShoppingCart = false;
+  productsInShoppingCartCount = 0;
 
   constructor(
     private categoriasService: CategoriasService,
@@ -20,5 +23,13 @@ export class MenuComponent {
   navigateToLogin(sideNav: MatSidenav): void {
     this.router.navigate(['/cadastro-cliente'])
     sideNav.close();
+  }
+
+  onShoppingCartClosed(): void {
+    this.showShoppingCart = false;
+  }
+
+  onProductAdded(numberOfProducts: number): void {
+    this.productsInShoppingCartCount = numberOfProducts;
   }
 }

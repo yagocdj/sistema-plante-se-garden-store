@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Produto } from 'src/app/shared/model/produto';
 import { ProdutoService } from 'src/app/shared/services/produto.service';
+import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
 import { BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
@@ -14,7 +15,8 @@ export class LojaProdutoComponent implements OnInit {
 
   constructor(
     private produtoService: ProdutoService,
-    private responsive: BreakpointObserver
+    private responsive: BreakpointObserver,
+    private shoppingCartService: ShoppingCartService
   ) {
     this.productsInfo = []
     this.numberOfCols = 2;
@@ -27,7 +29,7 @@ export class LojaProdutoComponent implements OnInit {
     ]).subscribe(
       result => {
         const breakpoints = result.breakpoints;
-        
+
         if (breakpoints['(max-width: 365px)']) {
           this.numberOfCols = 1;
         } else if (breakpoints['(max-width: 684px)']) {
@@ -39,13 +41,16 @@ export class LojaProdutoComponent implements OnInit {
         }
       }
     );
-    
+
   }
 
   fetchAllProducts(): void {
     this.produtoService.listar().subscribe(
-      products => this.productsInfo = products
-    );
+      products => this.productsInfo = products);
   }
-  
+
+  addProductToCart(product: Produto): void {
+    this.shoppingCartService.insertProductsIntoCart(product);
+  }
+
 }
