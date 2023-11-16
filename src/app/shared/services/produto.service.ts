@@ -21,14 +21,12 @@ export class ProdutoService {
     return this.http.post<Produto>(`${this.URL_PRODUTOS}`, produto);
   }
 
-  localizar(nomeProduto: string): Observable<number> {
-    return this.http.get<number>(`${this.URL_PRODUTOS}/localizar/${nomeProduto}`);
+  localizar(id: number): Observable<number> {
+    return this.http.get<number>(`${this.URL_PRODUTOS}/produtos/${id}`);
   }
 
-  remover(nomeProduto: string): Observable<void> {
-    return this.localizar(nomeProduto).pipe(
-      switchMap(id => this.http.delete<void>(`${this.URL_PRODUTOS}/${id}`))
-    );
+  remover(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.URL_PRODUTOS}/${id}`);
   }
 
   editar(idproduto:number, produto: Produto): Observable<Produto> {

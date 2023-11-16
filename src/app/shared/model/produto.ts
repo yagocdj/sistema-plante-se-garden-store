@@ -45,7 +45,7 @@ export class Produto {
   get quantidade(): number {
     return this._quantidade;
   }
-  
+
   get id(): number | undefined{
     return this._id;
   }
@@ -60,5 +60,5 @@ export class Produto {
   set imageUrl(value: string) {
     this._imageUrl = value;
   }
-  
+
 }
