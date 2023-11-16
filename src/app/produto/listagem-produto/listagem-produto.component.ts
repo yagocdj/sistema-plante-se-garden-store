@@ -11,9 +11,9 @@ export class ListagemProdutoComponent implements OnInit {
 
   produtos: Array<Produto> = [];
   titulo ='Área de Produtos'
-
+  numberOfCols: number;
 constructor(private produtoService: ProdutoService){
-
+  this.numberOfCols = 4;
 }
 
 

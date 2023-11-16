@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 })
 
 export class CadastrarProdutoComponent {
- 
+
   produtoForm !: FormGroup;
 
   constructor(private formBuilder:FormBuilder,  private produto: ProdutoService){
@@ -22,7 +22,8 @@ export class CadastrarProdutoComponent {
       nome: ['', Validators.required],
       categoria: ['', Validators.required],
       preco: ['', Validators.required],
-      quantidade: ['', Validators.required]
+      quantidade: ['', Validators.required],
+      imageUrl: ['', Validators.required]
     })
   }
 

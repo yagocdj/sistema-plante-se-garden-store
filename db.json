@@ -89,6 +89,14 @@
       "categoria": "Vasos de Plantas",
       "quantidade": 3,
       "imageUrl": "https://images.unsplash.com/photo-1609062111394-0427aa22d6c1?q=80&w=1951&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "nome": "asdsad",
+      "categoria": "asda",
+      "preco": "a",
+      "quantidade": "a",
+      "imageUrl": "https://www.petz.com.br/blog/wp-content/uploads/2019/03/adubos-e-fertilizantes-terra.jpg",
+      "id": 6
     }
   ],
   "pedidos": []
