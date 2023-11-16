@@ -1,5 +1,7 @@
-import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges, ViewChild, ViewEncapsulation} from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
+import { Produto } from 'src/app/shared/model/produto';
+import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -7,18 +9,27 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./carrinho.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class CarrinhoComponent implements OnChanges {
+export class CarrinhoComponent implements OnChanges, OnInit {
   @Input('show') showSidenav = false;
-  @Input('products') cartProducts: string[] = [];
   @Output() sidenavClosed = new EventEmitter<boolean>();
   @ViewChild('sidenav') sidenavElement!: MatSidenav;
 
-  constructor() { }
+  cartProducts: Produto[] = [];
+  totalValue = 0;
+
+  constructor(
+    private shoppingCartService: ShoppingCartService
+  ) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.sidenavElement) {
       this.sidenavElement.toggle(changes['showSidenav'].currentValue);
     }
+    this.totalValue = this.shoppingCartService.getTotalValue();
+  }
+
+  ngOnInit(): void {
+    this.cartProducts = this.shoppingCartService.shoppingCart;
   }
 
   closeSidenav(): void {
@@ -26,5 +37,11 @@ export class CarrinhoComponent implements OnChanges {
       this.sidenavClosed.emit(false);
       this.sidenavElement.toggle();
     }
+  }
+
+  removeProductFromCart(productId: number): void {
+    this.shoppingCartService.removeProductFromCart(productId);
+    this.cartProducts = this.shoppingCartService.shoppingCart;
+    this.totalValue = this.shoppingCartService.getTotalValue();
   }
 }

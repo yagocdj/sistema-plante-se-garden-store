@@ -7,22 +7,27 @@
   </div>
   <div id="cart-content">
     <div id="cart-product-cards-container">
-      <mat-card>
+      <mat-card *ngFor="let product of cartProducts">
         <mat-card-content class="product-card-content">
           <div class="card-info-container">
-            <img
-              mat-card-image
-              src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=2043&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            />
+            <img mat-card-image src="{{ product.imageUrl }}" />
             <p class="card-text-content">
-              <span class="product-title">-- Product title here --</span>
-              <span class="product-quantity">Product quantity</span>
-              <span class="product-price">R$100.00</span>
+              <span class="product-title">{{
+                product.nome.length > 25
+                  ? product.nome.slice(0, 25) + "..."
+                  : product.nome
+              }}</span>
+              <span class="product-quantity">{{ product.quantidade }}</span>
+              <span class="product-price">R{{ product.preco | currency }}</span>
             </p>
           </div>
         </mat-card-content>
         <mat-card-actions>
-          <button mat-icon-button type="button">
+          <button
+            mat-icon-button
+            type="button"
+            (click)="removeProductFromCart(product.id!)"
+          >
             <mat-icon> delete </mat-icon>
           </button>
         </mat-card-actions>
@@ -33,11 +38,11 @@
       <span>Valor total:</span>
       <div id="value-container">
         <span>PIX:</span>
-        <span>R$100.00</span>
+        <span>R{{ totalValue | currency }}</span>
       </div>
       <div id="installments-container">
         <span>Cartão:</span>
-        <span>4x de R$25.00</span>
+        <span>4x de R{{ totalValue / 4 | currency }}</span>
       </div>
     </div>
   </div>

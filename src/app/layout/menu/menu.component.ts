@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { CategoriasService } from 'src/app/shared/services/categorias.service';
-import { CarrinhoComponent } from 'src/app/pedido/carrinho/carrinho.component';
+import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
 
 @Component({
   selector: 'mobile-menu',
@@ -16,7 +16,8 @@ export class MenuComponent {
 
   constructor(
     private categoriasService: CategoriasService,
-    private router: Router
+    private router: Router,
+    private shoppingCartService: ShoppingCartService
   ) { }
 
   navigateToLogin(sideNav: MatSidenav): void {

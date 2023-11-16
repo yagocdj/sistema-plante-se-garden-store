@@ -12,6 +12,7 @@ import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
 import { PedidoModule } from '../pedido/pedido.module';
+import { MatBadgeModule } from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PedidoModule } from '../pedido/pedido.module';
     MatInputModule,
     RouterModule,
     PedidoModule,
-    MatCardModule
+    MatCardModule,
+    MatBadgeModule
   ],
   exports: [
     MenuComponent,
