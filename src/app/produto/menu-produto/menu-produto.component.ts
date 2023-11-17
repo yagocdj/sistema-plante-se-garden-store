@@ -14,6 +14,7 @@ constructor(private dialog: MatDialog) {
 
 openDialog() {
   this.dialog.open(CadastrarProdutoComponent, {
+    width:'16%'
   });
 }
 

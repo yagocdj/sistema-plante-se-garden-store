@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ProdutoService } from 'src/app/shared/services/produto.service';
 
 @Component({
@@ -13,8 +13,7 @@ export class EditarProdutoComponent {
   produtoForm !: FormGroup;
 
   constructor(private formBuilder:FormBuilder,  private produto: ProdutoService,
-    @Inject (MAT_DIALOG_DATA) public produtoEditado : any,
-    private dialogRef: MatDialogRef<EditarProdutoComponent>){
+    @Inject (MAT_DIALOG_DATA) public produtoEditado : any){
 
   }
 

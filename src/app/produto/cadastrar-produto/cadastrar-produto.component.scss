@@ -1,13 +1,39 @@
-#acaoModalCadastrar{
-  margin-right: 10px;
-  margin-left: 9px;
+input{
+  width: 85%;
+  height: 30px;
+  margin-left: 20px;
+  margin-bottom: 15px;
 }
 
-.card-cadastro {
-  width: 246px;
-  margin: 10px;
+form{
+  height: auto;
 }
 
-input::placeholder{
-  font-size: 14px;
+p{
+  font-size: 18px;
+  padding: 15px 30px 0px 20px;
+  color: green;
+}
+
+button{
+  width: 140px;
+  height: 50px;
+  background: rgb(245, 245, 245);
+  border: 0px solid rgb(145, 240, 193);
+  box-shadow: 0 1px 1px 0;
+  color: green;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5%;
+}
+#divBotoes{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 10px 15px 10px;
+}
+
+button:hover {
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 3px 6px 0 rgb(83, 176, 125);
 }

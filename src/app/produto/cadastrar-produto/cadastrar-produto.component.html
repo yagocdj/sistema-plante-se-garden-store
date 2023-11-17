@@ -1,21 +1,23 @@
 <div>
   <form [formGroup]="produtoForm">
-    <mat-card class="card-cadastro">
-      <mat-card-content>
-          <input formControlName="nome" matInput placeholder="Digite o Nome do Produto">
-        <br>
-          <input formControlName="categoria" matInput placeholder="Digite a Categoria">
-        <br>
-          <input formControlName="preco" matInput placeholder="Digite o Preço">
-        <br>
-          <input formControlName="quantidade" matInput placeholder="Digite a Quantidade">
-          <br>
-          <input formControlName="imageUrl" matInput placeholder="Digite a URL da Imagem">
-      </mat-card-content>
-      <mat-card-actions>
-        <button id="acaoModalCadastrar" mat-raised-button color="primary" [mat-dialog-close]="" >Cancelar</button>
-        <button mat-raised-button color="primary" (click)="produtoFormulario()" [mat-dialog-close]="">Adicionar</button>
-      </mat-card-actions>
-    </mat-card>
+    <p>Nome</p>
+    <input formControlName="nome" matInput placeholder="Digite o Nome do Produto">
+    <br>
+    <p>Categoria</p>
+    <input formControlName="categoria" matInput placeholder="Digite a Categoria">
+    <br>
+    <p>Preço</p>
+    <input formControlName="preco" matInput placeholder="Digite o Preço">
+    <br>
+    <p>Quantidade</p>
+    <input formControlName="quantidade" matInput placeholder="Digite a Quantidade">
+    <br>
+    <p>Imagem Url</p>
+    <input formControlName="imageUrl" matInput placeholder="Digite a URL da Imagem">
+    <div id="divBotoes">  
+      <button id="acaoModalCadastrar" [mat-dialog-close]="" >Cancelar</button>
+      <button (click)="produtoFormulario()" [mat-dialog-close]="">Adicionar</button>
+    </div>
+    
   </form>
 </div>
