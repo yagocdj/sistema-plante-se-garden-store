@@ -1,26 +1,24 @@
-<div>
-    <form [formGroup]="produtoForm">
-      <mat-card class="card-cadastro">
-        <mat-card-content>
-          <p>Nome</p>
-            <input formControlName="nome" matInput placeholder="Digite o Nome do Produto">
-          <br><br>
-          <p>Categoria</p>
-            <input formControlName="categoria" matInput placeholder="Digite a Categoria">
-          <br><br>
-          <p>Preço</p>
-            <input formControlName="preco" matInput placeholder="Digite o Preço">
-          <br><br>
-          <p>Quantidade</p>
-            <input formControlName="quantidade" matInput placeholder="Digite a Quantidade">
-            <br><br>
-            <p>Imagem</p>
-            <input formControlName="imageUrl" matInput placeholder="Digite a URL da Imagem">
-        </mat-card-content>
-        <mat-card-actions>
-          <button id="acaoModalEditar" mat-raised-button color="primary" [mat-dialog-close]="" >Cancelar</button>
-          <button mat-raised-button color="primary" (click)="produtoEditar()" [mat-dialog-close]="">Editar</button>
-        </mat-card-actions>
-      </mat-card>
-    </form>
-  </div>
+<div id="componenteEditar">
+  <form [formGroup]="produtoForm">          
+    <p>Nome</p>
+    <input formControlName="nome" placeholder="Digite o Nome do Produto">
+          
+    <p>Categoria</p>
+    <input formControlName="categoria" placeholder="Digite a Categoria">
+          
+    <p>Preço</p>
+    <input formControlName="preco" placeholder="Digite o Preço">
+         
+    <p>Quantidade</p>
+    <input formControlName="quantidade" placeholder="Digite a Quantidade">
+           
+    <p>Imagem</p>
+    <input formControlName="imageUrl" placeholder="Digite a URL da Imagem">
+    
+    <div id="divBotoes">   
+      <button id="acaoModalEditar"  [mat-dialog-close]="" >Cancelar</button>
+      <button (click)="produtoEditar()" [mat-dialog-close]="">Editar</button>
+    </div>
+ 
+  </form>
+</div>

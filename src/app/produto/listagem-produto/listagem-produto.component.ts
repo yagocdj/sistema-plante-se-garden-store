@@ -28,7 +28,7 @@ ngOnInit(): void {
 
 openEditar(produto:Produto) {
   this.dialog.open(EditarProdutoComponent, {
-    width: '30%',
+    width: '16%',
     data: produto
   });
 }
