@@ -1,11 +1,11 @@
 <div id="divTitulo">
   <h1>{{titulo}}</h1>
-  <p>_____________________________________________________________________</p>
+  <p id="divisao">_____________________________________________________________________</p>
 </div>
 
 <app-menu-produto></app-menu-produto>
 
-<div fxLayout="row wrap" fxLayout.lt-sm="column">
+<!-- <div fxLayout="row wrap" fxLayout.lt-sm="column">
   <mat-card fxFlex="20" class="card-produto" *ngFor="let produto of produtos">
     <mat-card-header>
       <mat-card-title>{{produto.nome | titlecase}}</mat-card-title>
@@ -25,4 +25,35 @@
       </mat-card-actions>
     </div>
   </mat-card>
-</div>
+</div> -->
+  <div class="inner-container">
+    <mat-grid-list [cols]="numberOfCols" gutterSize="21px" rowHeight="350px" id="products-grid">
+
+      <mat-grid-tile *ngFor="let produto of produtos" class="grid-tile">
+
+        <mat-card class="product-card">
+          <img mat-card-image src="{{produto.imageUrl}}" alt="Photo of a Shiba Inu">
+          <mat-card-content class="card-content">
+            <p class="product-description">
+              <span>{{produto.nome.length > 50 ? produto.nome.slice(0, 35) + '...' : produto.nome}}</span>
+              <span>Cód:{{produto.id}}</span>
+            </p>
+            <p class="product-value-info">
+              <span class="price">R{{produto.preco | currency}}</span>
+              <span class="installments">4x de R{{produto.preco / 4 | currency}} s/ juros</span>
+            </p>
+          </mat-card-content>
+          <mat-card-actions class="card-actions">
+            <button mat-button (click)="openEditar(produto)">
+              <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-button (click)="excluirProduto(produto.id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+
+      </mat-grid-tile>
+
+    </mat-grid-list>
+  </div>
