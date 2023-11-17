@@ -14,6 +14,8 @@ export class ListagemProdutoComponent implements OnInit {
   produtos: Array<Produto> = [];
   titulo ='Área de Produtos'
   numberOfCols: number;
+  produto!: Produto;
+  
 constructor(private produtoService: ProdutoService, private dialog: MatDialog){
   this.numberOfCols = 4;
 }
@@ -21,11 +23,13 @@ constructor(private produtoService: ProdutoService, private dialog: MatDialog){
 
 ngOnInit(): void {
  this.produtoService.listar().subscribe(produtos => this.produtos = produtos);
- 
+
 }
 
-openEditar() {
+openEditar(produto:Produto) {
   this.dialog.open(EditarProdutoComponent, {
+    width: '30%',
+    data: produto
   });
 }
 excluirProduto(id:any): void {

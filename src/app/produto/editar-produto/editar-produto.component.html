@@ -2,14 +2,19 @@
     <form [formGroup]="produtoForm">
       <mat-card class="card-cadastro">
         <mat-card-content>
+          <p>Nome</p>
             <input formControlName="nome" matInput placeholder="Digite o Nome do Produto">
-          <br>
+          <br><br>
+          <p>Categoria</p>
             <input formControlName="categoria" matInput placeholder="Digite a Categoria">
-          <br>
+          <br><br>
+          <p>Preço</p>
             <input formControlName="preco" matInput placeholder="Digite o Preço">
-          <br>
+          <br><br>
+          <p>Quantidade</p>
             <input formControlName="quantidade" matInput placeholder="Digite a Quantidade">
-            <br>
+            <br><br>
+            <p>Imagem</p>
             <input formControlName="imageUrl" matInput placeholder="Digite a URL da Imagem">
         </mat-card-content>
         <mat-card-actions>
