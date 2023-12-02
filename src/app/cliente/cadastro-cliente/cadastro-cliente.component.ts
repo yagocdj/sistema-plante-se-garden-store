@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Cliente } from 'src/app/shared/model/cliente';
-import { CepService } from 'src/app/shared/services/cep.service';
-import { ClienteService } from 'src/app/shared/services/cliente.service';
+import { CepService } from 'src/app/shared/services/rest/cep.service';
+import { ClienteService } from 'src/app/shared/services/rest/cliente.service';
 
 @Component({
   selector: 'app-cadastro-cliente',

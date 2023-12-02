@@ -2,10 +2,10 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 import { MatSidenav } from '@angular/material/sidenav';
 import { Produto } from 'src/app/shared/model/produto';
 import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
-import { PedidoService } from 'src/app/shared/services/pedido.service';
+import { PedidoService } from 'src/app/shared/services/rest/pedido.service';
 import { Pedido } from 'src/app/shared/model/pedido';
 import { Cliente } from 'src/app/shared/model/cliente';
-import { ClienteService } from 'src/app/shared/services/cliente.service';
+import { ClienteService } from 'src/app/shared/services/rest/cliente.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -49,7 +49,7 @@ export class CarrinhoComponent implements OnChanges, OnInit {
     }
   }
 
-  removeProductFromCart(productId: number): void {
+  removeProductFromCart(productId: string): void {
     this.shoppingCartService.removeProductFromCart(productId);
     this.cartProducts = this.shoppingCartService.shoppingCart;
     this.totalValue = this.shoppingCartService.getTotalValue();

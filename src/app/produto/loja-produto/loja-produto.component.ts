@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Produto } from 'src/app/shared/model/produto';
-import { ProdutoService } from 'src/app/shared/services/produto.service';
+// import { ProdutoService } from 'src/app/shared/services/rest/produto.service';
 import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import { ProdutoFirestoreService } from 'src/app/shared/services/firestore/produto-firestore.service';
 
 @Component({
   selector: 'app-loja-produto',
@@ -14,7 +15,7 @@ export class LojaProdutoComponent implements OnInit {
   numberOfCols: number;
 
   constructor(
-    private produtoService: ProdutoService,
+    private produtoService: ProdutoFirestoreService,
     private responsive: BreakpointObserver,
     private shoppingCartService: ShoppingCartService
   ) {

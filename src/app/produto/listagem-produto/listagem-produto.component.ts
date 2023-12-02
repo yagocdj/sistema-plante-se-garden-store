@@ -1,4 +1,4 @@
-import { ProdutoService } from './../../shared/services/produto.service';
+import { ProdutoService } from '../../shared/services/rest/produto.service';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Produto } from 'src/app/shared/model/produto';

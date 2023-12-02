@@ -20,8 +20,8 @@
             />
             <p class="card-text-content">
               <span class="product-title">{{
-                product.nome.length > 25
-                  ? product.nome.slice(0, 25) + "..."
+                product.nome!.length > 25
+                  ? product.nome?.slice(0, 25) + "..."
                   : product.nome
               }}</span>
               <span class="product-quantity"

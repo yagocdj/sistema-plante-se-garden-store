@@ -16,12 +16,12 @@ export class ShoppingCartService {
     if (productIndex < 0) {
       this._shoppingCart.push(productToBeInserted);
     } else {
-      this._shoppingCart[productIndex].quantidade++;
+      this._shoppingCart[productIndex].quantidade!++;
     }
     this._productsCount = this._shoppingCart.length;
   }
 
-  removeProductFromCart(productId: number): void {
+  removeProductFromCart(productId: string): void {
     const productIndex = this.searchForIndex(productId);
     if (productIndex < 0) {
       throw new Error(`There is no product with ID ${productId} into the cart.`);
@@ -32,7 +32,7 @@ export class ShoppingCartService {
 
   getTotalValue(): number {
     return this._shoppingCart.reduce(
-      (accumulator, product) => accumulator + product.preco * product.quantidade, 0);
+      (accumulator, product) => accumulator + product.preco! * product.quantidade!, 0);
   }
 
   get shoppingCart(): Produto[] {
@@ -50,7 +50,7 @@ export class ShoppingCartService {
     this._productsCount = value;
   }
 
-  private searchForIndex(productId: number): number {
+  private searchForIndex(productId: string): number {
     return this._shoppingCart.findIndex(
       product => product.id === productId);
   }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Pedido } from '../model/pedido';
-import { Cliente } from '../model/cliente';
-import { Produto } from '../model/produto';
+import { Pedido } from '../../model/pedido';
+import { Cliente } from '../../model/cliente';
+import { Produto } from '../../model/produto';
 import { ClienteService } from './cliente.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';

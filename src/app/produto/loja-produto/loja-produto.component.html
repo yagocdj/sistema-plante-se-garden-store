@@ -22,8 +22,8 @@
           <mat-card-content class="card-content">
             <p class="product-description">
               <span>{{
-                product.nome.length > 50
-                  ? product.nome.slice(0, 35) + "..."
+                product.nome!.length > 50
+                  ? product.nome?.slice(0, 35) + "..."
                   : product.nome
               }}</span>
               <span>Cód:{{ product.id }}</span>
@@ -31,7 +31,7 @@
             <p class="product-value-info">
               <span class="price">R{{ product.preco | currency }}</span>
               <span class="installments"
-                >4x de R{{ product.preco / 4 | currency }} s/ juros</span
+                >4x de R{{ product.preco! / 4 | currency }} s/ juros</span
               >
             </p>
           </mat-card-content>
