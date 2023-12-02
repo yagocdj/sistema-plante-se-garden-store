@@ -9,7 +9,7 @@ import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/comp
 export class ProdutoFirestoreService {
 
   productsCollection: AngularFirestoreCollection<Produto>;
-  COLLECTION_NAME = 'products';
+  COLLECTION_NAME = 'produtos';
 
   constructor(private afs: AngularFirestore) {
     this.productsCollection = afs.collection(this.COLLECTION_NAME);
