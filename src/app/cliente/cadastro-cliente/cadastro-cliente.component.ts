@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { Cliente } from 'src/app/shared/model/cliente';
+import { ClienteFirestoreService } from 'src/app/shared/services/firestore/cliente-firestore.service';
 import { CepService } from 'src/app/shared/services/rest/cep.service';
 import { ClienteService } from 'src/app/shared/services/rest/cliente.service';
 
@@ -10,7 +11,6 @@ import { ClienteService } from 'src/app/shared/services/rest/cliente.service';
   styleUrls: ['./cadastro-cliente.component.scss']
 })
 export class CadastroClienteComponent implements OnInit {
-  // ! -> non-null assertion operator
 
   cadastroForm!: FormGroup;
   readonly requiredFieldErrorMessage = 'Este campo é obrigatório.';
@@ -18,7 +18,7 @@ export class CadastroClienteComponent implements OnInit {
 
   constructor(
     private cepService: CepService,
-    private clienteService: ClienteService
+    private clienteService: ClienteFirestoreService
   ) { }
 
   ngOnInit(): void {
@@ -36,7 +36,7 @@ export class CadastroClienteComponent implements OnInit {
     });
   }
 
-  // FIXME - corrigir a questão da senha
+  // FIXME - corrigir a questão da senha (criptografia)
   createAccount(): void {
     if (this.cadastroForm.valid) {
       const address = `${this.nomeDaRua?.value},${this.numeroResidencia?.value},${this.cidade?.value}-${this.uf?.value.toUpperCase()}`;
