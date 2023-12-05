@@ -38,7 +38,7 @@ export class CarrinhoComponent implements OnChanges, OnInit {
   }
 
   ngOnInit(): void {
-    this.fetchDefaultCostumer();
+    // this.fetchDefaultCostumer();
     this.cartProducts = this.shoppingCartService.shoppingCart;
   }
 
@@ -72,9 +72,9 @@ export class CarrinhoComponent implements OnChanges, OnInit {
   }
 
   // Debug only method
-  private fetchDefaultCostumer(): void {
-    this.costumerService.localizar('11100099910').subscribe(
-      costumer => this.defaultCostumer = costumer
-    );
-  }
+  // private fetchDefaultCostumer(): void {
+  //   this.costumerService.localizar('11100099910').subscribe(
+  //     costumer => this.defaultCostumer = costumer
+  //   );
+  // }
 }

@@ -1,3 +1,4 @@
+import { Pedido } from 'src/app/shared/model/pedido';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginAdminComponent } from './login/login-admin/login-admin.component';
@@ -7,6 +8,7 @@ import { ListagemClienteComponent } from './cliente/listagem-cliente/listagem-cl
 import { CarrinhoComponent } from './pedido/carrinho/carrinho.component';
 import { AdminMenuComponent } from './layout/admin-menu/admin-menu.component';
 import { ListagemProdutoComponent } from './produto/listagem-produto/listagem-produto.component';
+import { ListagemPedidoComponent } from './pedido/listagem-pedido/listagem-pedido.component';
 
 const routes: Routes = [
   {
@@ -32,6 +34,10 @@ const routes: Routes = [
   {
     path:'listagem-produto',
     component: ListagemProdutoComponent
+  },
+  {
+    path:'listagem-pedido',
+    component: ListagemPedidoComponent
   },
   {
     path:'**',

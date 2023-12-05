@@ -28,7 +28,7 @@ import { FirestoreModule } from './shared/firestore/firestore.module';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginAdminComponent,
+    LoginAdminComponent
 
   ],
   imports: [

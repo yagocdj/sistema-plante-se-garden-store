@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Produto } from 'src/app/shared/model/produto';
 import { EditarProdutoComponent } from '../editar-produto/editar-produto.component';
+import { ProdutoFirestoreService } from 'src/app/shared/services/firestore/produto-firestore.service';
 
 @Component({
   selector: 'app-listagem-produto',
@@ -15,8 +16,8 @@ export class ListagemProdutoComponent implements OnInit {
   titulo ='Área de Produtos'
   numberOfCols: number;
   produto!: Produto;
-  
-constructor(private produtoService: ProdutoService, private dialog: MatDialog){
+
+constructor(private produtoService: ProdutoFirestoreService, private dialog: MatDialog){
   this.numberOfCols = 4;
 }
 
@@ -35,6 +36,5 @@ openEditar(produto:Produto) {
 excluirProduto(id:any): void {
   this.produtoService.remover(id).subscribe();
   console.log("produto removido com sucesso.")
-  location.reload();
 }
 }

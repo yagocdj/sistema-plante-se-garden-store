@@ -16,6 +16,7 @@ import { MatTableModule } from '@angular/material/table';
 import { RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { FirestoreModule } from '../shared/firestore/firestore.module';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatTableModule,
     RouterLink,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    FirestoreModule
   ],
   exports: [
     CadastroClienteComponent
