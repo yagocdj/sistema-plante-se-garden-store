@@ -1,32 +1,32 @@
-//import { ClienteService } from 'src/app/shared/services/rest/cliente.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Cliente } from 'src/app/shared/model/cliente';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { ClienteFirestoreService } from 'src/app/shared/services/firestore/cliente-firestore.service';
+import { Pedido } from 'src/app/shared/model/pedido';
+import { PedidoFirestoreService } from 'src/app/shared/services/firestore/pedido-firestore.service';
+
 
 @Component({
-  selector: 'app-listagem-cliente',
-  templateUrl: './listagem-cliente.component.html',
-  styleUrls: ['./listagem-cliente.component.scss']
+  selector: 'app-listagem-pedido',
+  templateUrl: './listagem-pedido.component.html',
+  styleUrls: ['./listagem-pedido.component.scss']
 })
 
-export class ListagemClienteComponent implements OnInit {
-  titulo = "Área de Clientes";
-  clientes: Array<Cliente> = [];
+export class ListagemPedidoComponent implements OnInit {
+  titulo = "Área de Pedidos";
+  clientes: Array<Pedido> = [];
   dataSource = new MatTableDataSource<any>;
-  displayedColumns: string[] = ['ID', 'Nome', 'CPF', 'Email', 'Telefone']
+  displayedColumns: string[] = ['ID', 'Nome do Cliente', 'Valor do Pedido']
 
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private clienteService: ClienteFirestoreService) {
+  constructor(private pedidoService: PedidoFirestoreService) {
   }
 
   ngOnInit(): void {
-    this.clienteService.listar().subscribe(
+    this.pedidoService.listar().subscribe(
       {
         next: (res) => {
           this.dataSource = new MatTableDataSource(res);

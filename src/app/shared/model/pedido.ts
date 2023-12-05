@@ -4,32 +4,32 @@ import { Cliente } from "./cliente";
 export class Pedido {
   readonly cliente: Cliente;
   readonly produtos: Array<Produto>;
-  private _valorTotal: number;
-  private _id: number | null = null;
+  public valorTotal: number;
+  public id?: string;
 
   constructor(
     cliente: Cliente, produtos: Produto[],
   ) {
     this.cliente = cliente;
     this.produtos = produtos;
-    this._valorTotal = 0;
+    this.valorTotal = 0;
   }
 
-  get valorTotal(): number {
-    return this._valorTotal;
-  }
+  // get valorTotal(): number {
+  //   return this._valorTotal;
+  // }
 
-  set valorTotal(value: number) {
-    this._valorTotal = value;
-  }
+  // set valorTotal(value: number) {
+  //   this._valorTotal = value;
+  // }
 
-  get id(): number | null {
-    return this._id;
-  }
+  // get id(): string {
+  //   return this._id;
+  // }
 
-  set id(value: number) {
-    this._id = value;
-  }
+  // set id(value: string) {
+  //   this._id = value;
+  // }
 
   //método para serviço
   // private calcularValorTotal(): number {
