@@ -15,7 +15,7 @@ export class ListagemProdutoComponent implements OnInit {
   titulo ='Área de Produtos'
   numberOfCols: number;
   produto!: Produto;
-  
+
 constructor(private produtoService: ProdutoService, private dialog: MatDialog){
   this.numberOfCols = 4;
 }

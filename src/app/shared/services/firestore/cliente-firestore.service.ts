@@ -16,11 +16,11 @@ export class ClienteFirestoreService {
     this.costumersCollection = afs.collection(this.COLLECTION_NAME);
   }
 
-  listar(): Observable<Produto[]> {
+  listar(): Observable<Cliente[]> {
     return this.costumersCollection.valueChanges({ idField: 'id' });
   }
 
-  inserir(costumer: Cliente): Observable<Produto> {
+  inserir(costumer: Cliente): Observable<Cliente> {
     delete costumer.id;
     return from(this.costumersCollection.add({ ...costumer }));
   }

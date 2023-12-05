@@ -9,7 +9,6 @@ export class Produto {
   constructor(
     id?: string, product: Produto = {}
   ) {
-    this.id = id;
     this.nome = product.nome;
     this.preco = product.preco;
     this.categoria = product.categoria;

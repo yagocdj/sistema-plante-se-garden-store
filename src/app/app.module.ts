@@ -50,7 +50,6 @@ import { FirestoreModule } from './shared/firestore/firestore.module';
     HttpClientModule,
     LayoutModule,
     MatSidenavModule,
-    ProdutoModule,
     ClienteModule,
     PedidoModule,
     RouterModule,
