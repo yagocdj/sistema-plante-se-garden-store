@@ -24,11 +24,21 @@
       </div>
     </div>
     <div class="user-options">
-      <button mat-icon-button>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
         <mat-icon class="icon-display">
           account_circle
         </mat-icon>
       </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>login</mat-icon>
+          <span>Entrar</span>
+        </button>
+        <button mat-menu-item [routerLink]="['/cadastro-cliente']">
+          <mat-icon>person_add</mat-icon>
+          <span>Criar conta</span>
+        </button>
+      </mat-menu>
       <button
         mat-icon-button
         class="flex-button"
