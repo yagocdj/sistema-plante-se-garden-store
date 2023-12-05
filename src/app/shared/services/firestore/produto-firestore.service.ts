@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { from, Observable, map, catchError, tap } from 'rxjs';
+import { from, Observable, map } from 'rxjs';
 import { Produto } from '../../model/produto';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 
@@ -34,14 +34,8 @@ export class ProdutoFirestoreService {
   }
 
   editar(product: Produto): Observable<void> {
-    const produtoRef = this.afs.collection('produtos').doc(product.id);
+    const id = product.id;
     delete product.id;
-    return from(produtoRef.update(product)).pipe(
-      tap(() => console.log('Atualização no Firestore concluída com sucesso')),
-      catchError(error => {
-        console.error('Erro ao atualizar no Firestore:', error);
-        throw error;
-      })
-    );;
+    return from(this.productsCollection.doc(id).update({ ...product }));
   }
 }
