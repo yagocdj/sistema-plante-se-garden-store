@@ -2,10 +2,9 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 import { MatSidenav } from '@angular/material/sidenav';
 import { Produto } from 'src/app/shared/model/produto';
 import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
-import { PedidoService } from 'src/app/shared/services/rest/pedido.service';
+import { PedidoFirestoreService } from 'src/app/shared/services/firestore/pedido-firestore.service';
 import { Pedido } from 'src/app/shared/model/pedido';
 import { Cliente } from 'src/app/shared/model/cliente';
-import { ClienteService } from 'src/app/shared/services/rest/cliente.service';
 
 @Component({
   selector: 'app-carrinho',
@@ -25,8 +24,7 @@ export class CarrinhoComponent implements OnChanges, OnInit {
 
   constructor(
     private shoppingCartService: ShoppingCartService,
-    private orderServide: PedidoService,
-    private costumerService: ClienteService
+    private orderServide: PedidoFirestoreService
   ) { }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -62,7 +60,7 @@ export class CarrinhoComponent implements OnChanges, OnInit {
       valorTotal: this.totalValue,
     } as Pedido;
 
-    this.orderServide.insert(orderToBeInserted).subscribe(
+    this.orderServide.inserir(orderToBeInserted).subscribe(
       _ => {
         this.cartProducts = [];
         this.totalValue = 0;
