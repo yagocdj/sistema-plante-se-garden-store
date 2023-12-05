@@ -13,6 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListagemProdutoComponent } from './listagem-produto/listagem-produto.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
+import { FirestoreModule } from '../shared/firestore/firestore.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { EditarProdutoComponent } from './editar-produto/editar-produto.componen
     MatDialogModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    FirestoreModule
   ]
 })
 export class ProdutoModule { }
