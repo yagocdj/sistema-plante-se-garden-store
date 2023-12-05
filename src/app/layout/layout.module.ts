@@ -13,6 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
 import { PedidoModule } from '../pedido/pedido.module';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MatBadgeModule } from '@angular/material/badge';
     RouterModule,
     PedidoModule,
     MatCardModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatMenuModule
   ],
   exports: [
     MenuComponent,
