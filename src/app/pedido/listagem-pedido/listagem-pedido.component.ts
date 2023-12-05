@@ -32,10 +32,25 @@ export class ListagemPedidoComponent implements OnInit {
           this.dataSource = new MatTableDataSource(res);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
+          this.dataSource.filterPredicate = this.customFilterPredicate();
         }
       })
   }
 
+  customFilterPredicate(): (data: any, filter: string) => boolean {
+    const filterFunction = (data: any, filter: string): boolean => {
+      const searchTerms = filter.toLowerCase().split(' ');
+
+      // Verifica se algum termo da busca está presente no ID, nome do cliente ou valor do pedido
+      return (
+        data.id.toString().includes(searchTerms[0]) ||
+        data.cliente?.nome.toLowerCase().includes(searchTerms[0]) ||
+        data.valorTotal.toString().includes(searchTerms[0])
+      );
+    };
+
+    return filterFunction;
+  }
   //default
   aplicarFiltro(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
