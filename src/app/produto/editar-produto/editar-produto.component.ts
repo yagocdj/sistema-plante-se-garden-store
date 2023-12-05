@@ -40,11 +40,11 @@ export class EditarProdutoComponent {
 
   editarProduto() {
     if (this.produtoForm.valid) {
+      console.log('Dados do Formulário:', this.produtoForm.value);
       // Para usar o REST service, descomente a linha de código abaixo
       // this.produtoService.editar(this.produtoEditado.id, this.produtoForm.value).subscribe();
       this.produtoService.editar(this.produtoEditado).subscribe();
       console.log('adicionou com sucesso!');
-      location.reload(); //utilizado para dar um refresh e atualizar a lista de produtos
     }
 
   }

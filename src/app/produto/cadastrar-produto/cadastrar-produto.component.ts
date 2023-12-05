@@ -33,7 +33,7 @@ export class CadastrarProdutoComponent {
     if (this.produtoForm.valid) {
       this.produtoService.inserir(this.produtoForm.value).subscribe();
       console.log('adicionou com sucesso!');
-      location.reload(); // utilizado para dar um refresh e atualizar a lista de produtos
+     
     }
 
   }

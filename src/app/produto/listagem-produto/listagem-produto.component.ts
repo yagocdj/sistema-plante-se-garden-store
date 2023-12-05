@@ -36,6 +36,5 @@ openEditar(produto:Produto) {
 excluirProduto(id:any): void {
   this.produtoService.remover(id).subscribe();
   console.log("produto removido com sucesso.")
-  location.reload();
 }
 }
