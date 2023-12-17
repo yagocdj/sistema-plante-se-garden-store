@@ -13,11 +13,12 @@ export class CadastrarProdutoComponent {
 
   produtoForm !: FormGroup;
 
-  constructor(private formBuilder:FormBuilder,  private produto: ProdutoService){
+  constructor(
+    private formBuilder: FormBuilder,
+    private produtoService: ProdutoService
+  ) { }
 
-  }
-
-  ngOnInit():void{
+  ngOnInit(): void {
     this.produtoForm = this.formBuilder.group({
       nome: ['', Validators.required],
       categoria: ['', Validators.required],
@@ -27,12 +28,11 @@ export class CadastrarProdutoComponent {
     })
   }
 
-  produtoFormulario(){
-    if (this.produtoForm.valid){
-      this.produto.inserir(this.produtoForm.value).subscribe();
+  cadastrarProduto() {
+    if (this.produtoForm.valid) {
+      this.produtoService.inserir(this.produtoForm.value).subscribe();
       console.log('adicionou com sucesso!');
       location.reload(); //utilizado para dar um refresh e atualizar a lista de produtos
+    }
   }
-
-}
 }

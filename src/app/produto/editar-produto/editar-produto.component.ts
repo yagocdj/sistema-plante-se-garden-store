@@ -12,12 +12,12 @@ export class EditarProdutoComponent {
 
   produtoForm !: FormGroup;
 
-  constructor(private formBuilder:FormBuilder,  private produto: ProdutoService,
-    @Inject (MAT_DIALOG_DATA) public produtoEditado : any){
+  constructor(private formBuilder: FormBuilder, private produto: ProdutoService,
+    @Inject(MAT_DIALOG_DATA) public produtoEditado: any) {
 
   }
 
-  ngOnInit():void{
+  ngOnInit(): void {
     this.produtoForm = this.formBuilder.group({
       nome: ['', Validators.required],
       categoria: ['', Validators.required],
@@ -26,7 +26,7 @@ export class EditarProdutoComponent {
       imageUrl: ['', Validators.required]
     });
 
-    if(this.produtoEditado){
+    if (this.produtoEditado) {
       this.produtoForm.controls['nome'].setValue(this.produtoEditado.nome);
       this.produtoForm.controls['categoria'].setValue(this.produtoEditado.categoria);
       this.produtoForm.controls['preco'].setValue(this.produtoEditado.preco);
@@ -36,13 +36,13 @@ export class EditarProdutoComponent {
     console.log(this.produtoEditado);
   }
 
-  produtoEditar(){
-    if (this.produtoForm.valid){
+  produtoEditar() {
+    if (this.produtoForm.valid) {
       this.produto.editar(this.produtoEditado.id, this.produtoForm.value).subscribe();
       console.log('adicionou com sucesso!');
       location.reload(); //utilizado para dar um refresh e atualizar a lista de produtos
-  }
+    }
 
-}
+  }
 }
 

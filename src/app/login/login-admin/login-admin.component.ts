@@ -20,6 +20,7 @@ export class LoginAdminComponent implements OnInit {
       })
     }
 
+    // TODO - the following code must be in a service
     acessar():void{
       this.http.get<any>("http://localhost:3000/administradores").subscribe(res=>{
         const usuario = res.find((a:any)=>{

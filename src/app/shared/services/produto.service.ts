@@ -3,13 +3,14 @@ import { Produto } from './../model/produto';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProdutoService {
 
-  private URL_PRODUTOS = 'http://localhost:3000/produtos';
+  private URL_PRODUTOS = environment.URL_API + '/produtos';
 
   constructor(private http: HttpClient) { }
 
@@ -22,7 +23,7 @@ export class ProdutoService {
   }
 
   localizar(id: number): Observable<number> {
-    return this.http.get<number>(`${this.URL_PRODUTOS}/produtos/${id}`);
+    return this.http.get<number>(`${this.URL_PRODUTOS}/${id}`);
   }
 
   remover(id: number): Observable<void> {

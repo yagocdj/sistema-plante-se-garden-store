@@ -6,8 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LayoutModule } from './layout/layout.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { LoginAdminComponent } from './login/login-admin/login-admin.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatInputModule } from '@angular/material/input';
@@ -27,7 +27,7 @@ import { PedidoModule } from './pedido/pedido.module';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginAdminComponent,
+    LoginAdminComponent
 
   ],
   imports: [

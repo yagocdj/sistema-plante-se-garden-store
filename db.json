@@ -156,6 +156,39 @@
       "produtos": [],
       "valorTotal": 0,
       "id": 2
+    },
+    {
+      "cliente": [
+        {
+          "id": 2,
+          "nome": "Yago César",
+          "cpf": "11100099910",
+          "email": "yagocdj@gmail.com",
+          "endereco": "Rua Rosa, 100",
+          "telefone": "940028922",
+          "senha": "MinhaSenha@123"
+        }
+      ],
+      "produtos": [
+        {
+          "id": 3,
+          "nome": "Fertilizante multiuso",
+          "preco": 4.44,
+          "categoria": "Fertilizantes",
+          "quantidade": 5,
+          "imageUrl": "https://images.unsplash.com/photo-1457414104202-9d4b4908f285?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+          "id": 2,
+          "nome": "Banco para Jardim Madeira 3 Lugares 184cm Marrom Yumi Naterial",
+          "preco": 1229,
+          "categoria": "Bancos para jardim",
+          "quantidade": 2,
+          "imageUrl": "https://images.unsplash.com/photo-1495220239082-2bb8c5228aa2?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }
+      ],
+      "valorTotal": 2480.2,
+      "id": 3
     }
   ]
 }

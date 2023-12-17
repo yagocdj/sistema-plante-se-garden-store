@@ -12,29 +12,28 @@ import { EditarProdutoComponent } from '../editar-produto/editar-produto.compone
 export class ListagemProdutoComponent implements OnInit {
 
   produtos: Array<Produto> = [];
-  titulo ='Área de Produtos'
+  titulo = 'Área de Produtos'
   numberOfCols: number;
   produto!: Produto;
-  
-constructor(private produtoService: ProdutoService, private dialog: MatDialog){
-  this.numberOfCols = 4;
-}
+
+  constructor(private produtoService: ProdutoService, private dialog: MatDialog) {
+    this.numberOfCols = 4;
+  }
 
 
-ngOnInit(): void {
- this.produtoService.listar().subscribe(produtos => this.produtos = produtos);
+  ngOnInit(): void {
+    this.produtoService.listar().subscribe(produtos => this.produtos = produtos);
+  }
 
-}
-
-openEditar(produto:Produto) {
-  this.dialog.open(EditarProdutoComponent, {
-    width: '16%',
-    data: produto
-  });
-}
-excluirProduto(id:any): void {
-  this.produtoService.remover(id).subscribe();
-  console.log("produto removido com sucesso.")
-  location.reload();
-}
+  openEditar(produto: Produto) {
+    this.dialog.open(EditarProdutoComponent, {
+      width: '16%',
+      data: produto
+    });
+  }
+  excluirProduto(id: any): void {
+    this.produtoService.remover(id).subscribe();
+    console.log("produto removido com sucesso.")
+    location.reload();
+  }
 }

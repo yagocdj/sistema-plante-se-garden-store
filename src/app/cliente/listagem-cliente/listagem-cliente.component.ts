@@ -1,7 +1,7 @@
 import { ClienteService } from 'src/app/shared/services/cliente.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Cliente } from 'src/app/shared/model/cliente';
-import {MatTableDataSource} from '@angular/material/table';
+import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 
@@ -11,25 +11,27 @@ import { MatSort } from '@angular/material/sort';
   styleUrls: ['./listagem-cliente.component.scss']
 })
 
-export class ListagemClienteComponent implements OnInit{
+export class ListagemClienteComponent implements OnInit {
   titulo = "Área de Clientes";
   clientes: Array<Cliente> = [];
   dataSource = new MatTableDataSource<any>;
   displayedColumns: string[] = ['ID', 'Nome', 'CPF', 'Email', 'Telefone']
 
 
-  @ViewChild(MatPaginator) paginator!:MatPaginator;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private clienteService:ClienteService){
+  constructor(private clienteService: ClienteService) {
   }
 
-  ngOnInit(): void{
+  ngOnInit(): void {
     this.clienteService.listar().subscribe(
-      {next:(res)=>{this.dataSource = new MatTableDataSource(res);
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-      }
+      {
+        next: (res) => {
+          this.dataSource = new MatTableDataSource(res);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+        }
       })
   }
 
@@ -38,9 +40,4 @@ export class ListagemClienteComponent implements OnInit{
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
-
-
 }
-
-
-
