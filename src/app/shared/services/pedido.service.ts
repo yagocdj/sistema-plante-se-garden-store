@@ -24,8 +24,8 @@ export class PedidoService {
     private http: HttpClient
   ) { }
 
-  list(): Observable<Pedido> {
-    return this.http.get<Pedido>(this.URL_ORDERS);
+  list(): Observable<Pedido[]> {
+    return this.http.get<Pedido[]>(this.URL_ORDERS);
   }
 
   insert(order: Pedido): Observable<Pedido> {

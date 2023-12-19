@@ -31,8 +31,8 @@ export class ClienteService {
     return this.httpClient.put<Cliente>(this.URL_CLIENTES, cliente, this.httpOptions);
   }
 
-  localizar(cpf: string): Observable<Cliente> {
-    return this.httpClient.get<Cliente>(this.URL_CLIENTES + '?cpf=' + cpf, this.httpOptions);
+  localizar(cpf: string): Observable<Cliente[]> {
+    return this.httpClient.get<Cliente[]>(this.URL_CLIENTES + '?cpf=' + cpf, this.httpOptions);
   }
 
   remover(cpf: string): Observable<Cliente> {
