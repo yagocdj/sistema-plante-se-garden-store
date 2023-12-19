@@ -24,7 +24,7 @@ export class CadastrarProdutoComponent {
       categoria: ['', Validators.required],
       preco: ['', Validators.required],
       quantidade: ['', Validators.required],
-      imageUrl: ['', Validators.required]
+      urlDaImagem: ['', Validators.required]
     })
   }
 

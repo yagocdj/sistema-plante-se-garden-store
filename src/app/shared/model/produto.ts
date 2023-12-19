@@ -4,17 +4,17 @@ export class Produto {
   private _preco: number;
   private _categoria: string;
   private _quantidade: number;
-  private _imageUrl: string;
+  private _urlDaImagem: string;
 
   constructor(
     nome: string, preco: number, categoria: string,
-    quantidade: number = 0, imageUrl: string = ''
+    quantidade: number = 0, urlDaImagem: string = ''
   ) {
     this._nome = nome;
     this._preco = preco;
     this._categoria = categoria;
     this._quantidade = quantidade;
-    this._imageUrl = imageUrl
+    this._urlDaImagem = urlDaImagem
   }
 
 
@@ -58,11 +58,11 @@ export class Produto {
     this._id = value;
   }
 
-  get imageUrl(): string {
-    return this._imageUrl;
+  get urlDaImagem(): string {
+    return this._urlDaImagem;
   }
-  set imageUrl(value: string) {
-    this._imageUrl = value;
+  set urlDaImagem(value: string) {
+    this._urlDaImagem = value;
   }
 
 }

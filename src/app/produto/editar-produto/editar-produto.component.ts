@@ -23,7 +23,7 @@ export class EditarProdutoComponent {
       categoria: ['', Validators.required],
       preco: ['', Validators.required],
       quantidade: ['', Validators.required],
-      imageUrl: ['', Validators.required]
+      urlDaImagem: ['', Validators.required]
     });
 
     if (this.produtoEditado) {
@@ -31,7 +31,7 @@ export class EditarProdutoComponent {
       this.produtoForm.controls['categoria'].setValue(this.produtoEditado.categoria);
       this.produtoForm.controls['preco'].setValue(this.produtoEditado.preco);
       this.produtoForm.controls['quantidade'].setValue(this.produtoEditado.quantidade);
-      this.produtoForm.controls['imageUrl'].setValue(this.produtoEditado.imageUrl);
+      this.produtoForm.controls['urlDaImagem'].setValue(this.produtoEditado.urlDaImagem);
     }
     console.log(this.produtoEditado);
   }

@@ -32,7 +32,7 @@
       <mat-grid-tile *ngFor="let produto of produtos" class="grid-tile">
 
         <mat-card class="product-card">
-          <img mat-card-image src="{{produto.imageUrl}}" alt="Photo of a Shiba Inu">
+          <img mat-card-image src="{{produto.urlDaImagem}}" alt="Photo of a Shiba Inu">
           <mat-card-content class="card-content">
             <p class="product-description">
               <span>{{produto.nome.length > 50 ? produto.nome.slice(0, 35) + '...' : produto.nome}}</span>
