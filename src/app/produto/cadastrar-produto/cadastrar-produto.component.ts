@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { ProdutoService } from '../../shared/services/produto.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-cadastrar-produto',
@@ -15,7 +16,8 @@ export class CadastrarProdutoComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private snackbar: MatSnackBar
   ) { }
 
   ngOnInit(): void {
@@ -28,11 +30,12 @@ export class CadastrarProdutoComponent {
     })
   }
 
+
   cadastrarProduto() {
     if (this.produtoForm.valid) {
       this.produtoService.inserir(this.produtoForm.value).subscribe();
       console.log('adicionou com sucesso!');
-      location.reload(); //utilizado para dar um refresh e atualizar a lista de produtos
+
     }
   }
 }

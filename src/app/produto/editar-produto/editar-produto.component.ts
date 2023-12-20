@@ -19,6 +19,7 @@ export class EditarProdutoComponent {
 
   ngOnInit(): void {
     this.produtoForm = this.formBuilder.group({
+      id: ['', Validators.required],
       nome: ['', Validators.required],
       categoria: ['', Validators.required],
       preco: ['', Validators.required],
@@ -27,6 +28,7 @@ export class EditarProdutoComponent {
     });
 
     if (this.produtoEditado) {
+      this.produtoForm.controls['id'].setValue(this.produtoEditado.id);
       this.produtoForm.controls['nome'].setValue(this.produtoEditado.nome);
       this.produtoForm.controls['categoria'].setValue(this.produtoEditado.categoria);
       this.produtoForm.controls['preco'].setValue(this.produtoEditado.preco);
