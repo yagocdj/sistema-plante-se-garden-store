@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MensagemSweetService } from 'src/app/shared/services/mensagem-sweet.service';
 import { ProdutoService } from 'src/app/shared/services/produto.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class EditarProdutoComponent {
   produtoForm !: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private produto: ProdutoService,
-    @Inject(MAT_DIALOG_DATA) public produtoEditado: any) {
+    @Inject(MAT_DIALOG_DATA) public produtoEditado: any, private mensagemService:MensagemSweetService) {
 
   }
 
@@ -42,7 +43,7 @@ export class EditarProdutoComponent {
     if (this.produtoForm.valid) {
       this.produto.editar(this.produtoEditado.id, this.produtoForm.value).subscribe();
       console.log('editado com sucesso!');
-      location.reload(); //utilizado para dar um refresh e atualizar a lista de produtos
+      this.mensagemService.sucesso('Editado com Sucesso!');
     }
 
   }

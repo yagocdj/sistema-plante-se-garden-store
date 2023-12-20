@@ -4,6 +4,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { MensagemService } from 'src/app/shared/services/mensagem.service';
 import { MensagemSnackService } from 'src/app/shared/services/mensagem-snack.service';
+import { MensagemSweetService } from 'src/app/shared/services/mensagem-sweet.service';
 
 @Component({
   selector: 'app-cadastrar-produto',
@@ -18,7 +19,7 @@ export class CadastrarProdutoComponent {
   constructor(
     private formBuilder: FormBuilder,
     private produtoService: ProdutoService,
-    private mensagemService: MensagemSnackService
+    private mensagemService: MensagemSweetService
   ) { }
 
   ngOnInit(): void {

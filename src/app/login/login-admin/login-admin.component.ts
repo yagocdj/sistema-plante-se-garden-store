@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AdminService } from 'src/app/shared/services/admin.service';
+import { MensagemSweetService } from 'src/app/shared/services/mensagem-sweet.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -16,7 +17,8 @@ export class LoginAdminComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private adminService: AdminService,
-    private router: Router
+    private router: Router,
+    private mensagemService: MensagemSweetService
   ) { }
 
   ngOnInit(): void {
@@ -26,21 +28,6 @@ export class LoginAdminComponent implements OnInit {
     })
   }
 
-  // acessar():void{
-  //   this.http.get<any>(environment.URL_API + '/administradores').subscribe(res=>{
-  //     const usuario = res.find((a:any)=>{
-  //       return a.nome === this.loginForm.value.nome && a.senha === this.loginForm.value.senha
-  //     });
-  //     if(usuario){
-  //       alert("Login efetuado com sucesso!");
-  //       this.loginForm.reset;
-  //       this.router.navigate(['/admin-menu']);
-  //     } else{
-  //       alert("Usuário incorreto!");
-  //     }
-  //   })
-  // }
-
   acessar(): void {
     this.adminService.listar().subscribe(
       admins => {
@@ -48,11 +35,11 @@ export class LoginAdminComponent implements OnInit {
           a => a.nome === this.loginForm.value.nome && a.senha === this.loginForm.value.senha
         );
         if (admin) {
-          alert("Login efetuado com sucesso!");
+          this.mensagemService.sucesso('Login Efetuado com Sucesso!');
           this.loginForm.reset;
           this.router.navigate(['/admin-menu']);
         } else {
-          alert("Usuário incorreto!");
+          this.mensagemService.erro('Login/Senha Incorreto!');
         }
       }
     );
