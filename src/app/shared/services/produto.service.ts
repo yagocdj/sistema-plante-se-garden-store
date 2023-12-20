@@ -1,8 +1,8 @@
-import { switchMap } from 'rxjs/operators';
+import { catchError, switchMap } from 'rxjs/operators';
 import { Produto } from './../model/produto';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -27,12 +27,31 @@ export class ProdutoService {
   }
 
   remover(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.URL_PRODUTOS}/${id}`);
+    const confirmation = confirm('Tem certeza de que deseja excluir este produto?');
+    if (!confirmation) {
+      return new Observable(); // Ou qualquer Observable vazio
+    }
+
+    return this.http.delete<void>(`${this.URL_PRODUTOS}/${id}`)
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  private handleError(error: any) {
+    console.error('Erro na requisição:', error);
+    const errorMessage = 'Erro na requisição. Por favor, tente novamente mais tarde.';
+    return throwError(() => new Error(errorMessage));
   }
 
   editar(idproduto: number, produto: Produto): Observable<Produto> {
     return this.http.put<Produto>(`${this.URL_PRODUTOS}/${idproduto}`, produto);
   }
+
+  // existenciaProduto(produtoNome: string): Observable<boolean> {
+  //   const url = `${this.URL_PRODUTOS}/exists/${produtoNome}`;
+  //   return this.http.get<boolean>(url);
+  // }
 }
 
 
