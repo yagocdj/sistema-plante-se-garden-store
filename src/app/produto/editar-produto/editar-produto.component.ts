@@ -41,7 +41,7 @@ export class EditarProdutoComponent {
   produtoEditar() {
     if (this.produtoForm.valid) {
       this.produto.editar(this.produtoEditado.id, this.produtoForm.value).subscribe();
-      console.log('adicionou com sucesso!');
+      console.log('editado com sucesso!');
       location.reload(); //utilizado para dar um refresh e atualizar a lista de produtos
     }
 

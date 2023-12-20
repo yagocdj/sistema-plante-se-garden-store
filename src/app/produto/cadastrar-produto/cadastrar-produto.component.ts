@@ -2,7 +2,8 @@ import { Router } from '@angular/router';
 import { ProdutoService } from '../../shared/services/produto.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MensagemService } from 'src/app/shared/services/mensagem.service';
+import { MensagemSnackService } from 'src/app/shared/services/mensagem-snack.service';
 
 @Component({
   selector: 'app-cadastrar-produto',
@@ -17,7 +18,7 @@ export class CadastrarProdutoComponent {
   constructor(
     private formBuilder: FormBuilder,
     private produtoService: ProdutoService,
-    private snackbar: MatSnackBar
+    private mensagemService: MensagemSnackService
   ) { }
 
   ngOnInit(): void {
@@ -27,15 +28,17 @@ export class CadastrarProdutoComponent {
       preco: ['', Validators.required],
       quantidade: ['', Validators.required],
       urlDaImagem: ['', Validators.required]
-    })
+    });
   }
-
 
   cadastrarProduto() {
     if (this.produtoForm.valid) {
-      this.produtoService.inserir(this.produtoForm.value).subscribe();
-      console.log('adicionou com sucesso!');
-
+      this.produtoService.inserir(this.produtoForm.value).subscribe(() => {
+        console.log('adicionou com sucesso!');
+        this.mensagemService.sucesso('Produto cadastrado!');
+      });
+    } else {
+      this.mensagemService.erro('Produto não cadastrado!');
     }
   }
 }
