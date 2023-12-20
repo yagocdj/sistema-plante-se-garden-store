@@ -44,6 +44,8 @@ export class EditarProdutoComponent {
       this.produto.editar(this.produtoEditado.id, this.produtoForm.value).subscribe();
       console.log('editado com sucesso!');
       this.mensagemService.sucesso('Editado com Sucesso!');
+    } else {
+        this.mensagemService.alerta('Produto não editado!');
     }
 
   }
