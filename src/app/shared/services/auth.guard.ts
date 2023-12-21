@@ -5,7 +5,7 @@ export const AuthGuard = () => {
 
   const router: Router = inject(Router)
 
-  if (localStorage.getItem('currentUser')) {
+  if (localStorage.getItem('clienteAtual')) {
     return true;
   }
   return router.navigateByUrl('/login')
