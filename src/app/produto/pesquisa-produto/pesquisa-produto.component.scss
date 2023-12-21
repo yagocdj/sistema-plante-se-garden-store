@@ -1,4 +1,47 @@
 div{
-  padding:1rem;
-  background-color: rgb(239, 239, 239);
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+}
+
+button {
+  margin-bottom: 5px;
+  color: rgb(168, 250, 168);
+  border: 0px solid white;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 30px;
+  height: 30px;
+  transition-duration: 0.4s;
+}
+
+.mat-icon{
+  color: rgb(100, 186, 100);
+  font-size: 16px;
+  border: 0px solid white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+button:hover {
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 4px 6px 0 rgb(83, 176, 125);
+}
+
+.inner-container {
+  display: flex;
+  flex-direction: column;
+
+  .close-button {
+    margin-left: auto;
+  }
+}
+
+img{
+  padding: 1rem;
 }

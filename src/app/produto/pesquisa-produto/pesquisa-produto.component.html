@@ -1,4 +1,8 @@
 <div class="inner-container">
+  <button mat-dialog-close class="close-button">
+    <mat-icon>close</mat-icon>
+  </button>
+
   <mat-card *ngFor="let produto of produtos" class="product-card">
     <img mat-card-image src="{{produto.urlDaImagem}}" alt="Photo of a Shiba Inu">
     <mat-card-content class="card-content">
