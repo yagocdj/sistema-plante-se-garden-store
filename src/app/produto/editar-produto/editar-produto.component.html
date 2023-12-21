@@ -1,24 +1,31 @@
 <div id="componenteEditar">
-  <form [formGroup]="produtoForm">          
+  <form [formGroup]="produtoForm">
+    <input
+      class="disable"
+      hidden="true"
+      tabindex="-1"
+      formControlName="id"
+      placeholder="ID do Produto"
+    />
+
     <p>Nome</p>
-    <input formControlName="nome" placeholder="Digite o Nome do Produto">
-          
+    <input formControlName="nome" placeholder="Digite o Nome do Produto" />
+
     <p>Categoria</p>
-    <input formControlName="categoria" placeholder="Digite a Categoria">
-          
+    <input formControlName="categoria" placeholder="Digite a Categoria" />
+
     <p>Preço</p>
-    <input formControlName="preco" placeholder="Digite o Preço">
-         
+    <input formControlName="preco" placeholder="Digite o Preço" />
+
     <p>Quantidade</p>
-    <input formControlName="quantidade" placeholder="Digite a Quantidade">
-           
+    <input formControlName="quantidade" placeholder="Digite a Quantidade" />
+
     <p>Imagem</p>
-    <input formControlName="imageUrl" placeholder="Digite a URL da Imagem">
-    
-    <div id="divBotoes">   
-      <button id="acaoModalEditar"  [mat-dialog-close]="" >Cancelar</button>
+    <input formControlName="urlDaImagem" placeholder="Digite a URL da Imagem" />
+
+    <div id="divBotoes">
+      <button id="acaoModalEditar" [mat-dialog-close]="">Cancelar</button>
       <button (click)="produtoEditar()" [mat-dialog-close]="">Editar</button>
     </div>
- 
   </form>
 </div>

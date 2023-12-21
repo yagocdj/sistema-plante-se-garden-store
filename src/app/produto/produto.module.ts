@@ -13,6 +13,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListagemProdutoComponent } from './listagem-produto/listagem-produto.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { PesquisaProdutoComponent } from './pesquisa-produto/pesquisa-produto.component';
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { EditarProdutoComponent } from './editar-produto/editar-produto.componen
     MenuProdutoComponent,
     CadastrarProdutoComponent,
     ListagemProdutoComponent,
-    EditarProdutoComponent
+    EditarProdutoComponent,
+    PesquisaProdutoComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +36,9 @@ import { EditarProdutoComponent } from './editar-produto/editar-produto.componen
     MatDialogModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule 
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatMenuModule
   ]
 })
 export class ProdutoModule { }

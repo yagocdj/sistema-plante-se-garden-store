@@ -10,8 +10,9 @@ import { Router } from '@angular/router';
 export class AppComponent implements OnInit {
   title = 'Olá, mundo!';
   private _isDesktop = false;
-  private _adminRoutes: string[] = [
-    '/login-admin', '/listagem-cliente', '/admin-menu','/listagem-produto'
+  private _noMenuRoutes: string[] = [
+    '/login-admin', '/listagem-cliente', '/admin-menu','/listagem-produto', '/listagem-pedido',
+    '/login-cliente'
   ];
 
   constructor(
@@ -26,7 +27,7 @@ export class AppComponent implements OnInit {
   }
 
   isAdminScreen(): boolean {
-    return this._adminRoutes.includes(this.router.url);
+    return this._noMenuRoutes.includes(this.router.url);
   }
 
   get isDesktop(): boolean {

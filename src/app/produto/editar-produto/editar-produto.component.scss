@@ -1,20 +1,21 @@
-input{
+input {
   width: 85%;
   height: 30px;
   margin-left: 20px;
   margin-bottom: 15px;
 }
 
-form{
+form {
   height: auto;
 }
-p{
+
+p {
   font-size: 18px;
   padding: 15px 30px 0px 20px;
   color: green;
 }
 
-button{
+button {
   width: 140px;
   height: 50px;
   background: rgb(245, 245, 245);
@@ -26,7 +27,7 @@ button{
   border-radius: 5%;
 }
 
-#divBotoes{
+#divBotoes {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -35,5 +36,10 @@ button{
 }
 
 button:hover {
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2), 0 3px 6px 0 rgb(83, 176, 125);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 3px 6px 0 rgb(83, 176, 125);
+}
+
+.disable {
+  color: lightgrey;
+  pointer-events: none;
 }

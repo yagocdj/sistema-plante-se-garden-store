@@ -5,34 +5,13 @@
 
 <app-menu-produto></app-menu-produto>
 
-<!-- <div fxLayout="row wrap" fxLayout.lt-sm="column">
-  <mat-card fxFlex="20" class="card-produto" *ngFor="let produto of produtos">
-    <mat-card-header>
-      <mat-card-title>{{produto.nome | titlecase}}</mat-card-title>
-      <mat-card-subtitle>numero: #{{produto.categoria}}</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content>
-      O preço do produto é: R$ {{produto.preco}}.
-    </mat-card-content>
-    <div class="botaoCard">
-      <mat-card-actions>
-          <button mat-button [routerLink]="['/login-admin']">
-            <mat-icon>edit</mat-icon>
-          </button>
-          <button mat-button (click)="excluirProduto(produto.id)">
-            <mat-icon>delete</mat-icon>
-          </button>
-      </mat-card-actions>
-    </div>
-  </mat-card>
-</div> -->
   <div class="inner-container">
     <mat-grid-list [cols]="numberOfCols" gutterSize="21px" rowHeight="350px" id="products-grid">
 
       <mat-grid-tile *ngFor="let produto of produtos" class="grid-tile">
 
         <mat-card class="product-card">
-          <img mat-card-image src="{{produto.imageUrl}}" alt="Photo of a Shiba Inu">
+          <img mat-card-image src="{{produto.urlDaImagem}}" alt="Photo of a Shiba Inu">
           <mat-card-content class="card-content">
             <p class="product-description">
               <span>{{produto.nome.length > 50 ? produto.nome.slice(0, 35) + '...' : produto.nome}}</span>

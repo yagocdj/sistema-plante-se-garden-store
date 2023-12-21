@@ -56,7 +56,7 @@
       "preco": 500,
       "categoria": "Ferramentas",
       "quantidade": 1,
-      "imageUrl": "https://images.unsplash.com/photo-1590820292118-e256c3ac2676?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "urlDaImagem": "https://images.unsplash.com/photo-1590820292118-e256c3ac2676?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 2,
@@ -64,7 +64,7 @@
       "preco": 1229,
       "categoria": "Bancos para jardim",
       "quantidade": 2,
-      "imageUrl": "https://images.unsplash.com/photo-1495220239082-2bb8c5228aa2?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "urlDaImagem": "https://images.unsplash.com/photo-1495220239082-2bb8c5228aa2?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 3,
@@ -72,7 +72,7 @@
       "preco": 4.44,
       "categoria": "Fertilizantes",
       "quantidade": 5,
-      "imageUrl": "https://images.unsplash.com/photo-1457414104202-9d4b4908f285?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "urlDaImagem": "https://images.unsplash.com/photo-1457414104202-9d4b4908f285?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 4,
@@ -80,7 +80,7 @@
       "preco": 6.5,
       "categoria": "Vasos de Plantas",
       "quantidade": 0,
-      "imageUrl": "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "urlDaImagem": "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": 5,
@@ -88,14 +88,14 @@
       "preco": 12.2,
       "categoria": "Vasos de Plantas",
       "quantidade": 3,
-      "imageUrl": "https://images.unsplash.com/photo-1609062111394-0427aa22d6c1?q=80&w=1951&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "urlDaImagem": "https://images.unsplash.com/photo-1609062111394-0427aa22d6c1?q=80&w=1951&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "nome": "TESTE3",
       "categoria": "fertinizante",
       "preco": "10",
       "quantidade": "10",
-      "imageUrl": "https://www.agriq.com.br/wp-content/uploads/2021/02/Blog-AgriQ_Fertilizantes-Creditos-Freepik.jpg",
+      "urlDaImagem": "https://www.agriq.com.br/wp-content/uploads/2021/02/Blog-AgriQ_Fertilizantes-Creditos-Freepik.jpg",
       "id": 7
     },
     {
@@ -103,7 +103,7 @@
       "categoria": "asdasd",
       "preco": "2600",
       "quantidade": "1",
-      "imageUrl": "https://www.agriq.com.br/wp-content/uploads/2021/02/Blog-AgriQ_Fertilizantes-Creditos-Freepik.jpg",
+      "urlDaImagem": "https://www.agriq.com.br/wp-content/uploads/2021/02/Blog-AgriQ_Fertilizantes-Creditos-Freepik.jpg",
       "id": 8
     },
     {
@@ -111,7 +111,7 @@
       "categoria": "Ferramentas",
       "preco": "16.01",
       "quantidade": "3",
-      "imageUrl": "https://static.superproatacado.com.br/storage/1000/cortador-de-grama-eletrico-com-recolhedor-rm-80e-2500w-220v-trapp-1639594708.jpg",
+      "urlDaImagem": "https://static.superproatacado.com.br/storage/1000/cortador-de-grama-eletrico-com-recolhedor-rm-80e-2500w-220v-trapp-1639594708.jpg",
       "id": 9
     }
   ],
@@ -135,7 +135,7 @@
           "preco": 1229,
           "categoria": "Bancos para jardim",
           "quantidade": 2,
-          "imageUrl": "https://images.unsplash.com/photo-1495220239082-2bb8c5228aa2?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          "urlDaImagem": "https://images.unsplash.com/photo-1495220239082-2bb8c5228aa2?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         }
       ],
       "valorTotal": 1229,
@@ -156,6 +156,39 @@
       "produtos": [],
       "valorTotal": 0,
       "id": 2
+    },
+    {
+      "cliente": [
+        {
+          "id": 2,
+          "nome": "Yago César",
+          "cpf": "11100099910",
+          "email": "yagocdj@gmail.com",
+          "endereco": "Rua Rosa, 100",
+          "telefone": "940028922",
+          "senha": "MinhaSenha@123"
+        }
+      ],
+      "produtos": [
+        {
+          "id": 3,
+          "nome": "Fertilizante multiuso",
+          "preco": 4.44,
+          "categoria": "Fertilizantes",
+          "quantidade": 5,
+          "urlDaImagem": "https://images.unsplash.com/photo-1457414104202-9d4b4908f285?q=80&w=1934&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+          "id": 2,
+          "nome": "Banco para Jardim Madeira 3 Lugares 184cm Marrom Yumi Naterial",
+          "preco": 1229,
+          "categoria": "Bancos para jardim",
+          "quantidade": 2,
+          "urlDaImagem": "https://images.unsplash.com/photo-1495220239082-2bb8c5228aa2?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        }
+      ],
+      "valorTotal": 2480.2,
+      "id": 3
     }
   ]
 }

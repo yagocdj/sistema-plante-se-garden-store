@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CategoriasService {
-  private _categorias: string[];
+  private readonly _categorias: string[];
   constructor() {
     this._categorias = ['Fertilizantes',
       'Ferramentas', 'Mudas', 'Sementes', 'Acessórios', 'Bancos para jardim', 'Vasos de plantas'];

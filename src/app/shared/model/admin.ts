@@ -1,10 +1,10 @@
-export class Admin {  
+export class Admin {
   private _nome: string;
   private _senha: string;
   private _id: number | null = null;
 
   constructor(
-    nome:string, senha: string
+    nome: string, senha: string
   ) {
     this._nome = nome;
     this._senha = senha;
@@ -14,7 +14,7 @@ export class Admin {
     return this._nome;
   }
 
-  set nome(novoNome:string) {
+  set nome(novoNome: string) {
     this._nome = novoNome;
   }
 
@@ -22,14 +22,14 @@ export class Admin {
     return this._senha;
   }
 
-  set senha(novaSenha:string) {
+  set senha(novaSenha: string) {
     this._senha = novaSenha;
   }
 
   public get id(): number | null {
     return this._id;
   }
-  
+
   public set id(value: number) {
     this._id = value;
   }

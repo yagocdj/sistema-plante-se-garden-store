@@ -5,13 +5,14 @@ import { Produto } from '../model/produto';
 import { ClienteService } from './cliente.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PedidoService {
 
-  private URL_ORDERS = 'http://localhost:3000/pedidos';
+  private URL_ORDERS = environment.URL_API + '/pedidos';
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -23,8 +24,8 @@ export class PedidoService {
     private http: HttpClient
   ) { }
 
-  list(): Observable<Pedido> {
-    return this.http.get<Pedido>(this.URL_ORDERS);
+  list(): Observable<Pedido[]> {
+    return this.http.get<Pedido[]>(this.URL_ORDERS);
   }
 
   insert(order: Pedido): Observable<Pedido> {
