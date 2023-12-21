@@ -1,8 +1,8 @@
-import { Component, Inject } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { MensagemSweetService } from 'src/app/shared/services/mensagem-sweet.service';
-import { ProdutoService } from 'src/app/shared/services/produto.service';
+import {Component, Inject} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MensagemSweetService} from 'src/app/shared/services/mensagem-sweet.service';
+import {ProdutoService} from 'src/app/shared/services/produto.service';
 
 @Component({
   selector: 'app-editar-produto',
@@ -14,7 +14,7 @@ export class EditarProdutoComponent {
   produtoForm !: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private produto: ProdutoService,
-    @Inject(MAT_DIALOG_DATA) public produtoEditado: any, private mensagemService:MensagemSweetService) {
+              @Inject(MAT_DIALOG_DATA) public produtoEditado: any, private mensagemService: MensagemSweetService) {
 
   }
 
@@ -45,7 +45,7 @@ export class EditarProdutoComponent {
       console.log('editado com sucesso!');
       this.mensagemService.sucesso('Editado com Sucesso!');
     } else {
-        this.mensagemService.alerta('Produto não editado!');
+      this.mensagemService.alerta('Produto não editado!');
     }
 
   }

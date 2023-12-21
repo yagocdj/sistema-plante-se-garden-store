@@ -8,6 +8,8 @@ import {AdminMenuComponent} from './layout/admin-menu/admin-menu.component';
 import {ListagemProdutoComponent} from './produto/listagem-produto/listagem-produto.component';
 import {ListagemPedidoComponent} from './pedido/listagem-pedido/listagem-pedido.component';
 import {LoginClienteComponent} from "./login/login-cliente/login-cliente.component";
+import {AuthGuard} from "./shared/services/auth.guard";
+import {LoginGuard} from "./shared/services/login.guard";
 
 const routes: Routes = [
   {
@@ -16,7 +18,8 @@ const routes: Routes = [
   },
   {
     path: 'login-cliente',
-    component: LoginClienteComponent
+    component: LoginClienteComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'loja-produtos',
@@ -24,7 +27,13 @@ const routes: Routes = [
   },
   {
     path: 'cadastro-cliente',
-    component: CadastroClienteComponent
+    component: CadastroClienteComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'edicao-cliente/:id',
+    component: CadastroClienteComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'listagem-cliente',

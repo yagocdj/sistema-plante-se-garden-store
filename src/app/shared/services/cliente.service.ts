@@ -28,7 +28,7 @@ export class ClienteService {
     return this.httpClient.post<Cliente>(this.URL_CLIENTES, cliente, this.httpOptions);
   }
 
-  editar(cpf: string, cliente: Cliente): Observable<Cliente> {
+  atualizar(cliente: Cliente): Observable<Cliente> {
     return this.httpClient.put<Cliente>(this.URL_CLIENTES, cliente, this.httpOptions);
   }
 
@@ -38,6 +38,10 @@ export class ClienteService {
 
   localizarPorEmail(email: string): Observable<Cliente> {
     return this.httpClient.get<Cliente>(`${this.URL_CLIENTES}/email/${email}`);
+  }
+
+  localizarPorId(id: string): Observable<Cliente> {
+    return this.httpClient.get<Cliente>(`${this.URL_CLIENTES}/${id}`);
   }
 
   remover(id: number): Observable<Cliente> {

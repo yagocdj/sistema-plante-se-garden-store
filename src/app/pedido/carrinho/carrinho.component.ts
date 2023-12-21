@@ -1,11 +1,22 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild, ViewEncapsulation } from '@angular/core';
-import { MatSidenav } from '@angular/material/sidenav';
-import { Produto } from 'src/app/shared/model/produto';
-import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
-import { PedidoService } from 'src/app/shared/services/pedido.service';
-import { Pedido } from 'src/app/shared/model/pedido';
-import { Cliente } from 'src/app/shared/model/cliente';
-import { ClienteService } from 'src/app/shared/services/cliente.service';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewChild,
+  ViewEncapsulation
+} from '@angular/core';
+import {MatSidenav} from '@angular/material/sidenav';
+import {Produto} from 'src/app/shared/model/produto';
+import {ShoppingCartService} from 'src/app/shared/services/shopping-cart.service';
+import {PedidoService} from 'src/app/shared/services/pedido.service';
+import {Pedido} from 'src/app/shared/model/pedido';
+import {Cliente} from 'src/app/shared/model/cliente';
+import {ClienteService} from 'src/app/shared/services/cliente.service';
+import {MensagemSweetService} from "../../shared/services/mensagem-sweet.service";
 
 @Component({
   selector: 'app-carrinho',
@@ -21,13 +32,14 @@ export class CarrinhoComponent implements OnChanges, OnInit {
 
   cartProducts: Produto[] = [];
   totalValue = 0;
-  defaultCostumer: Cliente | null = null;
 
   constructor(
     private shoppingCartService: ShoppingCartService,
-    private orderServide: PedidoService,
-    private costumerService: ClienteService
-  ) { }
+    private pedidoService: PedidoService,
+    private clienteService: ClienteService,
+    private mensagemService: MensagemSweetService
+  ) {
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (this.sidenavElement) {
@@ -38,7 +50,7 @@ export class CarrinhoComponent implements OnChanges, OnInit {
   }
 
   ngOnInit(): void {
-    this.fetchDefaultCostumer();
+    this.fetchCostumer();
     this.cartProducts = this.shoppingCartService.shoppingCart;
   }
 
@@ -56,29 +68,36 @@ export class CarrinhoComponent implements OnChanges, OnInit {
   }
 
   createNewOrder(): void {
-    const orderToBeInserted = {
-      cliente: this.defaultCostumer,
-      produtos: [...this.cartProducts],
-      valorTotal: this.totalValue,
-    } as Pedido;
-
-    this.orderServide.insert(orderToBeInserted).subscribe(
-      _ => {
-        this.cartProducts = [];
-        this.totalValue = 0;
-        this.closeSidenav();
-      }
-    );
+    const idDoCliente = localStorage.getItem('clienteAtual');
+    if (idDoCliente) {
+      this.clienteService.localizarPorId(idDoCliente).subscribe(
+        cliente => {
+          if (cliente) {
+            const pedidoASerInserido = {
+              cliente: cliente,
+              produtos: [...this.cartProducts],
+              valorTotal: this.totalValue
+            } as Pedido;
+            this.pedidoService.insert(pedidoASerInserido).subscribe(
+              answer => {
+                this.cartProducts = [];
+                this.totalValue = 0;
+                this.closeSidenav();
+                this.mensagemService.sucesso('Pedido efetuado com sucesso!');
+              }
+            );
+          } else {
+            this.mensagemService.erro('Não há cliente com o ID ' + idDoCliente);
+          }
+        }
+      );
+    } else {
+      this.mensagemService.erro('É necessário fazer o login antes de fazer um pedido.')
+    }
   }
 
   // Debug only method
-  private fetchDefaultCostumer(): void {
-    this.costumerService.localizarPorCpf('00011100099').subscribe(
-      costumer => {
-        this.defaultCostumer = costumer[0] ? costumer[0] : null;
-        console.log('DEFAULT ')
-        console.log(this.defaultCostumer);
-      }
-    );
+  private fetchCostumer(): void {
+
   }
 }

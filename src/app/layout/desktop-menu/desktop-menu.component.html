@@ -30,15 +30,35 @@
         </mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>login</mat-icon>
-          <span>Entrar</span>
-        </button>
-        <button mat-menu-item [routerLink]="['/cadastro-cliente']">
-          <mat-icon>person_add</mat-icon>
-          <span>Criar conta</span>
-        </button>
+
+        <div *ngIf="!clienteEstaLogado()">
+          <button mat-menu-item [routerLink]="['/login-cliente']" >
+            <mat-icon>login</mat-icon>
+            <span>Entrar</span>
+          </button>
+          <button mat-menu-item [routerLink]="['/cadastro-cliente']">
+            <mat-icon>person_add</mat-icon>
+            <span>Criar conta</span>
+          </button>
+        </div>
+
+        <div *ngIf="clienteEstaLogado()">
+          <button mat-menu-item (click)="fazerLogout()">
+            <mat-icon>
+              logout
+            </mat-icon>
+            <span>Sair</span>
+          </button>
+          <button mat-menu-item (click)="editarCliente()">
+            <mat-icon>
+              edit
+            </mat-icon>
+            <span>Editar informações</span>
+          </button>
+        </div>
+
       </mat-menu>
+
       <button
         mat-icon-button
         class="flex-button"
