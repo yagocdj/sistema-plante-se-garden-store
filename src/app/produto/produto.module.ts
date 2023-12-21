@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ListagemProdutoComponent } from './listagem-produto/listagem-produto.component';
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { PesquisaProdutoComponent } from './pesquisa-produto/pesquisa-produto.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MenuProdutoComponent,
     CadastrarProdutoComponent,
     ListagemProdutoComponent,
-    EditarProdutoComponent
+    EditarProdutoComponent,
+    PesquisaProdutoComponent
   ],
   imports: [
     CommonModule,

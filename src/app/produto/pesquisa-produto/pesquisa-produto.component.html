@@ -1,0 +1,21 @@
+<div class="inner-container">
+  <button mat-dialog-close class="close-button">
+    <mat-icon>close</mat-icon>
+  </button>
+
+  <mat-card *ngFor="let produto of produtos" class="product-card">
+    <img mat-card-image src="{{produto.urlDaImagem}}" alt="Photo of a Shiba Inu">
+    <mat-card-content class="card-content">
+      <p class="product-description">
+        <span>{{produto.nome.length > 50 ? produto.nome.slice(0, 35) + '...' : produto.nome}}</span>
+        <br>
+        <span>Cód:{{produto.id}}</span>
+      </p>
+      <p class="product-value-info">
+        <span class="price">R$ {{produto.preco}}</span>
+        <br>
+        <span class="installments">4x de R$ {{produto.preco / 4}} s/ juros</span>
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

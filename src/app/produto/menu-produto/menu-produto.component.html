@@ -2,5 +2,7 @@
   <button [routerLink]="['/admin-menu']"><mat-icon>keyboard_return</mat-icon></button>
   <button (click)="openDialog()">Cadastrar</button>
   <button (click)="refreshPage()">Listar Produtos</button>
-  <input id="inputBusca" placeholder="Digite sua busca" >
+  <button (click)="pesquisar()">Pesquisar</button>
+  <input id="inputBusca" [(ngModel)]="nomePesquisado" placeholder="Digite sua busca" >
 </div>
+

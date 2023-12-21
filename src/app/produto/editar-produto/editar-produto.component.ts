@@ -39,15 +39,22 @@ export class EditarProdutoComponent {
     console.log(this.produtoEditado);
   }
 
+
   produtoEditar() {
     if (this.produtoForm.valid) {
-      this.produto.editar(this.produtoEditado.id, this.produtoForm.value).subscribe();
-      console.log('editado com sucesso!');
-      this.mensagemService.sucesso('Editado com Sucesso!');
+      this.produto.editar(this.produtoEditado.id, this.produtoForm.value).subscribe(() => {
+        console.log('editado com sucesso!');
+        this.mensagemService.sucesso('Editado com Sucesso!');
+        setTimeout(() => {
+          location.reload();
+        }, 2000);
+      });
     } else {
       this.mensagemService.alerta('Produto não editado!');
+      setTimeout(() => {
+        location.reload();
+      }, 2000);
     }
-
   }
 }
 

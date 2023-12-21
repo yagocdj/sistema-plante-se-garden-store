@@ -37,6 +37,9 @@ export class CadastrarProdutoComponent {
       this.produtoService.inserir(this.produtoForm.value).subscribe(() => {
         console.log('adicionou com sucesso!');
         this.mensagemService.sucesso('Produto cadastrado!');
+        setTimeout(() => {
+          location.reload();
+        }, 2000);
       });
     } else {
       this.mensagemService.erro('Produto não cadastrado!');

@@ -48,6 +48,10 @@ export class ProdutoService {
     return this.http.put<Produto>(`${this.URL_PRODUTOS}/${idproduto}`, produto);
   }
 
+  pesquisarPorNome(nome: string): Observable<Produto[]> {
+    return this.http.get<Produto[]>(`${this.URL_PRODUTOS}?nome=${nome}`);
+  }
+
   // existenciaProduto(produtoNome: string): Observable<boolean> {
   //   const url = `${this.URL_PRODUTOS}/exists/${produtoNome}`;
   //   return this.http.get<boolean>(url);
