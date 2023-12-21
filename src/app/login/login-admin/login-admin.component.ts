@@ -1,10 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms'
-import { Router } from '@angular/router';
-import { AdminService } from 'src/app/shared/services/admin.service';
-import { MensagemSweetService } from 'src/app/shared/services/mensagem-sweet.service';
-import { environment } from 'src/environments/environment';
+import {Component, OnInit} from '@angular/core';
+import {FormGroup, FormBuilder} from '@angular/forms'
+import {Router} from '@angular/router';
+import {AdminService} from 'src/app/shared/services/admin.service';
+import {MensagemSweetService} from 'src/app/shared/services/mensagem-sweet.service';
 
 @Component({
   selector: 'app-login-admin',
@@ -14,12 +12,14 @@ import { environment } from 'src/environments/environment';
 export class LoginAdminComponent implements OnInit {
 
   public loginForm!: FormGroup
+
   constructor(
     private formBuilder: FormBuilder,
     private adminService: AdminService,
     private router: Router,
     private mensagemService: MensagemSweetService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({

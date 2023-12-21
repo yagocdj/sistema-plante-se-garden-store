@@ -9,16 +9,16 @@
     <div class="logo-container">
       <a href="#">
         <img src="../../../assets/icons/pot.svg" alt="Icon of a little pot with a plant inside of it"
-         width="64" height="64">
+             width="64" height="64">
       </a>
     </div>
     <div class="search-container">
       <input type="text" name="search" id="search-box"
-      placeholder="O que você deseja comprar?"
-      aria-label="Caixa de entrada de texto para buscar por produtos na loja">
+             placeholder="O que você deseja comprar?"
+             aria-label="Caixa de entrada de texto para buscar por produtos na loja">
       <div id="search-button-container">
         <button mat-icon-button
-         arial-label="Botão para buscar por produtos com a descrição digitada antes">
+                arial-label="Botão para buscar por produtos com a descrição digitada antes">
           <mat-icon>search</mat-icon>
         </button>
       </div>
@@ -46,14 +46,15 @@
         (click)="showShoppingCart = !showShoppingCart"
       >
         <mat-icon [matBadge]="productsInShoppingCartCount"
-          matBadgeSize="small">shopping_cart</mat-icon
+                  matBadgeSize="small">shopping_cart
+        </mat-icon
         >
       </button>
     </div>
   </mat-toolbar-row>
   <mat-toolbar-row class="justify-center" id="category-options">
     <button mat-button class="category-bttn" *ngFor="let categoria of categorias">
-      {{categoria}}
+      {{ categoria }}
     </button>
   </mat-toolbar-row>
 </mat-toolbar>

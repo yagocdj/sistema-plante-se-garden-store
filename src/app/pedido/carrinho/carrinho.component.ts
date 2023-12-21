@@ -73,7 +73,7 @@ export class CarrinhoComponent implements OnChanges, OnInit {
 
   // Debug only method
   private fetchDefaultCostumer(): void {
-    this.costumerService.localizar('00011100099').subscribe(
+    this.costumerService.localizarPorCpf('00011100099').subscribe(
       costumer => {
         this.defaultCostumer = costumer[0] ? costumer[0] : null;
         console.log('DEFAULT ')
