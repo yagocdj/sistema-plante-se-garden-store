@@ -85,6 +85,7 @@
           formControlName="cep"
           required
           (blur)="queryCep($event)"
+          [ngModel]="clienteDeManipulacao.endereco.split(',').at(4)"
         />
         <mat-error *ngIf="cep?.invalid && (cep?.dirty || cep?.touched)">
           {{ requiredFieldErrorMessage }}
@@ -99,6 +100,7 @@
           placeholder="Rua Exemplo"
           formControlName="nomeDaRua"
           required
+          [ngModel]="clienteDeManipulacao.endereco.split(',').at(0)"
         />
         <mat-error
           *ngIf="nomeDaRua?.invalid && (nomeDaRua?.dirty || nomeDaRua?.touched)"
@@ -115,6 +117,7 @@
           placeholder="Número da residência"
           formControlName="numeroResidencia"
           required
+          [ngModel]="clienteDeManipulacao.endereco.split(',').at(1)"
         />
         <mat-error
           *ngIf="
@@ -132,6 +135,7 @@
           #ufSelection
           (ngModelChange)="queryCitiesByUF(ufSelection.value)"
           formControlName="uf"
+          [ngModel]="clienteDeManipulacao.endereco.split(',').at(3)"
         >
           <mat-option *ngFor="let uf of queryUFs()" value="{{ uf }}">{{
               uf | uppercase
@@ -142,7 +146,8 @@
 
       <mat-form-field>
         <mat-label>Cidade</mat-label>
-        <mat-select formControlName="cidade">
+        <mat-select formControlName="cidade"
+                    [ngModel]="clienteDeManipulacao.endereco.split(',').at(2)">
           <mat-option *ngFor="let city of cities" value="{{ city }}">{{
               city
             }}
@@ -156,12 +161,13 @@
 
       <mat-form-field>
         <mat-label>Digite uma senha</mat-label>
-        <input type="password" matInput formControlName="senha" required/>
+        <input type="password" matInput formControlName="senha" required
+        [(ngModel)]="clienteDeManipulacao.senha"/>
       </mat-form-field>
 
       <!-- TODO - adicionar uma validação de senha -->
 
-      <button mat-button type="submit">Criar conta</button>
+      <button mat-button type="submit">{{nomeBotao}}</button>
     </form>
   </mat-card-content>
 </mat-card>

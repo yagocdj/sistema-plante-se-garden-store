@@ -64,7 +64,7 @@ export class CadastroClienteComponent implements OnInit {
         this.clienteService.localizarPorEmail(this.email?.value).subscribe(
           clientePesquisado => {
             if (clientePesquisado) {
-              this.mensagemService.erro(`Já há email com o email ${this.clienteDeManipulacao.email}`);
+              this.mensagemService.erro(`Já há cliente com o email ${this.clienteDeManipulacao.email}`);
             } else {
               const address = `${this.nomeDaRua?.value},${this.numeroResidencia?.value},${this.cidade?.value}-${this.uf?.value.toUpperCase()},${this.cep?.value}`;
               this.clienteService.inserir({
@@ -83,26 +83,30 @@ export class CadastroClienteComponent implements OnInit {
           }
         );
       } else {
-        const address = `${this.nomeDaRua?.value},${this.numeroResidencia?.value},${this.cidade?.value}-${this.uf?.value.toUpperCase()},${this.cep?.value}`;
+        this.clienteService.localizarPorEmail(this.email?.value).subscribe(cliente => {
+          const address = `${this.nomeDaRua?.value},${this.numeroResidencia?.value},${this.cidade?.value},${this.uf?.value.toUpperCase()},${this.cep?.value}`;
 
-        this.clienteDeManipulacao.nome = this.nome?.value;
-        this.clienteDeManipulacao.cpf = this.cpf?.value;
-        this.clienteDeManipulacao.email = this.email?.value;
-        this.clienteDeManipulacao.endereco = address;
-        this.clienteDeManipulacao.telefone = this.telefone?.value;
-        this.clienteDeManipulacao.senha = this.senha?.value;
+          this.clienteDeManipulacao.id = cliente.id!;
+          this.clienteDeManipulacao.nome = this.nome?.value;
+          this.clienteDeManipulacao.cpf = this.cpf?.value;
+          this.clienteDeManipulacao.email = this.email?.value;
+          this.clienteDeManipulacao.endereco = address;
+          this.clienteDeManipulacao.telefone = this.telefone?.value;
+          this.clienteDeManipulacao.senha = this.senha?.value;
 
-        this.clienteService.atualizar({
+          this.clienteService.atualizar({
             nome: this.nome?.value,
             cpf: this.cpf?.value,
             email: this.email?.value,
             endereco: address,
             telefone: this.telefone?.value,
             senha: this.senha?.value
-          } as Cliente).subscribe(cliente => {
-          this.mensagemService.sucesso('Cliente atualizado!');
-          this.roteador.navigate(['/loja-produto']);
+          } as Cliente, cliente.id!).subscribe(cliente => {
+            this.mensagemService.sucesso('Cliente atualizado!');
+            this.roteador.navigate(['/loja-produto']);
+          });
         });
+
       }
     }
   }

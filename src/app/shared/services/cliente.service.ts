@@ -28,8 +28,8 @@ export class ClienteService {
     return this.httpClient.post<Cliente>(this.URL_CLIENTES, cliente, this.httpOptions);
   }
 
-  atualizar(cliente: Cliente): Observable<Cliente> {
-    return this.httpClient.put<Cliente>(this.URL_CLIENTES, cliente, this.httpOptions);
+  atualizar(cliente: Cliente, id: number): Observable<Cliente> {
+    return this.httpClient.put<Cliente>(`${this.URL_CLIENTES}/${id}`, cliente, this.httpOptions);
   }
 
   localizarPorCpf(cpf: string): Observable<Cliente[]> {
