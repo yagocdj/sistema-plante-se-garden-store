@@ -1,10 +1,33 @@
 @import '../../../styles.scss';
 
+$transparent-bg: rgba($color: #505050, $alpha: 0.2);
+
 .product-card {
   display: flex;
   flex-flow: column wrap;
   height: min(350px, 350px);
   width: min(200px, 200px);
+}
+
+#search-box {
+  width: 100%;
+  height: min(30px, 30px);
+  border-radius: 5px;
+  background-color: $transparent-bg;
+  border: none;
+  padding: 5px 10px 5px 10px;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  width: min(50%, 50%);
+}
+
+#search-button-container {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
 }
 
 #products-grid {
@@ -75,8 +98,14 @@ mat-card img {
   height: 65%;
 }
 
-.screen-title-card {
+.search-options-card {
   width: max(85%, 370px);
   max-width: 1222px;
   margin-top: 14px;
+}
+
+#search-options-card-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }

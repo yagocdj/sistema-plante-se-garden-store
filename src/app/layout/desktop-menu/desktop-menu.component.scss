@@ -4,8 +4,8 @@ $transparent-bg: rgba($color: #505050, $alpha: 0.2);
 
 .navbar-container {
   display: flex;
-  justify-content: center;
-  gap: 40px;
+  justify-content: space-around;
+  gap: 55%;
   height: min(75px, 75px);
 }
 

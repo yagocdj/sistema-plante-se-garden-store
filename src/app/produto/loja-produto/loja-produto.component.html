@@ -1,7 +1,17 @@
 <div class="container">
-  <mat-card class="screen-title-card">
-    <mat-card-content>
-      <h1>Produtos</h1>
+  <mat-card class="search-options-card">
+    <mat-card-content id="search-options-card-content">
+      <div class="search-container">
+        <input type="text" name="search" id="search-box"
+               placeholder="O que você deseja comprar?"
+               aria-label="Caixa de entrada de texto para buscar por produtos na loja">
+        <div id="search-button-container">
+          <button mat-icon-button
+                  aria-label="Botão para buscar por produtos com a descrição digitada antes">
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+      </div>
     </mat-card-content>
   </mat-card>
 
