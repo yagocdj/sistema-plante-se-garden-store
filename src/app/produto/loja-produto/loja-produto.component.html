@@ -1,12 +1,13 @@
 <div class="container">
   <mat-card class="search-options-card">
     <mat-card-content id="search-options-card-content">
-      <button mat-icon-button
+      <button mat-button
               aria-label="Botão para desfazer a busca realizada anteirormente"
               (click)="fetchAllProducts()">
         <mat-icon>
           undo
         </mat-icon>
+        <span>Desfazer</span>
       </button>
       <div class="search-container">
         <input type="text" name="search" id="search-box"
@@ -21,13 +22,27 @@
           </button>
         </div>
       </div>
-      <button mat-button [matMenuTriggerFor]="menu"
+      <button mat-button [matMenuTriggerFor]="menuCategorias"
               aria-label="Botão que expande um menu com as categoria que podem ser selecionadas">
+        <mat-icon>category</mat-icon>
         Categorias
       </button>
-      <mat-menu #menu>
+      <mat-menu #menuCategorias>
         <button mat-menu-item *ngFor="let categoria of listCategorias()"
-        (click)="filtrarProdutosPorCategoria(categoria)">{{ categoria }}</button>
+                (click)="filtrarProdutosPorCategoria(categoria)">{{ categoria }}
+        </button>
+      </mat-menu>
+
+      <button mat-button [matMenuTriggerFor]="menuOrdenacao">
+        <mat-icon>sort</mat-icon>
+        Ordenar
+      </button>
+
+      <mat-menu #menuOrdenacao>
+        <button mat-menu-item (click)="ordenarPorPreco('ascendente')">por preço (ascendente)</button>
+        <button mat-menu-item (click)="ordenarPorPreco('descendente')">por preço (descendente)</button>
+        <button mat-menu-item (click)="ordenarPorNome('ascendente')">por nome (ascendente)</button>
+        <button mat-menu-item (click)="ordenarPorNome('descendente')">por nome (descendente)</button>
       </mat-menu>
     </mat-card-content>
   </mat-card>

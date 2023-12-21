@@ -73,4 +73,38 @@ export class LojaProdutoComponent implements OnInit {
       produtosFiltrados => this.productsInfo = produtosFiltrados
     );
   }
+
+  ordenarPorPreco(sentido: string): void {
+    const sortByPreco = (produto: Produto, outroProduto: Produto) => {
+      if (produto.preco < outroProduto.preco) {
+        return -1;
+      } else if (produto.preco > outroProduto.preco) {
+        return 1;
+      }
+      return 0;
+    }
+
+    if (sentido === 'ascendente') {
+      this.productsInfo.sort(sortByPreco);
+    } else if (sentido === 'descendente') {
+      this.productsInfo.sort(sortByPreco).reverse();
+    }
+  }
+
+  ordenarPorNome(sentido: string): void {
+    const sortByNome = (produto: Produto, outroProduto: Produto) => {
+      if (produto.nome < outroProduto.nome) {
+        return -1;
+      } else if (produto.nome > outroProduto.nome) {
+        return 1;
+      }
+      return 0;
+    }
+
+    if (sentido === 'ascendente') {
+      this.productsInfo.sort(sortByNome);
+    } else if (sentido === 'descendente') {
+      this.productsInfo.sort(sortByNome).reverse();
+    }
+  }
 }
