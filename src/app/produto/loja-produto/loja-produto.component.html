@@ -1,17 +1,34 @@
 <div class="container">
   <mat-card class="search-options-card">
     <mat-card-content id="search-options-card-content">
+      <button mat-icon-button
+              aria-label="Botão para desfazer a busca realizada anteirormente"
+              (click)="fetchAllProducts()">
+        <mat-icon>
+          undo
+        </mat-icon>
+      </button>
       <div class="search-container">
         <input type="text" name="search" id="search-box"
                placeholder="O que você deseja comprar?"
-               aria-label="Caixa de entrada de texto para buscar por produtos na loja">
+               aria-label="Caixa de entrada de texto para buscar por produtos na loja"
+               #inputBuscaProduto>
         <div id="search-button-container">
           <button mat-icon-button
-                  aria-label="Botão para buscar por produtos com a descrição digitada antes">
+                  aria-label="Botão para buscar por produtos com a descrição digitada antes"
+                  (click)="searchProductByName(inputBuscaProduto.value)">
             <mat-icon>search</mat-icon>
           </button>
         </div>
       </div>
+      <button mat-button [matMenuTriggerFor]="menu"
+              aria-label="Botão que expande um menu com as categoria que podem ser selecionadas">
+        Categorias
+      </button>
+      <mat-menu #menu>
+        <button mat-menu-item *ngFor="let categoria of listCategorias()"
+        (click)="filtrarProdutosPorCategoria(categoria)">{{ categoria }}</button>
+      </mat-menu>
     </mat-card-content>
   </mat-card>
 
@@ -32,16 +49,16 @@
           <mat-card-content class="card-content">
             <p class="product-description">
               <span>{{
-                product.nome.length > 50
-                  ? product.nome.slice(0, 35) + "..."
-                  : product.nome
-              }}</span>
+                  product.nome.length > 50
+                    ? product.nome.slice(0, 35) + "..."
+                    : product.nome
+                }}</span>
               <span>Cód:{{ product.id }}</span>
             </p>
             <p class="product-value-info">
               <span class="price">R{{ product.preco | currency }}</span>
               <span class="installments"
-                >4x de R{{ product.preco / 4 | currency }} s/ juros</span
+              >4x de R{{ product.preco / 4 | currency }} s/ juros</span
               >
             </p>
           </mat-card-content>

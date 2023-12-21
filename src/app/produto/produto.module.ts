@@ -15,6 +15,7 @@ import { ListagemProdutoComponent } from './listagem-produto/listagem-produto.co
 import { EditarProdutoComponent } from './editar-produto/editar-produto.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { PesquisaProdutoComponent } from './pesquisa-produto/pesquisa-produto.component';
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PesquisaProdutoComponent } from './pesquisa-produto/pesquisa-produto.co
     MatFormFieldModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatMenuModule
   ]
 })
 export class ProdutoModule { }

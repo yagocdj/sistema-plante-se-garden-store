@@ -3,6 +3,7 @@ import { Produto } from 'src/app/shared/model/produto';
 import { ProdutoService } from 'src/app/shared/services/produto.service';
 import { ShoppingCartService } from 'src/app/shared/services/shopping-cart.service';
 import { BreakpointObserver } from '@angular/cdk/layout';
+import {CategoriasService} from "../../shared/services/categorias.service";
 
 @Component({
   selector: 'app-loja-produto',
@@ -16,7 +17,8 @@ export class LojaProdutoComponent implements OnInit {
   constructor(
     private produtoService: ProdutoService,
     private responsive: BreakpointObserver,
-    private shoppingCartService: ShoppingCartService
+    private shoppingCartService: ShoppingCartService,
+    private categoriasService: CategoriasService
   ) {
     this.productsInfo = []
     this.numberOfCols = 2;
@@ -53,4 +55,22 @@ export class LojaProdutoComponent implements OnInit {
     this.shoppingCartService.insertProductsIntoCart(product);
   }
 
+  searchProductByName(name: string): void {
+    this.produtoService.pesquisarPorNome(name).subscribe(
+      produtos => {
+        if (produtos.length > 0) {
+          this.productsInfo = produtos;
+        }
+      });
+  }
+
+  listCategorias(): string[] {
+    return this.categoriasService.listar();
+  }
+
+  filtrarProdutosPorCategoria(categoria: string): void {
+    this.produtoService.pesquisarPorCategoria(categoria).subscribe(
+      produtosFiltrados => this.productsInfo = produtosFiltrados
+    );
+  }
 }

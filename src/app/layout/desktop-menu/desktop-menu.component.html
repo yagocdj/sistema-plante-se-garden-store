@@ -21,7 +21,7 @@
       <mat-menu #menu="matMenu">
 
         <div *ngIf="!clienteEstaLogado()">
-          <button mat-menu-item [routerLink]="['/login-cliente']" >
+          <button mat-menu-item [routerLink]="['/login-cliente']">
             <mat-icon>login</mat-icon>
             <span>Entrar</span>
           </button>
@@ -60,10 +60,5 @@
         >
       </button>
     </div>
-  </mat-toolbar-row>
-  <mat-toolbar-row class="justify-center" id="category-options">
-    <button mat-button class="category-bttn" *ngFor="let categoria of categorias">
-      {{ categoria }}
-    </button>
   </mat-toolbar-row>
 </mat-toolbar>

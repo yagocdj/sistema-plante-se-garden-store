@@ -52,6 +52,10 @@ export class ProdutoService {
     return this.http.get<Produto[]>(`${this.URL_PRODUTOS}?nome=${nome}`);
   }
 
+  pesquisarPorCategoria(categoria: string): Observable<Produto[]> {
+    return this.http.get<Produto[]>(`${this.URL_PRODUTOS}?categoria=${categoria}`);
+  }
+
   // existenciaProduto(produtoNome: string): Observable<boolean> {
   //   const url = `${this.URL_PRODUTOS}/exists/${produtoNome}`;
   //   return this.http.get<boolean>(url);
