@@ -1,0 +1,93 @@
+<mat-sidenav #sideNav mode="over" class="sidenav-component" role="navigation">
+  <div class="sidenav-header">
+    <div class="user-info">
+      <mat-icon class="icon-display"> account_circle </mat-icon>
+      <!-- Futuramente, utilizar-se-a de string interpolation
+      para pegar o nome do usuario caso haja um (logado)-->
+      <p id="hello-user-paragraph">Olá, usuário!</p>
+    </div>
+    <div class="user-actions">
+      <button mat-flat-button color="primary" id="login-bttn">Entrar</button>
+      <button
+        mat-flat-button
+        color="accent"
+        id="create-account-bttn"
+        (click)="navigateToLogin(sideNav)"
+      >
+        Criar conta
+      </button>
+    </div>
+    <button mat-icon-button (click)="sideNav.toggle()" class="close-button">
+      <mat-icon> close </mat-icon>
+    </button>
+  </div>
+  <div class="sidenav-options">
+    <button
+      *ngFor="let categoria of categorias"
+      mat-button
+      class="category-bttn"
+    >
+      {{ categoria }}
+    </button>
+  </div>
+</mat-sidenav>
+
+<app-carrinho
+  [show]="showShoppingCart"
+  (sidenavClosed)="onShoppingCartClosed()"
+  (productAdded)="onProductAdded($event)"
+></app-carrinho>
+
+<mat-toolbar class="bg-sl-green" id="toolbar-container">
+  <mat-toolbar-row>
+    <div fxFlex="15" fxLayoutAlign="center center">
+      <button
+        mat-icon-button
+        class="flex-button"
+        aria-label="Example icon-button with menu icon"
+        (click)="sideNav.toggle()"
+      >
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div fxFlex="70" fxLayoutAlign="center center">
+      <a href="#">
+        <img
+          src="../../../assets/icons/pot.svg"
+          alt="Icon of a little pot with a plant inside of it"
+          width="48"
+          height="48"
+        />
+      </a>
+    </div>
+    <div fxFlex="15" fxLayoutAlign="center center">
+      <button
+        mat-icon-button
+        class="flex-button"
+        aria-label="Example icon-button with share icon"
+        (click)="showShoppingCart = !showShoppingCart"
+      >
+        <mat-icon [matBadge]="productsInShoppingCartCount"
+          matBadgeSize="small">shopping_cart</mat-icon
+        >
+      </button>
+    </div>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <input
+      type="text"
+      name="search"
+      id="search-box"
+      placeholder="O que você deseja comprar?"
+      aria-label="Caixa de entrada de texto para buscar por produtos na loja"
+    />
+    <div id="search-button-container">
+      <button
+        mat-icon-button
+        aria-label="Botão para buscar por produtos com a descrição digitada antes"
+      >
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

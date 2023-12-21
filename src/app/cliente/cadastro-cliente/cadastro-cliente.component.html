@@ -1,0 +1,173 @@
+<mat-card id="form-container-card">
+  <h1>Criar conta</h1>
+  <mat-card-content>
+    <!-- TODO - add validações em todos os campos necessários -->
+    <form
+      [formGroup]="cadastroForm"
+      #formDir="ngForm"
+      id="registration-form"
+      (ngSubmit)="criarOuAtualizarCliente()"
+    >
+      <h2>1. Dados pessoais</h2>
+
+      <mat-form-field>
+        <mat-label>Nome completo</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Seu nome"
+          formControlName="nome"
+          required
+          [(ngModel)]="clienteDeManipulacao.nome"
+        />
+        <mat-error *ngIf="nome?.invalid && (nome?.dirty || nome?.touched)">
+          {{ requiredFieldErrorMessage }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>E-mail</mat-label>
+        <input
+          type="email"
+          matInput
+          placeholder="exemplo@mail.com"
+          formControlName="email"
+          required
+          [(ngModel)]="clienteDeManipulacao.email"
+        />
+        <mat-error *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+          {{ getEmailInputErrorMessage() }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>CPF</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="000.000.000-00"
+          formControlName="cpf"
+          required
+          [(ngModel)]="clienteDeManipulacao.cpf"
+        />
+        <mat-error *ngIf="cpf?.invalid && (cpf?.dirty || cpf?.touched)">
+          {{ requiredFieldErrorMessage }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>DDD e celular</mat-label>
+        <input
+          type="tel"
+          matInput
+          placeholder="(00) 90000-0000"
+          formControlName="telefone"
+          required
+          [(ngModel)]="clienteDeManipulacao.telefone"
+        />
+        <mat-error
+          *ngIf="telefone?.invalid && (telefone?.dirty || telefone?.touched)"
+        >
+          {{ requiredFieldErrorMessage }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-divider></mat-divider>
+
+      <h2>2. Endereço</h2>
+
+      <mat-form-field>
+        <mat-label>CEP</mat-label>
+        <input
+          type="number"
+          matInput
+          placeholder="00000000"
+          formControlName="cep"
+          required
+          (blur)="queryCep($event)"
+          [ngModel]="clienteDeManipulacao.endereco.split(',').at(4)"
+        />
+        <mat-error *ngIf="cep?.invalid && (cep?.dirty || cep?.touched)">
+          {{ requiredFieldErrorMessage }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Nome da rua</mat-label>
+        <input
+          type="text"
+          matInput
+          placeholder="Rua Exemplo"
+          formControlName="nomeDaRua"
+          required
+          [ngModel]="clienteDeManipulacao.endereco.split(',').at(0)"
+        />
+        <mat-error
+          *ngIf="nomeDaRua?.invalid && (nomeDaRua?.dirty || nomeDaRua?.touched)"
+        >
+          {{ requiredFieldErrorMessage }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Número</mat-label>
+        <input
+          type="number"
+          matInput
+          placeholder="Número da residência"
+          formControlName="numeroResidencia"
+          required
+          [ngModel]="clienteDeManipulacao.endereco.split(',').at(1)"
+        />
+        <mat-error
+          *ngIf="
+            numeroResidencia?.invalid &&
+            (numeroResidencia?.dirty || numeroResidencia?.touched)
+          "
+        >
+          {{ requiredFieldErrorMessage }}
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Estado (UF)</mat-label>
+        <mat-select
+          #ufSelection
+          (ngModelChange)="queryCitiesByUF(ufSelection.value)"
+          formControlName="uf"
+          [ngModel]="clienteDeManipulacao.endereco.split(',').at(3)"
+        >
+          <mat-option *ngFor="let uf of queryUFs()" value="{{ uf }}">{{
+              uf | uppercase
+            }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Cidade</mat-label>
+        <mat-select formControlName="cidade"
+                    [ngModel]="clienteDeManipulacao.endereco.split(',').at(2)">
+          <mat-option *ngFor="let city of cities" value="{{ city }}">{{
+              city
+            }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-divider></mat-divider>
+
+      <h2>3. Senha</h2>
+
+      <mat-form-field>
+        <mat-label>Digite uma senha</mat-label>
+        <input type="password" matInput formControlName="senha" required
+        [(ngModel)]="clienteDeManipulacao.senha"/>
+      </mat-form-field>
+
+      <!-- TODO - adicionar uma validação de senha -->
+
+      <button mat-button type="submit">{{nomeBotao}}</button>
+    </form>
+  </mat-card-content>
+</mat-card>

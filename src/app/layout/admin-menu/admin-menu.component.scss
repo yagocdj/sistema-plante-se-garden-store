@@ -1,0 +1,56 @@
+div{
+  padding: 3rem 1rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
+
+p{
+  color: rgb(168, 250, 168);
+}
+
+h1{
+  color: green;
+}
+
+h2{
+  color: green;
+}
+
+button {
+  background-color: white;
+  border: none;
+  border-radius: 5%;
+  width: 300px;
+  height: 300px;
+  transition-duration: 0.4s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgb(0,0,0,0.2);
+}
+
+.mat-icon{
+  color: rgb(168, 250, 168);
+  font-size: 75px;
+  border-radius: 50%;
+  border: 0px solid white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 120px;
+  height: 120px;
+  background: rgb(245, 245, 245);
+}
+.legendaBotao{
+  color:rgb(134, 134, 134);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin-top: 60px;
+}
+
+button:hover {
+  box-shadow: 0 10px 12px 0 rgba(0,0,0,0.2), 0 12px 30px 0 rgb(83, 176, 125);
+}

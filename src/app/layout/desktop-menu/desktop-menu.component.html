@@ -1,0 +1,64 @@
+<app-carrinho
+  [show]="showShoppingCart"
+  (sidenavClosed)="onShoppingCartClosed()"
+  (productAdded)="onProductAdded($event)"
+></app-carrinho>
+
+<mat-toolbar>
+  <mat-toolbar-row class="navbar-container bg-sl-green">
+    <div class="logo-container">
+      <a href="#">
+        <img src="../../../assets/icons/pot.svg" alt="Icon of a little pot with a plant inside of it"
+             width="64" height="64">
+      </a>
+    </div>
+    <div class="user-options">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon class="icon-display">
+          account_circle
+        </mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+
+        <div *ngIf="!clienteEstaLogado()">
+          <button mat-menu-item [routerLink]="['/login-cliente']">
+            <mat-icon>login</mat-icon>
+            <span>Entrar</span>
+          </button>
+          <button mat-menu-item [routerLink]="['/cadastro-cliente']">
+            <mat-icon>person_add</mat-icon>
+            <span>Criar conta</span>
+          </button>
+        </div>
+
+        <div *ngIf="clienteEstaLogado()">
+          <button mat-menu-item (click)="fazerLogout()">
+            <mat-icon>
+              logout
+            </mat-icon>
+            <span>Sair</span>
+          </button>
+          <button mat-menu-item (click)="editarCliente()">
+            <mat-icon>
+              edit
+            </mat-icon>
+            <span>Editar informações</span>
+          </button>
+        </div>
+
+      </mat-menu>
+
+      <button
+        mat-icon-button
+        class="flex-button"
+        aria-label="Example icon-button with share icon"
+        (click)="showShoppingCart = !showShoppingCart"
+      >
+        <mat-icon [matBadge]="productsInShoppingCartCount"
+                  matBadgeSize="small">shopping_cart
+        </mat-icon
+        >
+      </button>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

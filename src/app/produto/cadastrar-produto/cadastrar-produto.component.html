@@ -1,0 +1,40 @@
+<div>
+  <form [formGroup]="produtoForm">
+    <p>Nome</p>
+    <input
+      formControlName="nome"
+      matInput
+      placeholder="Digite o Nome do Produto"
+    />
+    <br />
+    <p>Categoria</p>
+    <input
+      formControlName="categoria"
+      matInput
+      placeholder="Digite a Categoria"
+    />
+    <br />
+    <p>Preço</p>
+    <input formControlName="preco" matInput placeholder="Digite o Preço" />
+    <br />
+    <p>Quantidade</p>
+    <input
+      formControlName="quantidade"
+      matInput
+      placeholder="Digite a Quantidade"
+    />
+    <br />
+    <p>Imagem Url</p>
+    <input
+      formControlName="urlDaImagem"
+      matInput
+      placeholder="Digite a URL da Imagem"
+    />
+    <div id="divBotoes">
+      <button id="acaoModalCadastrar" [mat-dialog-close]="">Cancelar</button>
+      <button (click)="cadastrarProduto()" [mat-dialog-close]="">
+        Adicionar
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,32 @@
+mat-card {
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+}
+
+h2 {
+  color: green;
+  padding: 20px;
+}
+
+.loginFormulario {
+  padding: 10rem 0 10rem 0;
+}
+
+button {
+  font-size: 28px;
+  color: rgb(47, 236, 47);
+  border: 0px solid rgb(63, 143, 67);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 160px;
+  height: 80px;
+  background: rgb(245, 245, 245);
+  border-radius: 10%;
+}
+
+button:hover {
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 6px 12px 0 rgb(83, 176, 125);
+}

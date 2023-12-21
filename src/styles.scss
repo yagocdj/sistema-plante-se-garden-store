@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* .*-sl-green */
+$slightly-lighter-green: #A3CF36;
+/* *.l-green */
+$lighter-green: #5CE06A;
+/* .*-r-green */
+$regular-green: #11C10E;
+/* .*-d-green */
+$dark-green: #31661D;
+/* .*-b-green */
+$blueish-green: #33C4A5;
+$light-gray: #EEEEEE;
+
+/* Font-sizes */
+$fs-x-small: 10px;
+$fs-small: 12px;
+$fs-medium: 14px;
+$fs-large: 16px;
+$fs-x-large: 18px;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.bg-sl-green {
+    background-color: $slightly-lighter-green;
+}
+
+snack-bar-container.success{
+  background-color: #5CE06A;
+}

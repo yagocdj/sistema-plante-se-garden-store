@@ -1,0 +1,53 @@
+@import '../../../styles.scss';
+
+$transparent-bg: rgba($color: #505050, $alpha: 0.2);
+
+.navbar-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 55%;
+  height: min(75px, 75px);
+}
+
+#search-box {
+  width: 100%;
+  height: min(30px, 30px);
+  border-radius: 5px;
+  background-color: $transparent-bg;
+  border: none;
+  padding: 5px 10px 5px 10px;
+}
+
+::placeholder {
+  color: rgba($color: #000000, $alpha: 0.6);
+  font-weight: bold;
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  width: min(50%, 50%);
+}
+
+#search-button-container {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+}
+
+.icon-display {
+  transform: scale(1.5);
+}
+
+.user-options {
+  display: flex;
+  gap: 10px;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+#category-options {
+  gap: 15px
+}
